@@ -29,7 +29,7 @@ if " " in wall:
 uv = shutil.which("uv")
 if not uv:
     raise SystemExit("uv is required on the submission host")
-command = [uv, "run", "--frozen", "--extra", "gpu", "python", "-m", "graded_resonators.train", relative,
+command = ["uv", "run", "--frozen", "--extra", "gpu", "python", "-m", "graded_resonators.train", relative,
            "--data", str(args.data.resolve()), "--output", f"results/{args.run_id}"]
 proposal = {
     "proposal_version": 1, "run_id": args.run_id, "platform": "athena",
@@ -51,7 +51,8 @@ with tempfile.TemporaryDirectory(prefix="graded-resonators-proposal-") as direct
             "--gpu-type", "rtx4090", "--cpus-per-task", "8", "--mem", "32G", "--time", wall,
             "--capability", "gpu=true", "--artifact-policy", "none", "--policy-programme", "graded-resonators",
             "--proposal-file", str(proposal_path), "--env", "PYTHONUNBUFFERED=1",
-            "--env", "XLA_PYTHON_CLIENT_PREALLOCATE=false"]
+            "--env", "XLA_PYTHON_CLIENT_PREALLOCATE=false",
+            "--env", f"PATH={Path(uv).parent}:/usr/local/bin:/usr/bin:/bin"]
     if args.dry_run:
         argv.append("--dry-run")
     argv += ["--", *command]
