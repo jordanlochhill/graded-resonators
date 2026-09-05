@@ -1,0 +1,47 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "pilot",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "brf",
+    "inputs": 1,
+    "hidden": 256,
+    "classes": 10,
+    "omega_range": [
+      15,
+      85
+    ],
+    "damping_range": [
+      0.1,
+      1
+    ],
+    "tau_std": 1,
+    "batch": 256,
+    "epochs": 300,
+    "lr": 0.1,
+    "task": "psmnist",
+    "epoch_limit": 2,
+    "train_limit": 768,
+    "validation_limit": 256,
+    "name": "timing-psmnist"
+  },
+  "best_epoch": 0,
+  "best_validation_loss": 2.3025851249694824,
+  "steps": 6,
+  "seconds_this_invocation": 2.0664671331178397,
+  "parameters": 68874,
+  "memory_stats": {
+    "num_allocs": 129943,
+    "bytes_in_use": 925440,
+    "peak_bytes_in_use": 1684602368,
+    "largest_alloc_size": 1681843712,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 2552233984,
+    "peak_pool_bytes": 2552233984
+  }
+}

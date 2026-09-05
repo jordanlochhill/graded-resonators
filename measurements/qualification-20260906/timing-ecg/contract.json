@@ -1,0 +1,104 @@
+{
+  "config": {
+    "stage": "pilot",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "brf",
+    "inputs": 4,
+    "hidden": 36,
+    "classes": 6,
+    "omega_range": [
+      3,
+      5
+    ],
+    "damping_range": [
+      0.1,
+      1
+    ],
+    "tau_std": 1,
+    "batch": 16,
+    "epochs": 400,
+    "lr": 0.1,
+    "task": "ecg",
+    "epoch_limit": 2,
+    "train_limit": 48,
+    "validation_limit": 16,
+    "name": "timing-ecg"
+  },
+  "neuron": {
+    "payload": "binary",
+    "adaptive_threshold": true,
+    "adaptive_damping": true,
+    "integration": "euler",
+    "signed": false,
+    "reset": "none",
+    "surrogate": "double_gaussian",
+    "refractory_decay": 0.9,
+    "threshold": 1.0,
+    "dt": 0.01,
+    "recurrent": true,
+    "payload_bits": 32,
+    "payload_clip": 1.0
+  },
+  "data": {
+    "protocol": "Yin et al. preprocessed QTDB distributed by BRF; remove final sentinel row; retain supplied split.",
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/AdaptiveAILab/brf-neurons/1a42b8c8aceedb13cae3b2327774c2fcc04fd696/experiments/ecg/data/QTDB_train.mat",
+        "file": "QTDB_train.mat",
+        "sha256": "72d1a10c96f1540880447e07256835d66da419c0b34f3dff495731a7928c5bc7",
+        "md5": null
+      },
+      {
+        "url": "https://raw.githubusercontent.com/AdaptiveAILab/brf-neurons/1a42b8c8aceedb13cae3b2327774c2fcc04fd696/experiments/ecg/data/QTDB_test.mat",
+        "file": "QTDB_test.mat",
+        "sha256": "916f11e21679a5b61988305bbb7cd1e6df8b34f1ed4a157a7a4e295d400ef232",
+        "md5": null
+      }
+    ],
+    "arrays": {
+      "train_x.npy": {
+        "sha256": "a2d6281e585f1776ee6fce087094abb1abbf2f093f78fe00a3ed958ed38dd97f",
+        "shape": [
+          618,
+          1300,
+          4
+        ]
+      },
+      "train_y.npy": {
+        "sha256": "cd9666e9fab4d3dbaab3ba5569215d21c3efed3acc026cb0645f78c7560f74ea",
+        "shape": [
+          618,
+          1300
+        ]
+      },
+      "test_x.npy": {
+        "sha256": "428b3721ecc7a48129a636a4593de8d46312e1bafebc74c5ecbc38c55836b28e",
+        "shape": [
+          141,
+          1300,
+          4
+        ]
+      },
+      "test_y.npy": {
+        "sha256": "a7f45fc786a156ed5f45ce95f4b07f35d3efd0f2afa95b68cbc61b7fc60406cc",
+        "shape": [
+          141,
+          1300
+        ]
+      }
+    },
+    "split_seed": 20260906,
+    "validation_indices_sha256": "12fe26d02fc94bf9f8adca94825f22455619cb63f13cb96b5710a3d76f9e153b",
+    "permutation_sha256": null
+  },
+  "source_commit": "bd2950b586aafe1f8daeef115764d46272e531fa",
+  "jax": "0.6.2",
+  "devices": [
+    "cuda:0"
+  ],
+  "parameters": 1734,
+  "started_unix": 1788651224.3639002,
+  "config_sha256": "3357969b182aff475d8cbc41af229a832c4474c17171f2004e898d4a40575cdd"
+}

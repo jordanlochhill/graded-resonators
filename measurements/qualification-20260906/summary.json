@@ -1,0 +1,195 @@
+[
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "brf",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd"
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.5375900654705024,
+    "steps": 4600,
+    "seconds_this_invocation": 146.06918321596459,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 129410,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 0.9182896896301647,
+      "accuracy": 0.9054770307490345,
+      "event_fraction": 0.10400679438990333,
+      "payload_rms": 0.3225008361773539,
+      "max_membrane_component": 151.90423583984375,
+      "seconds": 0.6828504370059818,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "pilot",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "brf",
+      "inputs": 1,
+      "hidden": 256,
+      "classes": 10,
+      "omega_range": [
+        15,
+        50
+      ],
+      "damping_range": [
+        0.1,
+        1
+      ],
+      "tau_std": 5,
+      "batch": 256,
+      "epochs": 300,
+      "lr": 0.1,
+      "task": "smnist",
+      "epoch_limit": 2,
+      "train_limit": 768,
+      "validation_limit": 256,
+      "name": "timing-smnist"
+    },
+    "best_epoch": 0,
+    "best_validation_loss": 2.3025853633880615,
+    "steps": 6,
+    "seconds_this_invocation": 2.029435598058626,
+    "parameters": 68874,
+    "memory_stats": {
+      "num_allocs": 129711,
+      "bytes_in_use": 925440,
+      "peak_bytes_in_use": 1676573952,
+      "largest_alloc_size": 1673815296,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 2552233984,
+      "peak_pool_bytes": 2552233984
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "pilot",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "brf",
+      "inputs": 1,
+      "hidden": 256,
+      "classes": 10,
+      "omega_range": [
+        15,
+        85
+      ],
+      "damping_range": [
+        0.1,
+        1
+      ],
+      "tau_std": 1,
+      "batch": 256,
+      "epochs": 300,
+      "lr": 0.1,
+      "task": "psmnist",
+      "epoch_limit": 2,
+      "train_limit": 768,
+      "validation_limit": 256,
+      "name": "timing-psmnist"
+    },
+    "best_epoch": 0,
+    "best_validation_loss": 2.3025851249694824,
+    "steps": 6,
+    "seconds_this_invocation": 2.0664671331178397,
+    "parameters": 68874,
+    "memory_stats": {
+      "num_allocs": 129943,
+      "bytes_in_use": 925440,
+      "peak_bytes_in_use": 1684602368,
+      "largest_alloc_size": 1681843712,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 2552233984,
+      "peak_pool_bytes": 2552233984
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "pilot",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "brf",
+      "inputs": 4,
+      "hidden": 36,
+      "classes": 6,
+      "omega_range": [
+        3,
+        5
+      ],
+      "damping_range": [
+        0.1,
+        1
+      ],
+      "tau_std": 1,
+      "batch": 16,
+      "epochs": 400,
+      "lr": 0.1,
+      "task": "ecg",
+      "epoch_limit": 2,
+      "train_limit": 48,
+      "validation_limit": 16,
+      "name": "timing-ecg"
+    },
+    "best_epoch": 0,
+    "best_validation_loss": 1.7917594909667969,
+    "steps": 6,
+    "seconds_this_invocation": 1.8654694510623813,
+    "parameters": 1734,
+    "memory_stats": {
+      "num_allocs": 130175,
+      "bytes_in_use": 24832,
+      "peak_bytes_in_use": 1684602368,
+      "largest_alloc_size": 1681843712,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 2552233984,
+      "peak_pool_bytes": 2552233984
+    }
+  }
+]

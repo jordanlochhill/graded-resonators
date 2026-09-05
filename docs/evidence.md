@@ -42,3 +42,37 @@ substituted for a benchmark result.
 and times the other original task shapes. This is the first learned baseline
 qualification. Its seed-zero BRF result should be included once, not retrained
 and counted twice when the five-seed primary comparison is assembled.
+
+## First full SHD baseline
+
+Execute `grf-qualification-20260906`, source `bd2950b`, job 720, completed
+20 full SHD epochs (4,600 updates). Seed zero's lowest-validation-loss checkpoint
+was epoch 11 (zero based). Held-out test accuracy: 90.5477% on all 2,264
+examples; event fraction 10.4007%, approximately 3,328.2 events per sequence.
+The published BRF result is 91.7 ± 0.8%, five seeds. The earlier 90.4% figure
+belongs to the ALIF comparator. One fresh seed is 1.15 percentage points below
+the published mean; this qualifies the multi-seed comparison but does not yet
+establish agreement of the means. No recipe was changed using this test result.
+
+Curated contracts and metrics: `measurements/qualification-20260906/`. Full
+checkpoints are retained in the corresponding Execute work directory. Seed zero
+is excluded from the next 19-run SHD manifest and included once when aggregating.
+
+Measured median batch times at original shapes: SHD 27.8 ms, sMNIST 83.6 ms,
+psMNIST 83.9 ms and ECG 76.6 ms. Image and ECG measurements are tiny timing
+pilots, not trained benchmark results. Extrapolation to the 80 primary trainings
+is approximately 66 hours plus validation/setup overhead on Athena, rounded to
+about 70 GPU-hours. Kaya H100 qualification is queued before assigning those
+longer tasks to that hardware.
+
+## Committed secondary design
+
+The SHD learning-rate control uses three rates (0.075, 0.025, 0.0075), two
+selection seeds (100, 101) and all four arms: 24 full trainings, validation only.
+The explicit tune stage cannot evaluate the test set. Any selected recipe must
+be confirmed on the five main seeds; original-recipe results remain separate.
+
+Fourteen targeted SHD contrasts, three paired seeds each, cover integration,
+signed/complex payload, near-matched parameter count, excess, reset, surrogate,
+smooth transmission, recovery decay and interaction controls. The main matrix,
+tuning and ablations are distinct evidence groups; do not pool their seeds.
