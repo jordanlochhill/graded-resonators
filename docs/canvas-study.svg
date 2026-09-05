@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1390" viewBox="0 0 900 1390">
+<rect width="900" height="1390" fill="#fffefa"/>
+<style>text{font-family:Arial,sans-serif;fill:#273b43}.k{font-size:18px;font-weight:bold;fill:#287766}.h{font-size:33px;font-weight:bold}.s{font-size:20px;fill:#64747b}.b{font-size:22px}.t{font-size:22px;font-weight:bold}.small{font-size:18px}</style>
+<text x="38" y="48" class="k">BRF REPRODUCTION · GRADED RESONATORS</text>
+<text x="38" y="95" class="h">What should an event change?</text>
+<text x="38" y="132" class="s">Four main arms; one independent, publishable implementation.</text>
+<line x1="38" y1="157" x2="862" y2="157" stroke="#aab8b8"/>
+<rect x="38" y="185" width="824" height="225" rx="8" fill="#e8f1ed" stroke="#b4ccc0"/>
+<text x="60" y="222" class="t">1 · CURRENT AUDIO DESIGN</text>
+<text x="60" y="260" class="b">linear membrane → nonlinear transmission</text>
+<text x="60" y="295" class="b">separate event observation → persistent memory</text>
+<text x="60" y="342" class="s">No event-triggered edit of the membrane in the proposal.</text>
+<text x="60" y="375" class="s">This study tests the primitive; audio-embedding fusion stays open.</text>
+<rect x="38" y="438" width="824" height="338" rx="8" fill="#eaf1f6" stroke="#b7cbd8"/>
+<text x="60" y="477" class="t">2 · HOLD THE NETWORK FIXED</text>
+<text x="60" y="520" class="small">EMISSION</text><text x="463" y="520" class="small">THRESHOLD</text><text x="660" y="520" class="small">DAMPING</text>
+<line x1="60" y1="536" x2="838" y2="536" stroke="#9eb7c7"/>
+<text x="60" y="574" class="b">Binary BRF</text><text x="463" y="574" class="b">adaptive</text><text x="660" y="574" class="b">adaptive</text>
+<text x="60" y="621" class="b">Graded BRF</text><text x="463" y="621" class="b">adaptive</text><text x="660" y="621" class="b">adaptive</text>
+<text x="60" y="668" class="b">Graded observation</text><text x="463" y="668" class="b">adaptive</text><text x="660" y="668" class="b">fixed</text>
+<text x="60" y="715" class="b">Graded static</text><text x="463" y="715" class="b">fixed</text><text x="660" y="715" class="b">fixed</text>
+<text x="60" y="751" class="small">Refractory state counts events; amplitude does not drive it.</text>
+<rect x="38" y="804" width="824" height="238" rx="8" fill="#fbf1dc" stroke="#dac899"/>
+<text x="60" y="843" class="t">3 · FIRST COMPUTE: BOUNDED SHD PILOT</text>
+<text x="60" y="882" class="b">700 inputs → 128 resonators → 20 readouts · T = 250</text>
+<text x="60" y="918" class="b">Batch 32 · 1,024 train / 256 validation · two epochs</text>
+<text x="60" y="954" class="b">Adam 0.075 · original 20-epoch decay · no clipping</text>
+<text x="60" y="992" class="s">Four arms × one seed. GPU wall cap: one hour.</text>
+<text x="60" y="1022" class="s">Check gradients, learning and runtime. No test-set evaluation.</text>
+<rect x="38" y="1070" width="824" height="230" rx="8" fill="#f0eeea" stroke="#c9c5bd"/>
+<text x="60" y="1109" class="t">4 · WHAT WOULD SUPPORT THE PAPER?</text>
+<text x="60" y="1148" class="b">Full BRF tasks and budgets · five paired seeds</text>
+<text x="60" y="1184" class="b">Accuracy, convergence, failure rate, events and payload cost</text>
+<text x="60" y="1225" class="s">Then: polar integration, signed/complex output, reset,</text>
+<text x="60" y="1258" class="s">surrogates, refractory decay and payload precision.</text>
+<text x="38" y="1342" class="k">IMPLEMENTATION VERIFIED · EMPIRICAL COMPARISONS PENDING</text>
+<text x="38" y="1370" class="small">6 September 2026 · source contract: docs/study.md</text>
+</svg>

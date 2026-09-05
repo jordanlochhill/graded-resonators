@@ -1,0 +1,115 @@
+{
+  "description": "Full-budget shd BRF reproduction and paired graded-emission comparison. Four arms, five seeds; original architecture and training budget; select by fixed held-out validation loss.",
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17797,18797]&y=[24641,26191]",
+  "decision_rule": "Require an explained BRF reproduction before interpreting alternatives. Report every seed, paired differences, event rate, payload scale and failures; no checkpoint selection from test accuracy.",
+  "cost": {
+    "gpu_type": "rtx4090",
+    "gpus": 1,
+    "time_limit": "to be resolved from pilot before submission"
+  },
+  "defaults": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "brf",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd"
+  },
+  "experiments": [
+    {
+      "arm": "brf",
+      "seed": 0
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 0
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 0
+    },
+    {
+      "arm": "graded_static",
+      "seed": 0
+    },
+    {
+      "arm": "brf",
+      "seed": 1
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 1
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 1
+    },
+    {
+      "arm": "graded_static",
+      "seed": 1
+    },
+    {
+      "arm": "brf",
+      "seed": 2
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 2
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 2
+    },
+    {
+      "arm": "graded_static",
+      "seed": 2
+    },
+    {
+      "arm": "brf",
+      "seed": 3
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 3
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 3
+    },
+    {
+      "arm": "graded_static",
+      "seed": 3
+    },
+    {
+      "arm": "brf",
+      "seed": 4
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 4
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 4
+    },
+    {
+      "arm": "graded_static",
+      "seed": 4
+    }
+  ]
+}

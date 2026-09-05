@@ -1,0 +1,51 @@
+{
+  "description": "Bounded SHD implementation and throughput pilot: four emission/refractory arms, one paired seed, 1024 training and 256 validation examples, two epochs of the original 20-epoch schedule. Never evaluate test data.",
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17797,18797]&y=[24641,26191]",
+  "decision_rule": "Check finite gradients and decreasing training loss. Diagnose any unstable arm before full comparisons. Use median batch times to estimate complete study cost; pilot accuracy is not a benchmark result.",
+  "cost": {
+    "gpu_type": "rtx4090",
+    "gpus": 1,
+    "time_limit": "01:00:00",
+    "max_updates": 256
+  },
+  "defaults": {
+    "stage": "pilot",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "brf",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "train_limit": 1024,
+    "validation_limit": 256,
+    "epoch_limit": 2
+  },
+  "experiments": [
+    {
+      "arm": "brf"
+    },
+    {
+      "arm": "graded_brf"
+    },
+    {
+      "arm": "graded_observation"
+    },
+    {
+      "arm": "graded_static"
+    }
+  ]
+}
