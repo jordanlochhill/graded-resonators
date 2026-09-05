@@ -1,0 +1,118 @@
+{
+  "description": "Kaya H100 environment and full-shape throughput qualification for the sMNIST, psMNIST and ECG replication. Two short pilot epochs at each original shape; no test-set evaluation.",
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
+  "decision_rule": "Require finite trajectories and recorded GPU identity. Compare per-batch times with Athena to choose a practical full-study placement; these runs do not report benchmark accuracy.",
+  "cost": {
+    "gpu_type": "h100",
+    "gpus": 1,
+    "time_limit": "00:30:00",
+    "estimated_seconds": 300,
+    "estimate_basis": "Includes a new JAX environment and small public-data download; measured H100 throughput is not yet available."
+  },
+  "defaults": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "brf",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd"
+  },
+  "experiments": [
+    {
+      "stage": "pilot",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "brf",
+      "inputs": 1,
+      "hidden": 256,
+      "classes": 10,
+      "omega_range": [
+        15,
+        50
+      ],
+      "damping_range": [
+        0.1,
+        1
+      ],
+      "tau_std": 5,
+      "batch": 256,
+      "epochs": 300,
+      "lr": 0.1,
+      "task": "smnist",
+      "epoch_limit": 2,
+      "train_limit": 768,
+      "validation_limit": 256,
+      "name": "timing-smnist"
+    },
+    {
+      "stage": "pilot",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "brf",
+      "inputs": 1,
+      "hidden": 256,
+      "classes": 10,
+      "omega_range": [
+        15,
+        85
+      ],
+      "damping_range": [
+        0.1,
+        1
+      ],
+      "tau_std": 1,
+      "batch": 256,
+      "epochs": 300,
+      "lr": 0.1,
+      "task": "psmnist",
+      "epoch_limit": 2,
+      "train_limit": 768,
+      "validation_limit": 256,
+      "name": "timing-psmnist"
+    },
+    {
+      "stage": "pilot",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "brf",
+      "inputs": 4,
+      "hidden": 36,
+      "classes": 6,
+      "omega_range": [
+        3,
+        5
+      ],
+      "damping_range": [
+        0.1,
+        1
+      ],
+      "tau_std": 1,
+      "batch": 16,
+      "epochs": 400,
+      "lr": 0.1,
+      "task": "ecg",
+      "epoch_limit": 2,
+      "train_limit": 48,
+      "validation_limit": 16,
+      "name": "timing-ecg"
+    }
+  ]
+}

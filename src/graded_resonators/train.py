@@ -67,6 +67,8 @@ def metric_dict(metrics):
 
 
 def run(config, output, data_root):
+    if config["stage"] not in {"main", "pilot", "tune"}:
+        raise ValueError("Stage must be main, pilot or tune")
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     if (output / "result.json").exists():
@@ -141,8 +143,8 @@ def run(config, output, data_root):
     result = {"status": status, "config": config, "best_epoch": best_epoch, "best_validation_loss": best_loss if np.isfinite(best_loss) else None,
               "steps": int(step), "seconds_this_invocation": time.perf_counter() - run_start,
               "parameters": contract["parameters"], "memory_stats": jax.devices()[0].memory_stats()}
-    # Pilot runs deliberately never evaluate test accuracy.
-    if status == "complete" and config["stage"] != "pilot":
+    # Pilot and hyperparameter-selection runs never evaluate test accuracy.
+    if status == "complete" and config["stage"] == "main":
         with np.load(output / "best.npz") as f:
             selected = {k: jnp.asarray(f[f"p_{k}"]) for k in p}
         result["test"] = evaluate(selected, split["test"], permutation, config, neuron)

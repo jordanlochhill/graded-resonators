@@ -1,11 +1,13 @@
 {
-  "description": "Full-budget shd BRF reproduction and paired graded-emission comparison. Four arms, five seeds; original architecture and training budget; select by fixed held-out validation loss.",
+  "description": "Full-budget shd BRF reproduction and paired graded-emission comparison. Four arms, five seeds; original architecture and training budget; select by fixed held-out validation loss. Seed-zero binary BRF comes from the preceding full qualification run and is not duplicated here.",
   "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
   "decision_rule": "Require an explained BRF reproduction before interpreting alternatives. Report every seed, paired differences, event rate, payload scale and failures; no checkpoint selection from test accuracy.",
   "cost": {
     "gpu_type": "rtx4090",
     "gpus": 1,
-    "time_limit": "to be resolved from pilot before submission"
+    "time_limit": "02:00:00",
+    "estimated_seconds": 2850,
+    "estimate_basis": "19 remaining full SHD trainings at about 150 seconds each; qualified seed-zero BRF counted once."
   },
   "defaults": {
     "stage": "main",
@@ -31,10 +33,6 @@
     "task": "shd"
   },
   "experiments": [
-    {
-      "arm": "brf",
-      "seed": 0
-    },
     {
       "arm": "graded_brf",
       "seed": 0

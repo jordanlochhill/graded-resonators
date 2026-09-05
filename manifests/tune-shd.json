@@ -1,0 +1,181 @@
+{
+  "description": "Equal-budget SHD learning-rate control for all four primary arms: original rate and two smaller rates, two independent selection seeds. Select using validation loss only, never test accuracy.",
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
+  "decision_rule": "Determine whether a refractory comparison survives equal learning-rate search. Average best validation loss across selection seeds, then confirm the selected rate on the five main seeds; retain the original-recipe comparison separately.",
+  "cost": {
+    "gpu_type": "rtx4090",
+    "gpus": 1,
+    "time_limit": "03:00:00",
+    "estimated_seconds": 3600,
+    "estimate_basis": "24 full SHD trainings at approximately 150 seconds each from observed BRF epoch timing."
+  },
+  "defaults": {
+    "stage": "tune",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "brf",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd"
+  },
+  "experiments": [
+    {
+      "arm": "brf",
+      "seed": 100,
+      "lr": 0.075,
+      "name": "brf-lr0.075-s100"
+    },
+    {
+      "arm": "brf",
+      "seed": 101,
+      "lr": 0.075,
+      "name": "brf-lr0.075-s101"
+    },
+    {
+      "arm": "brf",
+      "seed": 100,
+      "lr": 0.025,
+      "name": "brf-lr0.025-s100"
+    },
+    {
+      "arm": "brf",
+      "seed": 101,
+      "lr": 0.025,
+      "name": "brf-lr0.025-s101"
+    },
+    {
+      "arm": "brf",
+      "seed": 100,
+      "lr": 0.0075,
+      "name": "brf-lr0.0075-s100"
+    },
+    {
+      "arm": "brf",
+      "seed": 101,
+      "lr": 0.0075,
+      "name": "brf-lr0.0075-s101"
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 100,
+      "lr": 0.075,
+      "name": "graded_brf-lr0.075-s100"
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 101,
+      "lr": 0.075,
+      "name": "graded_brf-lr0.075-s101"
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 100,
+      "lr": 0.025,
+      "name": "graded_brf-lr0.025-s100"
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 101,
+      "lr": 0.025,
+      "name": "graded_brf-lr0.025-s101"
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 100,
+      "lr": 0.0075,
+      "name": "graded_brf-lr0.0075-s100"
+    },
+    {
+      "arm": "graded_brf",
+      "seed": 101,
+      "lr": 0.0075,
+      "name": "graded_brf-lr0.0075-s101"
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 100,
+      "lr": 0.075,
+      "name": "graded_observation-lr0.075-s100"
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 101,
+      "lr": 0.075,
+      "name": "graded_observation-lr0.075-s101"
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 100,
+      "lr": 0.025,
+      "name": "graded_observation-lr0.025-s100"
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 101,
+      "lr": 0.025,
+      "name": "graded_observation-lr0.025-s101"
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 100,
+      "lr": 0.0075,
+      "name": "graded_observation-lr0.0075-s100"
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 101,
+      "lr": 0.0075,
+      "name": "graded_observation-lr0.0075-s101"
+    },
+    {
+      "arm": "graded_static",
+      "seed": 100,
+      "lr": 0.075,
+      "name": "graded_static-lr0.075-s100"
+    },
+    {
+      "arm": "graded_static",
+      "seed": 101,
+      "lr": 0.075,
+      "name": "graded_static-lr0.075-s101"
+    },
+    {
+      "arm": "graded_static",
+      "seed": 100,
+      "lr": 0.025,
+      "name": "graded_static-lr0.025-s100"
+    },
+    {
+      "arm": "graded_static",
+      "seed": 101,
+      "lr": 0.025,
+      "name": "graded_static-lr0.025-s101"
+    },
+    {
+      "arm": "graded_static",
+      "seed": 100,
+      "lr": 0.0075,
+      "name": "graded_static-lr0.0075-s100"
+    },
+    {
+      "arm": "graded_static",
+      "seed": 101,
+      "lr": 0.0075,
+      "name": "graded_static-lr0.0075-s101"
+    }
+  ]
+}
