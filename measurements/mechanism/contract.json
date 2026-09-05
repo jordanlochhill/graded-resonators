@@ -1,0 +1,17 @@
+{
+  "scope": "Isolated neuron, fixed external impulses, no recurrent synaptic coupling; not a trained task result.",
+  "steps": 300,
+  "dt": 0.01,
+  "omega": 15.0,
+  "damping_offset": 1.0,
+  "impulses": {
+    "0": 230,
+    "100": 140
+  },
+  "counts": {
+    "brf": 3,
+    "graded_brf": 3,
+    "graded_observation": 4,
+    "graded_static": 21
+  }
+}

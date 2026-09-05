@@ -157,7 +157,9 @@ def advance(p, state, drive, neuron, coeff=None):
     elif neuron.payload == "complex":
         sent = jnp.concatenate((gate * new_u, gate * new_v), axis=-1)
     else:
-        sent = jax.nn.softplus(observed - threshold) * sign
+        sent = jax.nn.softplus(new_u - threshold)
+        if neuron.signed:
+            sent = sent - jax.nn.softplus(-new_u - threshold)
     if neuron.payload_bits < 32 and neuron.payload != "binary":
         # Fixed validation-calibrated range, including a representable zero.
         levels = 2 ** (neuron.payload_bits - int(neuron.signed or neuron.payload == "complex")) - 1

@@ -1,0 +1,46 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "pilot",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "graded_observation",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "train_limit": 1024,
+    "validation_limit": 256,
+    "epoch_limit": 2
+  },
+  "best_epoch": 1,
+  "best_validation_loss": 2.283622980117798,
+  "steps": 64,
+  "seconds_this_invocation": 3.4704723269678652,
+  "parameters": 108820,
+  "memory_stats": {
+    "num_allocs": 5568,
+    "bytes_in_use": 1307648,
+    "peak_bytes_in_use": 336854784,
+    "largest_alloc_size": 268435456,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 404750336,
+    "peak_pool_bytes": 404750336
+  }
+}
