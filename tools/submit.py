@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -25,7 +26,10 @@ commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=Tr
 wall = manifest["cost"]["time_limit"]
 if " " in wall:
     raise SystemExit("Resolve and commit the compute envelope before submitting")
-command = ["uv", "run", "--frozen", "--extra", "gpu", "python", "-m", "graded_resonators.train", relative,
+uv = shutil.which("uv")
+if not uv:
+    raise SystemExit("uv is required on the submission host")
+command = [uv, "run", "--frozen", "--extra", "gpu", "python", "-m", "graded_resonators.train", relative,
            "--data", str(args.data.resolve()), "--output", f"results/{args.run_id}"]
 proposal = {
     "proposal_version": 1, "run_id": args.run_id, "platform": "athena",

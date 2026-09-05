@@ -1,6 +1,6 @@
 {
   "description": "Full-budget ecg BRF reproduction and paired graded-emission comparison. Four arms, five seeds; original architecture and training budget; select by fixed held-out validation loss.",
-  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17797,18797]&y=[24641,26191]",
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
   "decision_rule": "Require an explained BRF reproduction before interpreting alternatives. Report every seed, paired differences, event rate, payload scale and failures; no checkpoint selection from test accuracy.",
   "cost": {
     "gpu_type": "rtx4090",

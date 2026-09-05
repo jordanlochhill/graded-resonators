@@ -1,6 +1,6 @@
 {
   "description": "Bounded SHD implementation and throughput pilot: four emission/refractory arms, one paired seed, 1024 training and 256 validation examples, two epochs of the original 20-epoch schedule. Never evaluate test data.",
-  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17797,18797]&y=[24641,26191]",
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
   "decision_rule": "Check finite gradients and decreasing training loss. Diagnose any unstable arm before full comparisons. Use median batch times to estimate complete study cost; pilot accuracy is not a benchmark result.",
   "cost": {
     "gpu_type": "rtx4090",
