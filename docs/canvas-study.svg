@@ -21,18 +21,18 @@
 <text x="60" y="715" class="b">Graded static</text><text x="463" y="715" class="b">fixed</text><text x="660" y="715" class="b">fixed</text>
 <text x="60" y="751" class="small">Refractory state counts events; amplitude does not drive it.</text>
 <rect x="38" y="804" width="824" height="238" rx="8" fill="#fbf1dc" stroke="#dac899"/>
-<text x="60" y="843" class="t">3 · FIRST COMPUTE: BOUNDED SHD PILOT</text>
+<text x="60" y="843" class="t">3 · EMPIRICAL STUDY UNDERWAY</text>
 <text x="60" y="882" class="b">700 inputs → 128 resonators → 20 readouts · T = 250</text>
-<text x="60" y="918" class="b">Batch 32 · 1,024 train / 256 validation · two epochs</text>
-<text x="60" y="954" class="b">Adam 0.075 · original 20-epoch decay · no clipping</text>
-<text x="60" y="992" class="s">Four arms × one seed. GPU wall cap: one hour.</text>
-<text x="60" y="1022" class="s">Check gradients, learning and runtime. No test-set evaluation.</text>
+<text x="60" y="918" class="b">First BRF SHD seed: 90.55% test · full 20 epochs</text>
+<text x="60" y="954" class="b">Published BRF: 91.7 ± 0.8% · five seeds</text>
+<text x="60" y="992" class="s">80 primary trainings · 42 ablations · 24 rate controls</text>
+<text x="60" y="1022" class="s">2/4/8-bit payloads · packet loss · binned-input noise</text>
 <rect x="38" y="1070" width="824" height="230" rx="8" fill="#f0eeea" stroke="#c9c5bd"/>
 <text x="60" y="1109" class="t">4 · WHAT WOULD SUPPORT THE PAPER?</text>
 <text x="60" y="1148" class="b">Full BRF tasks and budgets · five paired seeds</text>
 <text x="60" y="1184" class="b">Accuracy, convergence, failure rate, events and payload cost</text>
-<text x="60" y="1225" class="s">Then: polar integration, signed/complex output, reset,</text>
-<text x="60" y="1258" class="s">surrogates, refractory decay and payload precision.</text>
-<text x="38" y="1342" class="k">IMPLEMENTATION VERIFIED · EMPIRICAL COMPARISONS PENDING</text>
-<text x="38" y="1370" class="small">6 September 2026 · source contract: docs/study.md</text>
+<text x="60" y="1225" class="s">Code and methods draft are committed and reviewable.</text>
+<text x="60" y="1258" class="s">Full comparisons and final archive publication remain pending.</text>
+<text x="38" y="1342" class="k">17 CHECKS PASS · FIVE-SEED COMPARISON RUNNING</text>
+<a href="https://github.com/jordanlochhill/graded-resonators"><text x="38" y="1370" class="small">6 September 2026 · github.com/jordanlochhill/graded-resonators</text></a>
 </svg>
