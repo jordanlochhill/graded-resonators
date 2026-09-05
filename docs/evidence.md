@@ -54,7 +54,7 @@ belongs to the ALIF comparator. One fresh seed is 1.15 percentage points below
 the published mean; this qualifies the multi-seed comparison but does not yet
 establish agreement of the means. No recipe was changed using this test result.
 
-Curated contracts and metrics: `measurements/qualification-20260906/`. Full
+Curated contracts and metrics: `measurements/primary/grf-qualification-20260906/`. Full
 checkpoints are retained in the corresponding Execute work directory. Seed zero
 is excluded from the next 19-run SHD manifest and included once when aggregating.
 
@@ -85,8 +85,9 @@ completion and final model eligibility must be checked independently.
 
 The other original tasks now have measured compute envelopes and twelve
 derived, per-arm scheduler manifests, each retaining all five seeds. Athena is
-the verified execution platform. The Kaya timing request has no published
-receipt yet, so its capacity is not included in any completion-time promise.
+the verified execution platform. Kaya has now acknowledged its timing request
+as Slurm job 1175552, queued. Its throughput remains unverified and is not
+included in any completion-time promise.
 
 Post-training robustness is committed before evaluation: active-component
 99.9th-percentile clipping from validation, payload widths 2/4/8 bits, packet

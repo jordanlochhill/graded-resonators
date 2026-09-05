@@ -38,16 +38,16 @@ labels = {"brf": "Binary BRF", "graded_brf": "Graded BRF", "graded_observation":
 fig, axes = plt.subplots(3, 1, figsize=(7.0, 6.0), sharex=True, layout="constrained")
 for name in ("brf", "graded_observation"):
     axes[0].plot(traces[name]["real"], color=colors[name], label="Damping adapts" if name == "brf" else "Damping fixed")
-axes[0].set(ylabel="Real membrane", title="Same impulses; event-driven damping changes the retained oscillation")
+axes[0].set(ylabel="Real membrane", title="Event-dependent damping changes the oscillation")
 axes[0].legend(loc="upper right", frameon=False, ncols=2)
 for name in ("brf", "graded_brf"):
     axes[1].plot(traces[name]["payload"], color=colors[name], label=labels[name], lw=1.3)
-axes[1].set(ylabel="Transmitted value", title="Same state and event times; graded transmission carries amplitude")
+axes[1].set(ylabel="Transmitted value", title="Graded events carry membrane amplitude")
 axes[1].legend(frameon=False, ncols=2)
 for index, name in enumerate(ARMS):
     t = np.flatnonzero(traces[name]["event"])
     axes[2].vlines(t, index - .24, index + .24, color=colors[name])
-axes[2].set(yticks=range(4), yticklabels=[labels[name] for name in ARMS], xlabel="Time step", ylim=(-.6, 3.6), title="Observation adaptation suppresses events without editing isolated state")
+axes[2].set(yticks=range(4), yticklabels=[labels[name] for name in ARMS], xlabel="Time step", ylim=(-.6, 3.6), title="Threshold adaptation changes event timing")
 for ax in axes:
     ax.grid(alpha=.15)
 fig.savefig(args.output / "mechanism.pdf")

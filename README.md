@@ -71,6 +71,19 @@ updates refractory state; the same loss affects recurrent and readout delivery.
 Noise is added without clipping, in units where a binned input event has value
 one. These are numerical perturbations, not an acoustic-noise benchmark.
 
+To curate a completed run and regenerate the primary comparison:
+
+```sh
+python tools/collect.py --output measurements/primary /path/to/results/RUN
+uv run python tools/summarise_primary.py measurements/primary --output measurements/primary-summary
+```
+
+The collector preserves record bytes and writes checksums. The summary refuses
+duplicate seeds and missing planned seeds. `--tasks shd --allow-partial` produces
+an explicitly labelled progress view. Failed seeds remain visible and means
+over successful seeds are marked as conditional. Tuning, ablation and robustness
+results belong in separate measurement groups.
+
 ## Attribution
 
 Higuchi, Kairat, Bohté and Otte (2024), [Balanced Resonate-and-Fire
