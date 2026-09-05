@@ -18,6 +18,7 @@ parser.add_argument("--execute", type=Path, default=Path.home() / "Documents/exe
 parser.add_argument("--data", type=Path, required=True)
 parser.add_argument("--platform", choices=("athena", "kaya"), default="athena")
 parser.add_argument("--dry-run", action="store_true")
+parser.add_argument("--depends-on", action="append", default=[], help="Execute run id and afterok/afterany condition")
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
 manifest_path = args.manifest.resolve()
@@ -33,7 +34,10 @@ if " " in wall:
 uv = shutil.which("uv")
 if not uv:
     raise SystemExit("uv is required on the submission host")
-command = ["uv", "run", "--frozen", "--extra", "gpu", "python", "-m", "graded_resonators.train", relative,
+module = manifest.get("module", "graded_resonators.train")
+if module not in {"graded_resonators.train", "graded_resonators.robustness"}:
+    raise SystemExit("Unsupported experiment module")
+command = ["uv", "run", "--frozen", "--extra", "gpu", "python", "-m", module, relative,
            "--data", str(args.data.resolve()), "--output", f"results/{args.run_id}"]
 proposal = {
     "proposal_version": 1, "run_id": args.run_id, "platform": platform,
@@ -73,6 +77,8 @@ with tempfile.TemporaryDirectory(prefix="graded-resonators-proposal-") as direct
         argv += ["--artifact-policy", "none"]
     if args.dry_run:
         argv.append("--dry-run")
+    for dependency in args.depends_on:
+        argv += ["--depends-on", dependency]
     argv += ["--", *command]
     env = os.environ | {"PYTHONPATH": str(args.execute / "lib")}
     subprocess.run(argv, cwd=root, env=env, check=True)

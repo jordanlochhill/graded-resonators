@@ -129,7 +129,7 @@ def coefficients(p, neuron):
     return real, imag, jnp.exp(-1 / jnp.abs(p["tau"]))
 
 
-def advance(p, state, drive, neuron, coeff=None):
+def advance(p, state, drive, neuron, coeff=None, transmission_keep=None):
     """One step. Event count, payload and carried membrane are separate values."""
     u, v, q, previous, readout = state
     real, imag, alpha = coefficients(p, neuron) if coeff is None else coeff
@@ -165,6 +165,12 @@ def advance(p, state, drive, neuron, coeff=None):
         levels = 2 ** (neuron.payload_bits - int(neuron.signed or neuron.payload == "complex")) - 1
         lo = -neuron.payload_clip if neuron.signed or neuron.payload == "complex" else 0
         sent = jnp.round(jnp.clip(sent, lo, neuron.payload_clip) * levels / neuron.payload_clip) * neuron.payload_clip / levels
+    if transmission_keep is not None:
+        # Packet loss occurs after emission. The neuron's own refractory state
+        # still sees the event; both components of a complex packet are lost
+        # together. The same surviving packet reaches recurrence and readout.
+        keep = jnp.concatenate((transmission_keep, transmission_keep), -1) if neuron.payload == "complex" else transmission_keep
+        sent = sent * keep
     q_next = neuron.refractory_decay * q + gate
     if neuron.reset == "subtract":
         new_u = new_u - gate * sign * threshold
@@ -174,14 +180,15 @@ def advance(p, state, drive, neuron, coeff=None):
 
 
 @partial(jax.jit, static_argnames=("neuron", "trace"))
-def forward(p, x, neuron, state=None, trace=False):
+def forward(p, x, neuron, state=None, trace=False, transmission_keep=None):
     """x is [time, batch, input]. Passing state supports causal streaming."""
     state = initial_state(p, x.shape[1], neuron) if state is None else state
     drives = jnp.matmul(x, p["input"], precision="highest")
     coeff = coefficients(p, neuron)
 
-    def step(carry, drive):
-        nxt, (out, gate, sent) = advance(p, carry, drive, neuron, coeff)
+    def step(carry, item):
+        drive, keep = (item, None) if transmission_keep is None else item
+        nxt, (out, gate, sent) = advance(p, carry, drive, neuron, coeff, keep)
         if trace:
             return nxt, (out, gate, sent, nxt[0], nxt[1], nxt[2])
         # Keep per-sample statistics so padded examples cannot affect metrics.
@@ -189,11 +196,12 @@ def forward(p, x, neuron, state=None, trace=False):
                                 jnp.maximum(jnp.abs(nxt[0]).max(-1), jnp.abs(nxt[1]).max(-1))), -1)
         return nxt, (out, statistics)
 
-    return jax.lax.scan(step, state, drives)
+    sequence = drives if transmission_keep is None else (drives, transmission_keep)
+    return jax.lax.scan(step, state, sequence)
 
 
-def objective(p, x, labels, mask, neuron, task):
-    _, (outputs, statistics) = forward(p, x, neuron)
+def objective(p, x, labels, mask, neuron, task, transmission_keep=None):
+    _, (outputs, statistics) = forward(p, x, neuron, transmission_keep=transmission_keep)
     if task == "smnist":
         outputs = outputs[-1:]
     log_prob = jax.nn.log_softmax(outputs, axis=-1)

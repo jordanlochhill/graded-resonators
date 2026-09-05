@@ -1,0 +1,117 @@
+{
+  "module": "graded_resonators.robustness",
+  "description": "Post-training SHD payload quantisation, packet deletion, binned-input noise and dense forward latency for all twenty primary checkpoints. No refitting.",
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
+  "decision_rule": "Use the 99.9th percentile of active absolute payload components on validation for the clipping range. Use identical sample-indexed perturbations across arms. Report all conditions and failed-training eligibility; never select a test winner or infer hardware energy from these measurements.",
+  "cost": {
+    "gpu_type": "rtx4090",
+    "gpus": 1,
+    "time_limit": "01:00:00",
+    "estimated_seconds": 1500,
+    "estimate_basis": "Twenty checkpoints with validation tracing and eight or eleven full-test forwards; evaluation measured at roughly one second per test pass, allowing compilation and I/O."
+  },
+  "protocol": {
+    "batch": 32,
+    "clip_quantile": 0.999,
+    "payload_bits": [
+      2,
+      4,
+      8
+    ],
+    "packet_loss": [
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "input_noise": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "perturbation_seed": 20260906,
+    "latency_repetitions": 25
+  },
+  "checkpoints": [
+    {
+      "name": "shd-brf-s0",
+      "path": "/mnt/hot/execute/athena/work/grf-qualification-20260906/attempt-1/source/results/grf-qualification-20260906/shd-brf-s0"
+    },
+    {
+      "name": "shd-graded_brf-s0",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_brf-s0"
+    },
+    {
+      "name": "shd-graded_observation-s0",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_observation-s0"
+    },
+    {
+      "name": "shd-graded_static-s0",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_static-s0"
+    },
+    {
+      "name": "shd-brf-s1",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-brf-s1"
+    },
+    {
+      "name": "shd-graded_brf-s1",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_brf-s1"
+    },
+    {
+      "name": "shd-graded_observation-s1",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_observation-s1"
+    },
+    {
+      "name": "shd-graded_static-s1",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_static-s1"
+    },
+    {
+      "name": "shd-brf-s2",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-brf-s2"
+    },
+    {
+      "name": "shd-graded_brf-s2",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_brf-s2"
+    },
+    {
+      "name": "shd-graded_observation-s2",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_observation-s2"
+    },
+    {
+      "name": "shd-graded_static-s2",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_static-s2"
+    },
+    {
+      "name": "shd-brf-s3",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-brf-s3"
+    },
+    {
+      "name": "shd-graded_brf-s3",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_brf-s3"
+    },
+    {
+      "name": "shd-graded_observation-s3",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_observation-s3"
+    },
+    {
+      "name": "shd-graded_static-s3",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_static-s3"
+    },
+    {
+      "name": "shd-brf-s4",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-brf-s4"
+    },
+    {
+      "name": "shd-graded_brf-s4",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_brf-s4"
+    },
+    {
+      "name": "shd-graded_observation-s4",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_observation-s4"
+    },
+    {
+      "name": "shd-graded_static-s4",
+      "path": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906/shd-graded_static-s4"
+    }
+  ]
+}

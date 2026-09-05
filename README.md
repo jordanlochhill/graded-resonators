@@ -4,8 +4,9 @@ Independent source for **Graded Emissions and Refractory Feedback in Resonator
 Networks**, a reproduction and extension of Higuchi et al., *Balanced
 Resonate-and-Fire Neurons*, ICML 2024.
 
-**Status: implementation and pilot stage. No reproduced benchmark result or
-advantage for graded neurons is claimed yet.** The protocol is in
+**Status: full experiments underway.** The first full-budget BRF SHD seed reached
+90.55% test accuracy; the published five-seed mean is 91.7 ± 0.8%. The multi-seed
+reproduction and graded comparisons are pending. No advantage is claimed. The protocol is in
 [docs/study.md](docs/study.md). The manuscript is maintained in Jordan Hill's
 [papers archive source](https://github.com/jordanlochhill/papers).
 
@@ -59,6 +60,16 @@ Pilot manifests never evaluate the test set. Full experiments evaluate the
 selected checkpoint once. A failed seed remains a failed seed in the summary.
 Generated result directories are ignored by git; curated measurements for the
 paper will live under `measurements/` with an evidence ledger.
+
+`tools/split_primary.py` regenerates the twelve bounded original-task scheduler
+manifests from their three complete manifests. `manifests/robustness-shd.json`
+specifies post-training quantisation, packet deletion and binned-input Gaussian
+noise. Replace its checkpoint paths with your own selected-checkpoint directories
+when reproducing the evaluation. Its clipping range uses the 99.9th percentile
+of nonzero absolute validation payloads. A packet is lost after the local event
+updates refractory state; the same loss affects recurrent and readout delivery.
+Noise is added without clipping, in units where a binned input event has value
+one. These are numerical perturbations, not an acoustic-noise benchmark.
 
 ## Attribution
 

@@ -36,9 +36,9 @@ is worse. Its full-budget behaviour and equal-budget learning-rate controls
 must be examined before interpreting it. Pilot validation accuracy must not be
 substituted for a benchmark result.
 
-## Next decision
+## Qualification decision (completed)
 
-`manifests/qualification.json` runs the full 20-epoch BRF SHD recipe at seed zero
+`manifests/qualification.json` ran the full 20-epoch BRF SHD recipe at seed zero
 and times the other original task shapes. This is the first learned baseline
 qualification. Its seed-zero BRF result should be included once, not retrained
 and counted twice when the five-seed primary comparison is assembled.
@@ -76,3 +76,23 @@ Fourteen targeted SHD contrasts, three paired seeds each, cover integration,
 signed/complex payload, near-matched parameter count, excess, reset, surrogate,
 smooth transmission, recovery decay and interaction controls. The main matrix,
 tuning and ablations are distinct evidence groups; do not pool their seeds.
+
+The nineteen remaining primary SHD trainings are running as
+`grf-shd-main-20260906` (source `dc839cd`). The 42-run ablation and 24-run
+validation-only learning-rate manifests are authored as
+`grf-shd-ablations-20260906` and `grf-shd-tune-20260906`, respectively. Scheduler
+completion and final model eligibility must be checked independently.
+
+The other original tasks now have measured compute envelopes and twelve
+derived, per-arm scheduler manifests, each retaining all five seeds. Athena is
+the verified execution platform. The Kaya timing request has no published
+receipt yet, so its capacity is not included in any completion-time promise.
+
+Post-training robustness is committed before evaluation: active-component
+99.9th-percentile clipping from validation, payload widths 2/4/8 bits, packet
+deletion 1/5/10/20%, and additive Gaussian binned-input noise with standard
+deviation 0.01/0.05/0.1. Test perturbations use sample-indexed common random
+numbers. Packet deletion preserves the sender's local event/refractory update.
+All conditions are reported; no test-condition selection is permitted. Dense
+forward latency includes emission statistics, uses resident device inputs, and
+is not a neuromorphic-energy claim.

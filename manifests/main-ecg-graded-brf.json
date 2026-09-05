@@ -1,12 +1,12 @@
 {
-  "description": "Full-budget ecg BRF reproduction and paired graded-emission comparison. Four arms, five seeds; original architecture and training budget; select by fixed held-out validation loss.",
+  "description": "Full-budget ecg BRF reproduction and paired graded-emission comparison. Four arms, five seeds; original architecture and training budget; select by fixed held-out validation loss. Scheduler shard: graded_brf, all five seeds.",
   "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
   "decision_rule": "Require an explained BRF reproduction before interpreting alternatives. Report every seed, paired differences, event rate, payload scale and failures; no checkpoint selection from test accuracy.",
   "cost": {
     "gpu_type": "rtx4090",
     "gpus": 1,
-    "time_limit": "08:00:00",
-    "estimated_seconds": 25000,
+    "time_limit": "03:00:00",
+    "estimated_seconds": 6250.0,
     "estimate_basis": "Full original epoch/update budget times measured median training batch latency, with validation and setup allowance. Split into four per-arm scheduler jobs."
   },
   "defaults": {
@@ -34,84 +34,28 @@
   },
   "experiments": [
     {
-      "arm": "brf",
-      "seed": 0
-    },
-    {
       "arm": "graded_brf",
       "seed": 0
-    },
-    {
-      "arm": "graded_observation",
-      "seed": 0
-    },
-    {
-      "arm": "graded_static",
-      "seed": 0
-    },
-    {
-      "arm": "brf",
-      "seed": 1
     },
     {
       "arm": "graded_brf",
       "seed": 1
     },
     {
-      "arm": "graded_observation",
-      "seed": 1
-    },
-    {
-      "arm": "graded_static",
-      "seed": 1
-    },
-    {
-      "arm": "brf",
-      "seed": 2
-    },
-    {
       "arm": "graded_brf",
       "seed": 2
-    },
-    {
-      "arm": "graded_observation",
-      "seed": 2
-    },
-    {
-      "arm": "graded_static",
-      "seed": 2
-    },
-    {
-      "arm": "brf",
-      "seed": 3
     },
     {
       "arm": "graded_brf",
       "seed": 3
     },
     {
-      "arm": "graded_observation",
-      "seed": 3
-    },
-    {
-      "arm": "graded_static",
-      "seed": 3
-    },
-    {
-      "arm": "brf",
-      "seed": 4
-    },
-    {
       "arm": "graded_brf",
-      "seed": 4
-    },
-    {
-      "arm": "graded_observation",
-      "seed": 4
-    },
-    {
-      "arm": "graded_static",
       "seed": 4
     }
-  ]
+  ],
+  "parent_manifest": {
+    "path": "main-ecg.json",
+    "sha256": "91f21179600d7b46ad961ec9208fe8b8c0b0ad9979e6bb9bae5f229201049db7"
+  }
 }
