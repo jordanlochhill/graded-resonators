@@ -17,3 +17,6 @@ The manuscript lives in the parent papers repository. Data and trained weights
 are downloaded/generated artefacts; checksums and provenance belong in the
 source. Do not commit datasets or opaque upstream checkpoints.
 
+Jordan develops the manuscript interactively. Background continuations collect
+evidence and prepare the analysis page; they do not write, revise or publish
+papers. The current working draft is already in his private papers archive.

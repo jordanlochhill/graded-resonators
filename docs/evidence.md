@@ -234,3 +234,21 @@ Mixed membrane/event layers and waveform-as-first-state remain proposed audio
 extensions, with competing definitions recorded in docs/study.md. The manuscript
 now distinguishes these proposals and the added derivative control from the
 completed SHD comparison. Final archive publication remains pending.
+
+## Private working-paper publication and authorship boundary
+
+On 6 September the nine-page draft was added to Jordan's private papers archive:
+https://papers.prosodylabs.com.au/2026-graded-resonators/. The PDF at `paper.pdf`
+was verified over authenticated HTTPS against SHA-256
+`1aa0ef54e2fca40c40f3d109ed5d80fc66e8aadfaffd50674c5f717048e01ae1`;
+unauthenticated requests redirect to SSO. Manuscript PR #10 merged as
+`1b70ee7a849e762a66f2041943fb8687e4918737`. This publishes a working draft, not a
+completed study or a venue-accepted paper. Its current results remain unchanged.
+
+Jordan then clarified that manuscript development is interactive. The existing
+continuation now collects evidence, performs admitted confirmations and maintains
+analysis, with manuscript writing and archive/library publication removed from
+its scope. The core resonator paper should remain succinct; broader system
+exploration belongs in the KLM and Kairos Audio reports. A standalone steering
+experiment is a separate interactive paper. No extra training was authorised
+or submitted by this editorial change.

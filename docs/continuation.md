@@ -1,27 +1,30 @@
-# Continue the BRF reproduction through the final paper
+# Prepare BRF evidence for interactive paper development
 
-Jordan explicitly requested an independent, publishable replication of Balanced
-Resonate-and-Fire Neurons, with two or three graded alternatives and a broad
-controlled design study, informed by the current Kairos Audio canvas. He also
-explicitly requested that the final draft be pushed to the existing papers
-archive. He subsequently said “continue”. This authorises the planned training,
-analysis, code publication and completed-paper publication. Do not ask for the
-same permission again. It does not authorise invented findings, changes to the
-audio system, or publishing an unfinished experiment as a completed result.
+Jordan authorised the committed BRF reproduction, graded alternatives, rate
+controls and analysis. On 6 September he clarified that papers are developed
+interactively with him: no autoresearch manuscripts. This worker may collect
+evidence, run the already admitted confirmations, update the analysis and
+prepare findings for discussion. It must not write, revise, merge or publish
+a manuscript, modify the papers archive, or intake a paper into the library.
 
-This brief is for a bounded continuation worker, not a request to stop at a
-plan. Complete the available work and leave an armed, verifiable continuation
-for work awaiting long jobs. The final paper is the intended outcome.
+The nine-page working draft is already available at
+https://papers.prosodylabs.com.au/2026-graded-resonators/ (private archive).
+PR #10 merged as 1b70ee7; archive availability and study completion are separate.
+The ongoing paper is the compact core resonator unit study. Broader KLM and
+Kairos Audio reports, and an independent steering experiment, are separate
+interactive writing projects. Complete the available evidence work and leave
+one verified successor for admitted experiments that are still running.
 
 ## Workspaces and discovery
 
 - Your source worktree is `/home/jordan/Documents/worktrees/graded-resonators-shd-review`.
-- Your manuscript worktree is `/home/jordan/Documents/worktrees/papers-graded-shd-review`.
+- Papers are read-only for this worker. The canonical manuscript is on papers main
+  under `2026-graded-resonators/`; no manuscript worktree is needed.
 - The original source checkout is inside
   `/home/jordan/Documents/worktrees/papers-brf-graded/2026-graded-resonators/code`.
   It holds the prepared datasets. Treat that checkout as read-only.
-- The existing manuscript branch and draft PR are `paper/brf-graded` and
-  https://github.com/jordanlochhill/papers/pull/10.
+- The first manuscript PR, https://github.com/jordanlochhill/papers/pull/10,
+  is merged. Do not push to it or open a manuscript PR from this worker.
 - Source repository: https://github.com/jordanlochhill/graded-resonators.
 - Jordan additionally requested a live analysis page. Maintain the existing
   https://analysis.prosodylabs.com.au/graded-resonators/contents/ at
@@ -30,18 +33,17 @@ for work awaiting long jobs. The final paper is the intended outcome.
 - `docs/execution.json` is the current run inventory, including source pins,
   manifests, roles and result locations. Read it afresh; it is not live status.
 
-Read both worktrees' AGENTS.md instructions, `docs/study.md`, `docs/evidence.md`,
+Read the source worktree's AGENTS.md instructions, `docs/study.md`, `docs/evidence.md`,
 the executable manifests, and the paper's `review.md` and current TeX. Use the
-paper, style, glossary, runs, gpu-train, agents, when and worktrees skills for
-their respective work. Read the current canvas if interpreting implications
+analysis, glossary, runs, gpu-train, agents, when and worktrees skills for
+their respective work. The paper skill records the interactive-only authorship rule. Read the current canvas if interpreting implications
 for audio; its embedding fusion remains an open question. The own study card is
 item `297c5457f1f7` in workspace `50b74ebefe`, at x=17470, y=24691, width=900.
 Other items and Jordan's ink are outside your write scope.
 
 On arrival, inspect status and fetch the source remote. Fast-forward your clean
 source branch to origin/main if the original coordinator added newer evidence
-or platform decisions. For the paper, integrate the latest origin/paper/brf-graded
-into your own clean branch. Never reset, stash or change the branch of either
+or platform decisions. Never reset, stash or change the branch of either
 canonical checkout. The canonical papers directory has other work in progress.
 The source worktree should use its own uv environment, not a symlink to another
 checkout's editable environment. The data path is given in the run inventory.
@@ -101,10 +103,9 @@ the primary jobs. The pending evidence can change the interpretation.
    forward latency is a software measurement, not neuromorphic energy. A payload
    bit proxy must state its encoding assumption and exclude or explicitly count
    address/timestamp overhead; event counts alone are not energy savings.
-7. Update the evidence ledger, README, manuscript and own canvas card with the
-   actual results and limits. Keep the paper's pending sections explicit until
-   the remaining original-task comparisons finish. Its main argument must
-   follow the findings, including an informative negative if that is the result.
+7. Update the evidence ledger, README, analysis page and own canvas card with
+   actual results and limits. Record implications and questions for Jordan in
+   the evidence ledger, including informative negatives. Do not edit the paper.
 
 ## Complete the remaining study
 
@@ -169,15 +170,15 @@ unbounded search. The exact-gradient study above is the bounded admitted additio
 
 If jobs are still running when the bounded session ends, author and arm one
 successor trigger on their actual terminal conditions, with `on_failure: true`.
-Give it fresh source and paper worktrees and this objective, current inventory,
-evidence and publication instructions. It may in turn arm one further bounded
+Give it a fresh source worktree and this objective, current inventory,
+evidence and interactive-authorship boundary. It may in turn arm one further bounded
 continuation when a newly required job is pending. No parallel worker fan-out.
 Use the existing global policy and launch window; do not change or bypass them.
 Validate and test the trigger and record its exact name. A promise to follow up
 is insufficient. Do useful available analysis before ending; do not spend an
 agent session polling training for hours.
 
-## Final manuscript and publication
+## Evidence handoff for interactive paper review
 
 Before declaring the study complete, account for every planned primary seed,
 the ablation and robustness groups, and selected-rate confirmations. Distinguish
@@ -186,51 +187,18 @@ The primary summary refuses missing planned seeds and duplicate baselines.
 An unexplained failure cannot disappear into an average of survivors. Finish
 the required diagnoses or report their consequence explicitly in the results.
 
-Replace the methods-draft abstract and outstanding-work section with the actual
-research result. The paper must stand alone: mechanisms, numbers, uncertainty,
-related work, interpretation and limits; no internal run IDs, code paths or
-functions in its prose. The source ledger carries provenance. Read the nearest
-papers in the central library, including BRF, its convergence analysis, Frady's
-graded resonator work and S5-RF. Do not claim graded resonators were invented
-here or claim an exhaustive novelty search. State clearly what the study licenses
-for the latest audio primitive and what remains untested in the full system.
+Prepare a concise evidence handoff in the source ledger: which findings changed,
+which proposed mechanisms remain untested, which numerical results are ready
+for discussion, and where the current PDF has become stale. Keep the paper's
+claims separate from the latest findings until Jordan revises it interactively.
+Do not generate a replacement paper or a second manuscript in the source repo.
 
-Run the source's meaningful checks (CPU, with the pinned upstream oracle when
-available), the paper's `make check`, and the archive validation/tests. Render
-and visually inspect every PDF page and result figure; clean LaTeX logs missed
-clipped plot titles once. Perform the paper skill's hostile-review and reader
-passes, fix or acknowledge the three weakest points, and reconcile every result
-against committed data. Regenerating figures must reproduce their numbers.
-
-Publish coherent source waypoints on GitHub and update PR #10's title/body to
-describe the completed manuscript. Source changes can be pushed from the source
-worktree to main after fetching and integrating any intervening work, without
-force. Paper changes can be pushed to the existing paper/brf-graded PR branch
-after integrating its current tip, also without force. Jordan's explicit final
-archive-publication request authorises the necessary final publication; do not
-leave it at an unmerged PR with a request to approve the same action again.
-The manuscript may remain scholarly status `draft` when complete; do not imply
-venue acceptance. Use an accurate kind such as “Research draft”.
-
-Publish to the existing `papers.prosodylabs.com.au` archive only. It is served
-from `/home/jordan/Documents/papers/_site` with editable source in the canonical
-papers directory. Inspect its current branch, dirty files and service before
-deployment. Preserve others' work. In particular, `scripts/papers.py build`
-deletes its output tree: never point it blindly at the live tree from an old
-worktree. Build and validate a staging tree first, then publish the new paper's
-page/PDF and a correctly regenerated archive index without replacing unrelated
-live papers. Use the existing render functions and record metadata; no duplicate
-browser version of the paper and no new hosting platform. Ensure the source link
-resolves to the final manuscript on GitHub main. Sync only this final paper into
-the central reference library and commit/push that intake through `ref`.
-
-Verify the final archive landing page and PDF over HTTPS, compare the downloaded
-PDF hash with the built final file, and verify its source and code links. Keep
-the full source/result provenance available. Update the own canvas card and
-write the final completion record with paper URL, PDF URL, code URL, commits,
-validation results, findings and remaining scientific limitations.
-Include the analysis URL and link that page to the final archive PDF when it
-is published. Until then, its working-PDF link must clearly identify a draft.
+Run meaningful source checks (CPU, including the pinned upstream oracle when
+available), the relevant analysis checks and a desktop/mobile browser audit.
+Commit and push coherent source and analysis updates without force, integrating
+intervening work first. Keep the analysis linked to the existing private archive
+PDF and mark new evidence that has not yet entered that draft. Archive and
+library publication are outside this worker's scope.
 
 ## Completion contract for this first worker
 
@@ -239,6 +207,6 @@ Work notes may be written while you proceed. Write
 available SHD review is complete, changes are committed/pushed, and any necessary
 successor is actually armed and tested. Include findings without presupposing a
 winner, failed/missing run IDs, new confirmation run IDs, next trigger name,
-source/paper commits and whether final archive publication is complete. A methods
-draft is not the final artifact. If an external blocker prevents this contract,
+source and analysis commits, the current working-paper URL, and the questions
+ready for interactive review. Do not describe an unchanged draft as newly revised. If an external blocker prevents this contract,
 report the exact blocker and fail visibly rather than emitting a false completion.

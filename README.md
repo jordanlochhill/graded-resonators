@@ -12,7 +12,8 @@ reduce event activity by 38–56% but have lower mean accuracy under the origina
 initial learning rate and linear decay. Rate controls, ablations, robustness and the other three tasks
 remain pending; this does not establish an energy advantage. The protocol is in
 [docs/study.md](docs/study.md). The manuscript is maintained in Jordan Hill's
-[papers archive source](https://github.com/jordanlochhill/papers).
+[private working-paper archive](https://papers.prosodylabs.com.au/2026-graded-resonators/),
+with [manuscript source](https://github.com/jordanlochhill/papers/tree/main/2026-graded-resonators).
 The [live analysis page](https://analysis.prosodylabs.com.au/graded-resonators/contents/)
 shows paired seeds, trajectories and analytic illustrations. A later controlled
 study tests ordinary versus surrogate gradients for the same threshold-excess
