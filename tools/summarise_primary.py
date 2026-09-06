@@ -67,4 +67,44 @@ fig.suptitle("Partial results: planned seeds still missing" if missing else "Pri
 fig.tight_layout()
 fig.savefig(args.output / "accuracy.pdf", bbox_inches="tight")
 fig.savefig(args.output / "accuracy.png", dpi=160, bbox_inches="tight")
+
+# Accuracy and event activity are distinct outcomes: show both for every seed.
+fig, axes = plt.subplots(rows, min(2, len(args.tasks)), figsize=(7.2, 3.3 * rows), squeeze=False)
+table_labels = ["Binary BRF", "Graded BRF", "Graded observation", "Graded static"]
+for ax, task in zip(axes.flat, args.tasks):
+    table = []
+    for arm, colour, label in zip(ARMS, colours, table_labels):
+        group = summary["tasks"][task][arm]
+        tests = [records[task, arm, seed]["result"]["test"] for seed in group["completed_seeds"]]
+        if not tests:
+            table.append(f"{label} & --- & --- & 0/5 " + r"\\")
+            continue
+        accuracy = group["metrics"]["accuracy"]
+        activity = group["metrics"]["event_fraction"]
+        ax.scatter([100 * t["event_fraction"] for t in tests], [100 * t["accuracy"] for t in tests],
+                   s=17, alpha=.55, color=colour)
+        ax.errorbar(100 * activity["mean"], 100 * accuracy["mean"],
+                    xerr=100 * activity["sd"] if activity["sd"] is not None else None,
+                    yerr=100 * accuracy["sd"] if accuracy["sd"] is not None else None,
+                    fmt="D", ms=5, capsize=3, color=colour, label=label)
+        def cell(stats):
+            return f"{100 * stats['mean']:.2f}" + (f" $\\pm$ {100 * stats['sd']:.2f}" if stats["sd"] is not None else "")
+        table.append(f"{label} & {cell(accuracy)} & {cell(activity)} & {len(tests)}/5 " + r"\\")
+    table_header = "\n".join([r"\begin{tabular}{lrrr}", r"\toprule",
+                               r"Variant & Accuracy (\%) & Event fraction (\%) & Completed\\", r"\midrule"])
+    (args.output / f"{task}-table.tex").write_text(table_header + "\n" + "\n".join(table)
+                                                + "\n" + r"\bottomrule" + "\n" + r"\end{tabular}" + "\n")
+    ax.set(xlabel="Test event fraction (%)", ylabel="Test accuracy (%)")
+    if len(args.tasks) > 1:
+        ax.set_title(task)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.grid(alpha=.15)
+for ax in list(axes.flat)[len(args.tasks):]:
+    ax.set_visible(False)
+if missing:
+    fig.suptitle("Partial results: planned seeds still missing", fontsize=10)
+fig.legend(*axes[0, 0].get_legend_handles_labels(), loc="lower center", ncol=2, frameon=False, fontsize=9)
+fig.tight_layout(rect=(0, .13 / rows, 1, 1))
+fig.savefig(args.output / "activity-accuracy.pdf", bbox_inches="tight")
+fig.savefig(args.output / "activity-accuracy.png", dpi=170, bbox_inches="tight")
 print(json.dumps({"missing_groups": missing, "output": str(args.output)}, indent=2))

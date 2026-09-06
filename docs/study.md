@@ -39,8 +39,8 @@ real reset. Neither should silently stand in for the newer no-reset proposal.
 
 ## Secondary contrasts
 
-After the main comparison, vary one factor at a time on SHD: exact polar
-integration; signed real versus phase-carrying complex emission; full membrane
+After the main comparison, vary one factor at a time on SHD: a polar homogeneous
+update with the same explicit input kick; signed real versus phase-carrying complex emission; full membrane
 versus threshold excess; subtractive reset; surrogate family; and refractory
 decay. Include a smooth, continuously graded transmission control to distinguish
 amplitude coding from learning without a threshold surrogate. Complex emission
@@ -72,12 +72,23 @@ differences, including failed seeds. Preserve upstream pre-processing quirks in
 the reproduction recipe and identify them in the paper; separately test any
 correction rather than silently repairing the baseline.
 
+The released SHD trainer uses an equal mean of validation batch means, whereas
+the primary protocol weights examples equally. A separately labelled five-seed
+BRF replay restores that selection reduction. Independent random draws and the
+fresh fixed split also prevent a claim of exact released training trajectories.
+See the evidence ledger's selection audit; do not choose between reductions
+using test accuracy.
+
 Metrics: classification accuracy (ECG per-time-step accuracy), validation
-learning curves, time to a fixed validation target, event fraction, payload RMS,
+learning curves against epochs and elapsed training time, event fraction, payload RMS,
 gradient norm, maximum membrane magnitude, non-finite failures, training time,
 inference latency, parameter count and peak device memory when available.
 Event counts are not energy measurements. Graded transmission multiplies a
 payload by a weight; binary transmission can use conditional additions.
+No scalar time-to-target threshold was fixed before the primary curves became
+available; report the curves rather than select a favourable target afterwards.
+The recorded JAX allocator peak is cumulative within a multi-model process,
+so it cannot establish per-variant peak memory without separate profiling.
 
 Post-training perturbations use validation-calibrated payload quantisation at
 2/4/8 bits plus float32, and matched event deletion/input noise. Refit nothing on

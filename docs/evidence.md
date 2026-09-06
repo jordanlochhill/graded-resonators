@@ -156,3 +156,46 @@ to selection. Keep these results under `measurements/selection-control`, outside
 the primary and learning-rate confirmation groups. This diagnostic does not
 authorise selecting the better validation rule using test accuracy. The sample
 mean remains the primary protocol.
+
+## Full five-seed SHD primary comparison
+
+Jobs 720 (the qualification's BRF seed zero) and 721 (the other nineteen models)
+now provide all twenty primary outcomes. Job 721 completed with exit 0 in
+46:13. Every model completed 20 epochs, 4,600 updates and all 2,264 test examples;
+all have 108,820 parameters and the same validation-index digest. No numerical
+failure or missing seed is hidden. Source changes between the qualification and
+main batch only admitted the validation-only tune stage; the main training
+calculation is unchanged. The qualification's seed zero is counted once.
+
+| Variant | Test accuracy, mean ± sample SD (%) | Event fraction, mean ± sample SD (%) |
+| --- | --- | --- |
+| BRF | 91.57 ± 0.90 | 10.32 ± 0.42 |
+| Graded BRF | 90.40 ± 0.60 | 5.17 ± 0.27 |
+| Graded observation | 89.60 ± 1.06 | 4.57 ± 0.26 |
+| Graded static | 89.81 ± 0.61 | 6.41 ± 0.36 |
+
+The BRF mean is close to the reported result. Relative to that fresh baseline,
+graded variants lower mean accuracy by 1.17, 1.97 and 1.77 percentage points,
+while reducing event activity by 49.9, 55.7 and 37.8%. These describe the
+fixed-original-rate condition; learning-rate controls are still required.
+Unadjusted paired t intervals are in `measurements/shd-primary-summary/summary.json`;
+their upper bounds are close to zero and there are only five pairs. They are
+not multiple-comparison-adjusted or dataset/speaker-resampling intervals.
+Do not claim a universal design ranking or energy saving.
+
+The full trajectories show similar declining training losses, with no failure
+to fit. The maximum recorded gradient norms across the five trainings are
+68.1, 879.2, 377.9 and 234.6, respectively, using the summed temporal loss.
+Maximum membrane component magnitudes are 451.8, 845.5, 564.1 and 313.7. Larger
+gradients are an observation, not proof of an optimisation cause for the test
+gap. Median warm update times remain approximately 28 ms for every variant.
+The allocator peak is cumulative within a batch process and cannot compare
+per-model peak memory.
+
+Exact result, metric and contract bytes plus inventories are in
+`measurements/primary/grf-shd-main-20260906/`. `tools/summarise_primary.py`
+regenerates seed CSV, statistics, accuracy and activity figures and table rows;
+`tools/training_diagnostics.py` regenerates all seed trajectories and diagnostics.
+The generated figures were visually inspected. All 19 implementation checks,
+including the upstream forward/gradient oracle and unequal-batch loss reduction,
+passed after the selection-control addition.

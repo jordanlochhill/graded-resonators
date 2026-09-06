@@ -1,0 +1,476 @@
+{
+  "task": "shd",
+  "groups": {
+    "brf": {
+      "expected_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "completed_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "failed_seeds": {},
+      "missing_seeds": [],
+      "conditional_on_completed_training": false,
+      "metrics": {
+        "accuracy": {
+          "n": 5,
+          "mean": 0.9157243824257868,
+          "sd": 0.009043451429478058,
+          "mean_ci95": [
+            0.9044954543662995,
+            0.9269533104852741
+          ]
+        },
+        "event_fraction": {
+          "n": 5,
+          "mean": 0.10317852415486697,
+          "sd": 0.0042307672491087136,
+          "mean_ci95": [
+            0.0979253327768691,
+            0.10843171553286485
+          ]
+        },
+        "payload_rms": {
+          "n": 5,
+          "mean": 0.32115882915194116,
+          "sd": 0.006663906131706465,
+          "mean_ci95": [
+            0.3128844968207919,
+            0.32943316148309043
+          ]
+        },
+        "max_membrane_component": {
+          "n": 5,
+          "mean": 208.49322509765625,
+          "sd": 125.35302444945403,
+          "mean_ci95": [
+            52.84688757281265,
+            364.13956262249985
+          ]
+        }
+      }
+    },
+    "graded_brf": {
+      "expected_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "completed_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "failed_seeds": {},
+      "missing_seeds": [],
+      "conditional_on_completed_training": false,
+      "metrics": {
+        "accuracy": {
+          "n": 5,
+          "mean": 0.9039752657758895,
+          "sd": 0.006012584060502664,
+          "mean_ci95": [
+            0.8965096566117895,
+            0.9114408749399895
+          ]
+        },
+        "event_fraction": {
+          "n": 5,
+          "mean": 0.05168174353062895,
+          "sd": 0.0027447430953376796,
+          "mean_ci95": [
+            0.04827369484482979,
+            0.05508979221642812
+          ]
+        },
+        "payload_rms": {
+          "n": 5,
+          "mean": 1.292249055791037,
+          "sd": 0.10499606574541849,
+          "mean_ci95": [
+            1.1618792210019153,
+            1.422618890580159
+          ]
+        },
+        "max_membrane_component": {
+          "n": 5,
+          "mean": 608.5120666503906,
+          "sd": 178.45316775917712,
+          "mean_ci95": [
+            386.93319287840325,
+            830.0909404223779
+          ]
+        }
+      }
+    },
+    "graded_observation": {
+      "expected_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "completed_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "failed_seeds": {},
+      "missing_seeds": [],
+      "conditional_on_completed_training": false,
+      "metrics": {
+        "accuracy": {
+          "n": 5,
+          "mean": 0.8960247371727501,
+          "sd": 0.010640201898807527,
+          "mean_ci95": [
+            0.8828131815413814,
+            0.9092362928041188
+          ]
+        },
+        "event_fraction": {
+          "n": 5,
+          "mean": 0.04572252277613951,
+          "sd": 0.002630283655531264,
+          "mean_ci95": [
+            0.04245659425600254,
+            0.04898845129627648
+          ]
+        },
+        "payload_rms": {
+          "n": 5,
+          "mean": 1.2044262088783857,
+          "sd": 0.0515112813751284,
+          "mean_ci95": [
+            1.1404665052935445,
+            1.2683859124632269
+          ]
+        },
+        "max_membrane_component": {
+          "n": 5,
+          "mean": 402.48488159179686,
+          "sd": 143.85450460247785,
+          "mean_ci95": [
+            223.8659222474621,
+            581.1038409361316
+          ]
+        }
+      }
+    },
+    "graded_static": {
+      "expected_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "completed_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "failed_seeds": {},
+      "missing_seeds": [],
+      "conditional_on_completed_training": false,
+      "metrics": {
+        "accuracy": {
+          "n": 5,
+          "mean": 0.898056537144597,
+          "sd": 0.006067495816127636,
+          "mean_ci95": [
+            0.8905227460304593,
+            0.9055903282587346
+          ]
+        },
+        "event_fraction": {
+          "n": 5,
+          "mean": 0.06413166391344036,
+          "sd": 0.00355090188293763,
+          "mean_ci95": [
+            0.05972263688424274,
+            0.06854069094263798
+          ]
+        },
+        "payload_rms": {
+          "n": 5,
+          "mean": 0.8766471870166475,
+          "sd": 0.03761351043343947,
+          "mean_ci95": [
+            0.8299438452653839,
+            0.923350528767911
+          ]
+        },
+        "max_membrane_component": {
+          "n": 5,
+          "mean": 132.4262435913086,
+          "sd": 44.28677638073038,
+          "mean_ci95": [
+            77.4369477628548,
+            187.4155394197624
+          ]
+        }
+      }
+    }
+  },
+  "aggregation": "Thin lines are individual seeds; thick lines are arithmetic means of recorded values at that epoch. Failures truncate trajectories; no forward filling. Peak metrics are maxima within each epoch, not state trajectories. Gradients use the summed temporal training loss.",
+  "seeds": [
+    {
+      "task": "shd",
+      "arm": "brf",
+      "seed": 0,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 12,
+      "peak_membrane_component": 205.94151306152344,
+      "peak_gradient_norm": 67.6767349243164,
+      "warm_batch_seconds_median": 0.027765561011619866,
+      "source": "measurements/primary/grf-qualification-20260906/shd-brf-s0/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "brf",
+      "seed": 1,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 10,
+      "peak_membrane_component": 133.75999450683594,
+      "peak_gradient_norm": 68.06110382080078,
+      "warm_batch_seconds_median": 0.02779501094482839,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-brf-s1/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "brf",
+      "seed": 2,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 10,
+      "peak_membrane_component": 451.763916015625,
+      "peak_gradient_norm": 60.90167999267578,
+      "warm_batch_seconds_median": 0.02781086741015315,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-brf-s2/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "brf",
+      "seed": 3,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 14,
+      "peak_membrane_component": 190.86659240722656,
+      "peak_gradient_norm": 62.63443374633789,
+      "warm_batch_seconds_median": 0.02779883099719882,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-brf-s3/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "brf",
+      "seed": 4,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 10,
+      "peak_membrane_component": 209.6065216064453,
+      "peak_gradient_norm": 65.34027862548828,
+      "warm_batch_seconds_median": 0.0277755674906075,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-brf-s4/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_brf",
+      "seed": 0,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 17,
+      "peak_membrane_component": 628.5545654296875,
+      "peak_gradient_norm": 279.679931640625,
+      "warm_batch_seconds_median": 0.02778649644460529,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_brf-s0/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_brf",
+      "seed": 1,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 20,
+      "peak_membrane_component": 745.0905151367188,
+      "peak_gradient_norm": 879.193115234375,
+      "warm_batch_seconds_median": 0.027782678022049367,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_brf-s1/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_brf",
+      "seed": 2,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 18,
+      "peak_membrane_component": 845.51611328125,
+      "peak_gradient_norm": 819.3740234375,
+      "warm_batch_seconds_median": 0.027804396930150688,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_brf-s2/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_brf",
+      "seed": 3,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 19,
+      "peak_membrane_component": 428.91180419921875,
+      "peak_gradient_norm": 438.8606872558594,
+      "warm_batch_seconds_median": 0.027851738035678864,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_brf-s3/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_brf",
+      "seed": 4,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 13,
+      "peak_membrane_component": 746.5543823242188,
+      "peak_gradient_norm": 334.1797180175781,
+      "warm_batch_seconds_median": 0.02777630847413093,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_brf-s4/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_observation",
+      "seed": 0,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 15,
+      "peak_membrane_component": 564.13330078125,
+      "peak_gradient_norm": 322.8017272949219,
+      "warm_batch_seconds_median": 0.028094546985812485,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_observation-s0/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_observation",
+      "seed": 1,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 14,
+      "peak_membrane_component": 436.4340515136719,
+      "peak_gradient_norm": 293.1585998535156,
+      "warm_batch_seconds_median": 0.02804682042915374,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_observation-s1/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_observation",
+      "seed": 2,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 13,
+      "peak_membrane_component": 297.6132507324219,
+      "peak_gradient_norm": 286.93365478515625,
+      "warm_batch_seconds_median": 0.02806045243050903,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_observation-s2/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_observation",
+      "seed": 3,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 14,
+      "peak_membrane_component": 455.78717041015625,
+      "peak_gradient_norm": 377.8965759277344,
+      "warm_batch_seconds_median": 0.02811977395322174,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_observation-s3/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_observation",
+      "seed": 4,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 16,
+      "peak_membrane_component": 497.3531188964844,
+      "peak_gradient_norm": 244.90802001953125,
+      "warm_batch_seconds_median": 0.028058861033059657,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_observation-s4/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_static",
+      "seed": 0,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 14,
+      "peak_membrane_component": 142.46942138671875,
+      "peak_gradient_norm": 199.04273986816406,
+      "warm_batch_seconds_median": 0.028013816569000483,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_static-s0/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_static",
+      "seed": 1,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 12,
+      "peak_membrane_component": 313.7020263671875,
+      "peak_gradient_norm": 201.99447631835938,
+      "warm_batch_seconds_median": 0.027998632518574595,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_static-s1/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_static",
+      "seed": 2,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 15,
+      "peak_membrane_component": 119.57231903076172,
+      "peak_gradient_norm": 201.1976318359375,
+      "warm_batch_seconds_median": 0.028052535373717546,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_static-s2/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_static",
+      "seed": 3,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 14,
+      "peak_membrane_component": 199.35842895507812,
+      "peak_gradient_norm": 234.5567626953125,
+      "warm_batch_seconds_median": 0.027969850576482713,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_static-s3/metrics.jsonl"
+    },
+    {
+      "task": "shd",
+      "arm": "graded_static",
+      "seed": 4,
+      "status": "complete",
+      "epochs_recorded": 20,
+      "selected_epoch": 15,
+      "peak_membrane_component": 113.78607177734375,
+      "peak_gradient_norm": 231.5166778564453,
+      "warm_batch_seconds_median": 0.0280049170833081,
+      "source": "measurements/primary/grf-shd-main-20260906/shd-graded_static-s4/metrics.jsonl"
+    }
+  ]
+}

@@ -21,18 +21,19 @@
 <text x="60" y="715" class="b">Graded static</text><text x="463" y="715" class="b">fixed</text><text x="660" y="715" class="b">fixed</text>
 <text x="60" y="751" class="small">Refractory state counts events; amplitude does not drive it.</text>
 <rect x="38" y="804" width="824" height="238" rx="8" fill="#fbf1dc" stroke="#dac899"/>
-<text x="60" y="843" class="t">3 · EMPIRICAL STUDY UNDERWAY</text>
-<text x="60" y="882" class="b">700 inputs → 128 resonators → 20 readouts · T = 250</text>
-<text x="60" y="918" class="b">First BRF SHD seed: 90.55% test · full 20 epochs</text>
-<text x="60" y="954" class="b">Published BRF: 91.7 ± 0.8% · five seeds</text>
-<text x="60" y="992" class="s">80 primary trainings · 42 ablations · 24 rate controls</text>
-<text x="60" y="1022" class="s">2/4/8-bit payloads · packet loss · binned-input noise</text>
+<text x="60" y="843" class="t">3 · SHD COMPLETE · FIVE PAIRED SEEDS</text>
+<text x="60" y="876" class="small">VARIANT</text><text x="435" y="876" class="small">ACCURACY ± SD (%)</text><text x="695" y="876" class="small">EVENTS (%)</text>
+<text x="60" y="907" class="b">Binary BRF</text><text x="435" y="907" class="b">91.57 ± 0.90</text><text x="695" y="907" class="b">10.32</text>
+<text x="60" y="938" class="b">Graded BRF</text><text x="435" y="938" class="b">90.40 ± 0.60</text><text x="695" y="938" class="b">5.17</text>
+<text x="60" y="969" class="b">Graded observation</text><text x="435" y="969" class="b">89.60 ± 1.06</text><text x="695" y="969" class="b">4.57</text>
+<text x="60" y="1000" class="b">Graded static</text><text x="435" y="1000" class="b">89.81 ± 0.61</text><text x="695" y="1000" class="b">6.41</text>
+<text x="60" y="1028" class="small">Original rate · reduced activity, lower mean graded accuracy.</text>
 <rect x="38" y="1070" width="824" height="230" rx="8" fill="#f0eeea" stroke="#c9c5bd"/>
-<text x="60" y="1109" class="t">4 · WHAT WOULD SUPPORT THE PAPER?</text>
-<text x="60" y="1148" class="b">Full BRF tasks and budgets · five paired seeds</text>
-<text x="60" y="1184" class="b">Accuracy, convergence, failure rate, events and payload cost</text>
-<text x="60" y="1225" class="s">Code and methods draft are committed and reviewable.</text>
-<text x="60" y="1258" class="s">Full comparisons and final archive publication remain pending.</text>
-<text x="38" y="1342" class="k">17 CHECKS PASS · FIVE-SEED COMPARISON RUNNING</text>
+<text x="60" y="1109" class="t">4 · WHAT REMAINS TO EXPLAIN?</text>
+<text x="60" y="1148" class="b">Three other BRF tasks · rate and mechanism controls</text>
+<text x="60" y="1184" class="b">Precision, packet loss, noise and payload cost</text>
+<text x="60" y="1225" class="s">Published BRF SHD: 91.7 ± 0.8% · reproduced closely.</text>
+<text x="60" y="1258" class="s">Final archive paper follows the complete evidence and review.</text>
+<text x="38" y="1342" class="k">19 CHECKS PASS · 20/80 PRIMARY TRAININGS COMPLETE</text>
 <a href="https://github.com/jordanlochhill/graded-resonators"><text x="38" y="1370" class="small">6 September 2026 · github.com/jordanlochhill/graded-resonators</text></a>
 </svg>

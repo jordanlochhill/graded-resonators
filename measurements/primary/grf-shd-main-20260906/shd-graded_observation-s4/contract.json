@@ -1,0 +1,110 @@
+{
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 4,
+    "arm": "graded_observation",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd"
+  },
+  "neuron": {
+    "payload": "membrane",
+    "adaptive_threshold": true,
+    "adaptive_damping": false,
+    "integration": "euler",
+    "signed": false,
+    "reset": "none",
+    "surrogate": "double_gaussian",
+    "refractory_decay": 0.9,
+    "threshold": 1.0,
+    "dt": 0.01,
+    "recurrent": true,
+    "payload_bits": 32,
+    "payload_clip": 1.0
+  },
+  "data": {
+    "protocol": "BRF upstream: 250 bins with upper edges 0,.004,...,.996 seconds; channel 700-unit; discard unit zero.",
+    "sources": [
+      {
+        "url": "https://zenkelab.org/datasets/shd_train.h5.gz",
+        "file": "shd_train.h5.gz",
+        "sha256": "e95bdc00c03c36537ff587d85d14efeee14a01b3846e14a70defc7e8a14e387c",
+        "md5": "d47c9825dee33347913e8ce0f2be08b0"
+      },
+      {
+        "url": "https://zenkelab.org/datasets/shd_test.h5.gz",
+        "file": "shd_test.h5.gz",
+        "sha256": "bfd3d30d08a1eab1e9549f1b7f08d36044f38efa260f32241bafdf6e42bd2326",
+        "md5": "3062a80ec0c5719404d5b02e166543b1"
+      }
+    ],
+    "arrays": {
+      "train_x.npy": {
+        "sha256": "80f5bf107ad6e3aadba696f3ad5f76942bb1f75c8abd8cc5fd608483ac4ab1e9",
+        "shape": [
+          8156,
+          250,
+          700
+        ]
+      },
+      "train_y.npy": {
+        "sha256": "79c1773981b65a29dd269af5eab37cdcbc6de6390c2534b28806ee6449dec9b9",
+        "shape": [
+          8156
+        ]
+      },
+      "test_speaker.npy": {
+        "sha256": "a2aab546373c0f6e349717b89003a5facff1fcec0bb8b4f95ddcff3c94a47ea0",
+        "shape": [
+          2264
+        ]
+      },
+      "train_speaker.npy": {
+        "sha256": "238c8bc8740e88966cb649f6cb908922046e7dac233ab6df5c4cfde6baaeb5bc",
+        "shape": [
+          8156
+        ]
+      },
+      "test_x.npy": {
+        "sha256": "b4fcaa4c4555d636a2f1c55850703b3985b85ad92a7607da763be2b1b2a0db84",
+        "shape": [
+          2264,
+          250,
+          700
+        ]
+      },
+      "test_y.npy": {
+        "sha256": "8c44c8a89f1bb023b3c8ad84960d6876058f99815d521b0fecdd182e8a27e7a7",
+        "shape": [
+          2264
+        ]
+      }
+    },
+    "split_seed": 20260906,
+    "validation_indices_sha256": "bccea06c40f28098ece1d4001c3ed2f72b07a163eaaa7dd6c7970349c206f412",
+    "permutation_sha256": null
+  },
+  "source_commit": "dc839cde43bd282475d4bc19187c96fcfe21bb9c",
+  "jax": "0.6.2",
+  "devices": [
+    "cuda:0"
+  ],
+  "parameters": 108820,
+  "started_unix": 1788654016.096754,
+  "config_sha256": "0fff2d263820edf9f8ac27c5c82f1e391975b9a1e258af4a28ddb34e71375995"
+}

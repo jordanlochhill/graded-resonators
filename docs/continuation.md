@@ -44,6 +44,12 @@ checkout's editable environment. The data path is given in the run inventory.
 
 ## First continuation: complete the SHD evidence
 
+The coordinator already curated the complete primary SHD comparison and updated
+the methods draft: BRF 91.57 ± 0.90%, graded BRF 90.40 ± 0.60%, observation
+89.60 ± 1.06%, static 89.81 ± 0.61%, all five seeds complete. Treat these as the
+fixed-rate primary result; review them with the controls, rather than rerunning
+the primary jobs. The pending evidence can change the interpretation.
+
 1. Read fresh Execute states from
    `/home/jordan/.local/state/athena-executor/execute-store/runs`. Check scheduler
    outcome as well as `state`; finalised can still mean FAILED. The trigger opts

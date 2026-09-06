@@ -4,9 +4,13 @@ Independent source for **Graded Emissions and Refractory Feedback in Resonator
 Networks**, a reproduction and extension of Higuchi et al., *Balanced
 Resonate-and-Fire Neurons*, ICML 2024.
 
-**Status: full experiments underway.** The first full-budget BRF SHD seed reached
-90.55% test accuracy; the published five-seed mean is 91.7 ± 0.8%. The multi-seed
-reproduction and graded comparisons are pending. No advantage is claimed. The protocol is in
+**Status: SHD primary comparison complete; other experiments underway.** Five-seed
+test accuracies are 91.57 ± 0.90% (BRF), 90.40 ± 0.60% (graded BRF),
+89.60 ± 1.06% (graded observation) and 89.81 ± 0.61% (graded static), with no
+numerical failures. The published BRF result is 91.7 ± 0.8%. Graded variants
+reduce event activity by 38–56% but have lower mean accuracy under the original
+learning rate. Rate controls, ablations, robustness and the other three tasks
+remain pending; this does not establish an energy advantage. The protocol is in
 [docs/study.md](docs/study.md). The manuscript is maintained in Jordan Hill's
 [papers archive source](https://github.com/jordanlochhill/papers).
 
@@ -76,6 +80,9 @@ To curate a completed run and regenerate the primary comparison:
 ```sh
 python tools/collect.py --output measurements/primary /path/to/results/RUN
 uv run python tools/summarise_primary.py measurements/primary --output measurements/primary-summary
+# The completed SHD comparison and its training trajectories:
+uv run python tools/summarise_primary.py measurements/primary --tasks shd --output measurements/shd-primary-summary
+uv run python tools/training_diagnostics.py measurements/primary --task shd --output measurements/shd-primary-summary
 ```
 
 The collector preserves record bytes and writes checksums. The summary refuses
@@ -83,6 +90,12 @@ duplicate seeds and missing planned seeds. `--tasks shd --allow-partial` produce
 an explicitly labelled progress view. Failed seeds remain visible and means
 over successful seeds are marked as conditional. Tuning, ablation and robustness
 results belong in separate measurement groups.
+
+The released trainer uses an equal mean of validation batch means; the primary
+study weights examples equally. A five-seed BRF selection control isolates that
+protocol difference. See [the evidence ledger](docs/evidence.md) for the audit,
+released-log verification, source pins and current findings. Selection controls
+must not be pooled as additional primary seeds.
 
 ## Attribution
 
