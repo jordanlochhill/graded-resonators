@@ -1,0 +1,50 @@
+{
+  "upstream_commit": "1a42b8c8aceedb13cae3b2327774c2fcc04fd696",
+  "selection": "Minimum validation loss in released CSV, ties earliest epoch; test accuracy is read at that epoch only.",
+  "seeds": [
+    {
+      "upstream_run": 0,
+      "selected_epoch": 15,
+      "test_accuracy_percent": 92.27031707763672,
+      "path": "experiments/SHD/csv_files/shd_best_model_run_0.csv",
+      "sha256": "c1aaef3b20a5b13597fb308171124403852618df60dd1d21ec95a812392d4911"
+    },
+    {
+      "upstream_run": 1,
+      "selected_epoch": 13,
+      "test_accuracy_percent": 90.68021392822266,
+      "path": "experiments/SHD/csv_files/shd_best_model_run_1.csv",
+      "sha256": "b02eb593b51118be4e6c31215067f61a852d80edff1e7adc5c5c666af372ad4a"
+    },
+    {
+      "upstream_run": 2,
+      "selected_epoch": 12,
+      "test_accuracy_percent": 91.96112823486328,
+      "path": "experiments/SHD/csv_files/shd_best_model_run_2.csv",
+      "sha256": "7cba6b37d04706fd95a12f02381d923a8870bf6b9c05ce1d264ef02e59c419a1"
+    },
+    {
+      "upstream_run": 3,
+      "selected_epoch": 10,
+      "test_accuracy_percent": 90.90106201171875,
+      "path": "experiments/SHD/csv_files/shd_best_model_run_3.csv",
+      "sha256": "9321d4bf9362bf0d829aaf13693437168b2a3bf4b62ae7cf9686229483b2e9aa"
+    },
+    {
+      "upstream_run": 4,
+      "selected_epoch": 10,
+      "test_accuracy_percent": 92.53533935546875,
+      "path": "experiments/SHD/csv_files/shd_best_model_run_4.csv",
+      "sha256": "956a4f616d434e001a17eb30915279d3273d6b5775beb63236e99ad86ba5fa8d"
+    }
+  ],
+  "accuracy_percent": {
+    "n": 5,
+    "mean": 91.66961212158203,
+    "sd": 0.8313978873587058,
+    "mean_ci95": [
+      90.63729529666605,
+      92.70192894649801
+    ]
+  }
+}

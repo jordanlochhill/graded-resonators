@@ -58,10 +58,18 @@ checkout's editable environment. The data path is given in the run inventory.
    timing pilots, not primary results. Preserve inventories, source contracts,
    epoch metrics, failures and all seeds. Do not commit datasets or checkpoints.
 3. Generate the SHD primary summary with `tools/summarise_primary.py --tasks shd`.
+   Generate trajectories with `tools/training_diagnostics.py --task shd`.
    Inspect trajectories, event rates, payload scale, gradients and failed seeds.
    The published BRF reference is 91.7 ± 0.8%, not 90.4% (the latter is ALIF).
    Our first full-budget seed was 90.5477%. Explain a multi-seed reproduction gap
    before interpreting an alternative as an improvement over published BRF.
+   The coordinator also added a five-seed checkpoint-selection diagnostic,
+   `grf-shd-selection-20260906`. Read the ledger's selection audit. Curate it under
+   `measurements/selection-control`, check replayed training trajectories against
+   primary BRF, and report changes of selected epoch and test accuracy. Its
+   equal-batch validation reduction reproduces one detail of the released script;
+   the primary sample-mean reduction stays fixed. Do not pool these extra runs
+   as new primary seeds or select a preferred validation rule from test accuracy.
 4. Run `tools/select_rates.py` on the complete validation-only tuning group.
    Each rate needs both selection seeds complete; failed rates are ineligible.
    Choose lowest mean best validation loss, breaking exact ties by smaller rate.

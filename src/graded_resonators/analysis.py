@@ -51,6 +51,8 @@ def primary_records(roots):
                 continue  # pilots, tuning and post-training perturbation results
             if config.get("neuron") or "parent" in config:
                 continue  # ablations are not primary-seed replicates
+            if config.get("comparison_role") or config.get("validation_reduction", "sample_mean") != "sample_mean":
+                continue  # protocol diagnostics cannot become additional primary seeds
             if any(key in config for key in ("train_limit", "validation_limit", "epoch_limit")):
                 raise ValueError(f"Limited run labelled as primary: {path}")
             key = (config["task"], config["arm"], config["seed"])

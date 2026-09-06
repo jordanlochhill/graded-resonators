@@ -1,0 +1,72 @@
+{
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
+  "defaults": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "brf",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd"
+  },
+  "description": "SHD BRF checkpoint-selection diagnostic: replay five paired trainings using the released validation-batch mean instead of the primary sample mean.",
+  "decision_rule": "Report separately from primary results. Confirm unchanged training trajectories against primary BRF seeds, then compare validation-selected epochs and test accuracy; do not choose the preferred selection rule using test accuracy. This isolates one documented protocol difference, not all JAX/PyTorch or random-split differences.",
+  "cost": {
+    "gpu_type": "rtx4090",
+    "gpus": 1,
+    "time_limit": "00:30:00",
+    "estimated_seconds": 760,
+    "estimate_basis": "Five full SHD trainings at approximately 150 seconds each, plus environment setup."
+  },
+  "experiments": [
+    {
+      "arm": "brf",
+      "seed": 0,
+      "name": "brf-batch-selection-s0",
+      "validation_reduction": "batch_mean",
+      "comparison_role": "checkpoint_selection_control"
+    },
+    {
+      "arm": "brf",
+      "seed": 1,
+      "name": "brf-batch-selection-s1",
+      "validation_reduction": "batch_mean",
+      "comparison_role": "checkpoint_selection_control"
+    },
+    {
+      "arm": "brf",
+      "seed": 2,
+      "name": "brf-batch-selection-s2",
+      "validation_reduction": "batch_mean",
+      "comparison_role": "checkpoint_selection_control"
+    },
+    {
+      "arm": "brf",
+      "seed": 3,
+      "name": "brf-batch-selection-s3",
+      "validation_reduction": "batch_mean",
+      "comparison_role": "checkpoint_selection_control"
+    },
+    {
+      "arm": "brf",
+      "seed": 4,
+      "name": "brf-batch-selection-s4",
+      "validation_reduction": "batch_mean",
+      "comparison_role": "checkpoint_selection_control"
+    }
+  ]
+}

@@ -58,7 +58,9 @@ def evaluate(p, dataset, permutation, config, neuron, limit=None):
     mean = np.average(values, weights=weights, axis=0)
     mean[3] = np.sqrt(np.average(values[:, 3] ** 2, weights=weights))
     mean[4] = values[:, 4].max()
-    return metric_dict(mean) | {"seconds": time.perf_counter() - elapsed, "samples": int(sum(weights))}
+    batch_mean_loss = float(values[:, 0].mean())
+    return metric_dict(mean) | {"batch_mean_loss": batch_mean_loss if np.isfinite(batch_mean_loss) else None,
+                               "seconds": time.perf_counter() - elapsed, "samples": int(sum(weights))}
 
 
 def metric_dict(metrics):
@@ -69,6 +71,10 @@ def metric_dict(metrics):
 def run(config, output, data_root):
     if config["stage"] not in {"main", "pilot", "tune"}:
         raise ValueError("Stage must be main, pilot or tune")
+    reduction = config.get("validation_reduction", "sample_mean")
+    if reduction not in {"sample_mean", "batch_mean"}:
+        raise ValueError("Validation reduction must be sample_mean or batch_mean")
+    selection_metric = "loss" if reduction == "sample_mean" else "batch_mean_loss"
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     if (output / "result.json").exists():
@@ -126,11 +132,11 @@ def run(config, output, data_root):
         training[3] = np.sqrt(np.average(np.asarray(measurements)[:, 3] ** 2, weights=weights))
         training[4] = np.asarray(measurements)[:, 4].max()
         validation = evaluate(p, split["validation"], permutation, config, neuron, val_limit)
-        if validation["loss"] is None:
+        if validation[selection_metric] is None:
             status = "nonfinite_validation"
             break
-        if validation["loss"] < best_loss:
-            best_loss, best_epoch = validation["loss"], epoch
+        if validation[selection_metric] < best_loss:
+            best_loss, best_epoch = validation[selection_metric], epoch
             save_checkpoint(output / "best.npz", p, m, v, step, epoch, best_loss, best_epoch)
         save_checkpoint(output / "last.npz", p, m, v, step, epoch, best_loss, best_epoch)
         row = {"epoch": epoch, "step": int(step), "lr": lr, "train": metric_dict(training),

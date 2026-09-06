@@ -129,3 +129,30 @@ replacement. `docs/execution.json` marks those scheduler records superseded.
 The cancellation CLI's pull-after-edit ordering initially refused its own
 changes; the verified eight monotonic controls were committed and pushed, and
 the CLI was repaired upstream with three real-Git regression tests.
+
+## Released-checkpoint selection audit
+
+`tools/upstream_summary.py` reconstructs the SHD result from the five released
+BRF CSV logs at the pinned upstream commit. Selecting each minimum-validation-loss
+epoch gives test accuracies 92.2703, 90.6802, 91.9611, 90.9011 and 92.5353%:
+mean 91.6696%, sample SD 0.8314 percentage points. These reproduce the published
+91.7 ± 0.8 figure. The derived record and CSV hashes are in
+`measurements/upstream/shd-released-summary.json`; these are the authors' runs,
+not five extra independent replications by this study.
+
+The released SHD trainer averages validation batch means equally. With 815
+validation examples and batches of 256, the final 47 examples receive 25% of
+the checkpoint-selection objective rather than their 5.77% sample share. Our
+committed primary protocol uses sample-weighted validation loss. This is an
+explicit protocol difference, alongside independent random draws and a fresh
+fixed split; it must not be described as exact execution of the released
+training script. Model forward/gradient conformance does not erase it.
+
+`manifests/checkpoint-selection-shd.json` adds a bounded five-seed BRF diagnostic
+that changes only this selection reduction. Training is replayed because the
+primary run retains only the selected and final checkpoints, not every epoch.
+Compare the replayed training trajectories before attributing a test difference
+to selection. Keep these results under `measurements/selection-control`, outside
+the primary and learning-rate confirmation groups. This diagnostic does not
+authorise selecting the better validation rule using test accuracy. The sample
+mean remains the primary protocol.
