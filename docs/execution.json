@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "programme": "graded-resonators",
+  "created": "2026-09-06",
+  "data": "/home/jordan/Documents/worktrees/papers-brf-graded/2026-graded-resonators/code/data",
+  "runs": [
+    {
+      "run_id": "grf-qualification-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "bd2950b586aafe1f8daeef115764d46272e531fa",
+      "manifest": "manifests/qualification.json",
+      "results": "/mnt/hot/execute/athena/work/grf-qualification-20260906/attempt-1/source/results/grf-qualification-20260906",
+      "primary_models": [
+        "shd-brf-s0"
+      ]
+    },
+    {
+      "run_id": "grf-shd-main-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "dc839cde43bd282475d4bc19187c96fcfe21bb9c",
+      "manifest": "manifests/main-shd.json",
+      "results": "/mnt/hot/execute/athena/work/grf-shd-main-20260906/attempt-1/source/results/grf-shd-main-20260906"
+    },
+    {
+      "run_id": "grf-shd-ablations-20260906",
+      "role": "ablations",
+      "platform": "athena",
+      "source_commit": "dc839cde43bd282475d4bc19187c96fcfe21bb9c",
+      "manifest": "manifests/ablations-shd.json",
+      "results": "/mnt/hot/execute/athena/work/grf-shd-ablations-20260906/attempt-1/source/results/grf-shd-ablations-20260906"
+    },
+    {
+      "run_id": "grf-shd-tune-20260906",
+      "role": "tuning",
+      "platform": "athena",
+      "source_commit": "dc839cde43bd282475d4bc19187c96fcfe21bb9c",
+      "manifest": "manifests/tune-shd.json",
+      "results": "/mnt/hot/execute/athena/work/grf-shd-tune-20260906/attempt-1/source/results/grf-shd-tune-20260906"
+    },
+    {
+      "run_id": "grf-shd-robustness-20260906",
+      "role": "robustness",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/robustness-shd.json",
+      "results": "/mnt/hot/execute/athena/work/grf-shd-robustness-20260906/attempt-1/source/results/grf-shd-robustness-20260906"
+    },
+    {
+      "run_id": "grf-ecg-brf-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-ecg-brf.json",
+      "results": "/mnt/hot/execute/athena/work/grf-ecg-brf-20260906/attempt-1/source/results/grf-ecg-brf-20260906"
+    },
+    {
+      "run_id": "grf-ecg-graded-brf-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-ecg-graded-brf.json",
+      "results": "/mnt/hot/execute/athena/work/grf-ecg-graded-brf-20260906/attempt-1/source/results/grf-ecg-graded-brf-20260906"
+    },
+    {
+      "run_id": "grf-ecg-graded-observation-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-ecg-graded-observation.json",
+      "results": "/mnt/hot/execute/athena/work/grf-ecg-graded-observation-20260906/attempt-1/source/results/grf-ecg-graded-observation-20260906"
+    },
+    {
+      "run_id": "grf-ecg-graded-static-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-ecg-graded-static.json",
+      "results": "/mnt/hot/execute/athena/work/grf-ecg-graded-static-20260906/attempt-1/source/results/grf-ecg-graded-static-20260906"
+    },
+    {
+      "run_id": "grf-smnist-brf-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-smnist-brf.json",
+      "results": "/mnt/hot/execute/athena/work/grf-smnist-brf-20260906/attempt-1/source/results/grf-smnist-brf-20260906"
+    },
+    {
+      "run_id": "grf-smnist-graded-brf-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-smnist-graded-brf.json",
+      "results": "/mnt/hot/execute/athena/work/grf-smnist-graded-brf-20260906/attempt-1/source/results/grf-smnist-graded-brf-20260906"
+    },
+    {
+      "run_id": "grf-smnist-graded-observation-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-smnist-graded-observation.json",
+      "results": "/mnt/hot/execute/athena/work/grf-smnist-graded-observation-20260906/attempt-1/source/results/grf-smnist-graded-observation-20260906"
+    },
+    {
+      "run_id": "grf-smnist-graded-static-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-smnist-graded-static.json",
+      "results": "/mnt/hot/execute/athena/work/grf-smnist-graded-static-20260906/attempt-1/source/results/grf-smnist-graded-static-20260906"
+    },
+    {
+      "run_id": "grf-psmnist-brf-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-psmnist-brf.json",
+      "results": "/mnt/hot/execute/athena/work/grf-psmnist-brf-20260906/attempt-1/source/results/grf-psmnist-brf-20260906"
+    },
+    {
+      "run_id": "grf-psmnist-graded-brf-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-psmnist-graded-brf.json",
+      "results": "/mnt/hot/execute/athena/work/grf-psmnist-graded-brf-20260906/attempt-1/source/results/grf-psmnist-graded-brf-20260906"
+    },
+    {
+      "run_id": "grf-psmnist-graded-observation-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-psmnist-graded-observation.json",
+      "results": "/mnt/hot/execute/athena/work/grf-psmnist-graded-observation-20260906/attempt-1/source/results/grf-psmnist-graded-observation-20260906"
+    },
+    {
+      "run_id": "grf-psmnist-graded-static-20260906",
+      "role": "primary",
+      "platform": "athena",
+      "source_commit": "acfa75ff8c2ae7834cd362650623dc44e4f637ce",
+      "manifest": "manifests/main-psmnist-graded-static.json",
+      "results": "/mnt/hot/execute/athena/work/grf-psmnist-graded-static-20260906/attempt-1/source/results/grf-psmnist-graded-static-20260906"
+    },
+    {
+      "run_id": "grf-kaya-qualification-20260906",
+      "role": "timing-only",
+      "platform": "kaya",
+      "source_commit": "221cdbf3ae368d071aa2d11af93f8bffb8c17606",
+      "manifest": "manifests/qualification-kaya.json",
+      "results": "/mnt/cold/research/execute/artifacts/grf-kaya-qualification-20260906/attempt-1/results/grf-kaya-qualification-20260906"
+    }
+  ],
+  "pending_additional_work": [
+    "Validation-selected rate confirmation, only for rates different from original; use tools/select_rates.py.",
+    "Final figures, statistical comparisons, manuscript review, and verified archive publication."
+  ],
+  "status_source": "Read current status.yaml and attempt receipts from the Execute store; this file is an inventory, not live status."
+}

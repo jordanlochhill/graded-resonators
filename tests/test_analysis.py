@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from graded_resonators.analysis import primary_records, summarise
+from graded_resonators.analysis import ARMS, primary_records, select_learning_rates, summarise
 
 
 def test_duplicate_baseline_cannot_be_counted_twice(tmp_path):
@@ -33,3 +33,18 @@ def test_failure_and_absence_are_not_silently_pooled():
     assert paired["n"] == 1 and paired["seeds"] == [0]
     assert paired["mean"] == pytest.approx(5.0)
     assert paired["mean_ci95"] is None
+
+
+def test_failed_rate_cannot_win_on_an_early_checkpoint_and_test_access_is_refused():
+    results = []
+    for arm in ARMS:
+        for rate, loss in ((.075, .1), (.025, .4), (.0075, .5)):
+            for seed in (100, 101):
+                results.append({"config": {"stage": "tune", "arm": arm, "lr": rate, "seed": seed},
+                                "status": "nonfinite" if rate == .075 and seed == 101 else "complete",
+                                "best_validation_loss": loss})
+    decisions = select_learning_rates(results)
+    assert all(value["selected_rate"] == .025 for value in decisions.values())
+    results[0]["test"] = {"accuracy": 1.0}
+    with pytest.raises(ValueError, match="validation-only"):
+        select_learning_rates(results)

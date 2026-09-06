@@ -9,6 +9,38 @@ from scipy.stats import t
 ARMS = ("brf", "graded_brf", "graded_observation", "graded_static")
 
 
+def select_learning_rates(results, rates=(.075, .025, .0075), seeds=(100, 101)):
+    """Two complete validation-only seeds are required for an eligible rate."""
+    indexed = {}
+    for result in results:
+        config = result["config"]
+        if config["stage"] != "tune" or "test" in result:
+            raise ValueError("Learning-rate selection accepts validation-only tuning results")
+        key = config["arm"], config["lr"], config["seed"]
+        if key in indexed:
+            raise ValueError(f"Duplicate tuning seed: {key}")
+        indexed[key] = result
+    decisions = {}
+    for arm in ARMS:
+        candidates = []
+        for rate in rates:
+            rows = []
+            for seed in seeds:
+                key = arm, rate, seed
+                if key not in indexed:
+                    raise ValueError(f"Missing tuning seed: {key}")
+                result = indexed[key]
+                rows.append({"seed": seed, "status": result["status"], "validation_loss": result["best_validation_loss"]})
+            eligible = all(row["status"] == "complete" and row["validation_loss"] is not None
+                           and np.isfinite(row["validation_loss"]) for row in rows)
+            candidates.append({"rate": rate, "eligible": eligible, "seeds": rows,
+                               "mean_validation_loss": float(np.mean([row["validation_loss"] for row in rows])) if eligible else None})
+        eligible = [candidate for candidate in candidates if candidate["eligible"]]
+        chosen = min(eligible, key=lambda row: (row["mean_validation_loss"], row["rate"])) if eligible else None
+        decisions[arm] = {"candidates": candidates, "selected_rate": chosen["rate"] if chosen else None}
+    return decisions
+
+
 def primary_records(roots):
     records = {}
     for root in roots:
