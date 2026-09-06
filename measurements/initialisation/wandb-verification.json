@@ -1,0 +1,19 @@
+{
+  "saved_model_records": 167,
+  "complete": 156,
+  "nonfinite": 10,
+  "partial": 1,
+  "checks": [
+    {
+      "run": "grf-5566e11d0f662cd4ec41a923",
+      "result_json_equal": true,
+      "epochs": 20
+    },
+    {
+      "run": "grf-05e26f66d58b0bab090a112b",
+      "result_json_equal": true,
+      "epochs": 20
+    }
+  ],
+  "new_job_id": "739"
+}
