@@ -16,6 +16,7 @@ import numpy as np
 
 from .data import batches, datasets
 from .model import ARMS, initialise, objective
+from .initialisation import calibrate
 
 
 def write_json(path, value):
@@ -68,7 +69,7 @@ def metric_dict(metrics):
     return {name: float(value) if np.isfinite(value) else None for name, value in zip(names, metrics)}
 
 
-def run(config, output, data_root):
+def run(config, output, data_root, telemetry=None):
     if config["stage"] not in {"main", "pilot", "tune"}:
         raise ValueError("Stage must be main, pilot or tune")
     reduction = config.get("validation_reduction", "sample_mean")
@@ -86,10 +87,18 @@ def run(config, output, data_root):
     split, permutation, data_record = datasets(data_root, config["task"], config["split_seed"])
     p = initialise(config["seed"], config["inputs"], config["hidden"], config["classes"],
                    config["omega_range"], config["damping_range"], config["tau_std"], neuron)
+    calibration = None
+    if config.get("initialisation_calibration"):
+        p, neuron, calibration = calibrate(p, neuron, split["train"], permutation, config)
+        write_json(output / "initialisation.json", calibration)
+        if telemetry is not None:
+            telemetry.initialisation(config, calibration)
     contract = {"config": config, "neuron": asdict(neuron), "data": data_record,
                 "source_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
                 "jax": jax.__version__, "devices": [str(d) for d in jax.devices()],
                 "parameters": sum(z.size for z in p.values()), "started_unix": time.time()}
+    if calibration is not None:
+        contract["initialisation"] = calibration
     contract["config_sha256"] = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()
     if (output / "contract.json").exists():
         old = json.loads((output / "contract.json").read_text())
@@ -150,6 +159,8 @@ def run(config, output, data_root):
                                         "max": float(thresholds.max())}
         with (output / "metrics.jsonl").open("a") as f:
             f.write(json.dumps(row, allow_nan=False) + "\n")
+        if telemetry is not None:
+            telemetry.epoch(config, row)
         print(json.dumps({"task": config["task"], "arm": config["arm"], "seed": config["seed"], **row}), flush=True)
     result = {"status": status, "config": config, "best_epoch": best_epoch, "best_validation_loss": best_loss if np.isfinite(best_loss) else None,
               "steps": int(step), "seconds_this_invocation": time.perf_counter() - run_start,
@@ -177,13 +188,23 @@ def main():
     elif jax.default_backend() != "gpu":
         raise RuntimeError("GPU job has no usable JAX GPU backend")
     manifest = json.loads(args.manifest.read_text())
+    from .telemetry import Telemetry
+    telemetry = Telemetry(manifest, args.output)
     results = []
     for experiment in manifest["experiments"]:
         config = manifest["defaults"] | experiment
         name = config.get("name", f"{config['task']}-{config['arm']}-s{config['seed']}")
-        results.append(run(config, args.output / name, args.data))
+        try:
+            result = run(config, args.output / name, args.data, telemetry)
+        except Exception:
+            telemetry.finish(1)
+            raise
+        results.append(result)
+        telemetry.result(config, result)
     write_json(args.output / "summary.json", results)
-    if any(r["status"] != "complete" for r in results):
+    failed = any(r["status"] != "complete" for r in results)
+    telemetry.finish(2 if failed else 0)
+    if failed:
         raise SystemExit(2)
 
 

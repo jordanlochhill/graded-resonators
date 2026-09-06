@@ -10,12 +10,15 @@ from graded_resonators.analysis import select_learning_rates
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("results", type=Path)
 parser.add_argument("--output", type=Path, required=True)
+parser.add_argument("--manifest", type=Path, default=Path(__file__).resolve().parents[1] / "manifests/exact-gradient-shd.json")
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
-parent = json.loads((root / "manifests/exact-gradient-shd.json").read_text())
+parent = json.loads(args.manifest.read_text())
 paths = sorted(args.results.rglob("result.json"))
 results = [json.loads(p.read_text()) for p in paths]
 for result in results:
+    if result["config"].get("initialisation_calibration") != parent["defaults"].get("initialisation_calibration"):
+        raise ValueError("Changed initialisation calibration")
     condition = result["config"]["gradient_condition"]
     if result["config"].get("neuron") != parent["conditions"][condition]:
         raise ValueError(f"Changed neuron definition: {condition}")

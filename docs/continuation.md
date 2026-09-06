@@ -109,17 +109,33 @@ the primary jobs. The pending evidence can change the interpretation.
 
 ## Complete the remaining study
 
-The later exact-gradient request is part of this study. Read the added section
-in docs/study.md and `manifests/exact-gradient-shd.json`; its Execute run is
-`grf-shd-exact-gradient-tune-20260906`. It crosses exact versus BRF surrogate
-gradients for identical threshold-excess emission with fixed versus learned
-positive thresholds, without event feedback or reset. Curate the 24 validation
-selections separately. Run `tools/select_exact_gradient_rates.py RESULTS --output
-MANIFEST` to author up to twenty confirmations. Commit before submitting to
-Execute; never submit an empty manifest. Report all four conditions, the 128
-extra learned-threshold parameters, inactivity, threshold/gradient scale,
-failures and paired test differences. This control was added after the primary
-SHD results. The older softplus control alone does not answer this question.
+The original exact-gradient sweep completed with all twelve exact-gradient
+models silent throughout training: maximum gradient norm zero, threshold one,
+loss log(20). Preserve it as an initialisation diagnostic. Do not launch
+five-seed confirmations of this all-silent comparison.
+
+Jordan authorised the active-initialisation correction on 6 September. Read
+`manifests/active-init-gradient-shd.json`, `docs/active-initialisation.md` and
+`measurements/initialisation/active-init-audit.json`. The new Execute run is
+`grf-shd-active-init-tune-20260906`. It retains the four paired conditions,
+three initial rates and seeds 100/101, while calibrating the initial threshold
+from training inputs alone. Once complete, run:
+
+```
+python tools/select_exact_gradient_rates.py RESULTS --manifest manifests/active-init-gradient-shd.json --output manifests/active-init-confirmation-shd.json
+```
+
+Commit and submit eligible confirmations only. Keep original and calibrated
+comparisons separate. The initial activity audit is not a training result.
+Report inactivity, learned thresholds, failures and paired five-seed outcomes.
+
+All results must be visible in W&B at
+https://wandb.ai/jordanlochhill-nmtafe/graded-resonators.
+New manifests must enable the project's W&B settings. Existing frozen jobs are
+mirrored by `graded-resonators-wandb.timer` on Athena; `tools/sync_wandb.py`
+imports local metrics and returned Kaya artifacts without modifying workloads.
+Inspect failed/in-progress outcomes rather than assuming a W&B finished import
+means the underlying training succeeded. See `docs/wandb.md`.
 
 After source records are curated and committed, ingest primary evidence in the
 analysis repo with `python3 tools/ingest_graded_resonators.py --source
