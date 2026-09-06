@@ -121,3 +121,11 @@ accepted only timestamp-style identifiers. The receiver now uses Execute's
 canonical run-ID validator (Athena commit `88f85b4`, three HTTP regression
 tests). Requests 1 and 2 remain failed transport records. Request 3 returned
 the same completed qualification after the fix; no training was repeated.
+
+The eight H100 primary replacements have been authored and their finalisation
+returns requested. The corresponding eight Athena jobs were cancelled while
+pending after checking that every default and experiment row matched its
+replacement. `docs/execution.json` marks those scheduler records superseded.
+The cancellation CLI's pull-after-edit ordering initially refused its own
+changes; the verified eight monotonic controls were committed and pushed, and
+the CLI was repaired upstream with three real-Git regression tests.

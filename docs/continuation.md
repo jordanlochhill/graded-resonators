@@ -96,15 +96,21 @@ Athena manifests are split into twelve per-arm jobs for the other tasks. The
 first estimate was roughly 70 GPU-hours on Athena, before secondary controls.
 These full budgets must not be replaced by short pilots and called replicated.
 
-Kaya H100 qualification is also in the inventory. Use its returned metrics to
-decide whether to move pending original-task batches there; it has public-source
+Kaya H100 qualification is complete and its returned metrics are curated.
+The allocation now keeps SHD/sMNIST on Athena and all psMNIST/ECG arms on Kaya,
+with an explicit two-job H100 dependency chain. The eight old Athena psMNIST/ECG
+jobs were cancelled while pending and are marked superseded in the inventory.
+Do not count them as missing or failed models or launch those comparisons again.
+Kaya has public-source
 HTTPS access and prepares MNIST/ECG directly in
 `/scratch/sh001/jhill/graded-resonators/qualification-data`. Never dial the VPN
 unattended or use the prohibited reverse tunnel. Status and artifact returns
 use Execute without a VPN. The `execute-artifacts` and `execute-cancel` entrypoints
 are under `/home/jordan/Documents/execute/bin/`, not necessarily on PATH.
-The qualification has artifact requests 1 (finalised) and 2 (now); inspect their
-ledgers rather than submitting duplicates. If platform allocation changes,
+The qualification's requests 1 and 2 failed because of a receiver run-ID mismatch;
+Athena `88f85b4` fixed the receiver and request 3 returned the files with verified
+hashes. The eight H100 primary runs each have request 1 queued for finalisation.
+Inspect their ledgers rather than submitting duplicates. If allocation changes,
 record replacements in the inventory and cancel only superseded pending jobs
 through Execute. Do not count a cancelled scheduler attempt as a failed model.
 Preserve complete per-task comparisons and report any hardware differences.
