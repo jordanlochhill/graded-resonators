@@ -1,6 +1,6 @@
 {
   "schema": "agent-trigger-v1",
-  "description": "Finish the SHD reproduction and controlled graded-neuron analysis when the fixed primary, ablation, tuning and robustness jobs terminate; carry the authorised study through to its final paper.",
+  "description": "Finish the SHD reproduction and controlled graded-neuron analysis when the primary, ablation, tuning, robustness and checkpoint-selection jobs terminate; carry the authorised study through to its final paper.",
   "produces": "Committed SHD evidence, statistical figures, validation-selected confirmation recipes, updated manuscript, and a tested successor for any remaining long jobs.",
   "artifact": "/home/jordan/Documents/worktrees/graded-resonators-shd-review/docs/shd-review-complete.json",
   "boundaries": "Own graded-resonators and graded-resonators paper worktrees only, Execute-authored study jobs, own canvas card, and the final paper library/archive intake. Preserve other papers, all user ink, current audio code, global launch policy and VPN restrictions. No unbounded search or unsupported publication claims.",
@@ -27,6 +27,12 @@
       {
         "execute_run": {
           "run_id": "grf-shd-robustness-20260906",
+          "on_failure": true
+        }
+      },
+      {
+        "execute_run": {
+          "run_id": "grf-shd-selection-20260906",
           "on_failure": true
         }
       }

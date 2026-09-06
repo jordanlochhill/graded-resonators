@@ -230,6 +230,14 @@
       "manifest": "manifests/main-psmnist-graded-static-h100.json",
       "results": "/mnt/cold/research/execute/artifacts/grf-psmnist-graded-static-h100-20260906/attempt-1/results/grf-psmnist-graded-static-h100-20260906",
       "replaces": "grf-psmnist-graded-static-20260906"
+    },
+    {
+      "run_id": "grf-shd-selection-20260906",
+      "role": "selection-control",
+      "platform": "athena",
+      "source_commit": "8f7077f163622d14b1186158b7170329b21ab0c1",
+      "manifest": "manifests/checkpoint-selection-shd.json",
+      "results": "/mnt/hot/execute/athena/work/grf-shd-selection-20260906/attempt-1/source/results/grf-shd-selection-20260906"
     }
   ],
   "pending_additional_work": [
