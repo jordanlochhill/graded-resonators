@@ -30,10 +30,10 @@
 <text x="60" y="1028" class="small">Original rate · reduced activity, lower mean graded accuracy.</text>
 <rect x="38" y="1070" width="824" height="230" rx="8" fill="#f0eeea" stroke="#c9c5bd"/>
 <text x="60" y="1109" class="t">4 · WHAT REMAINS TO EXPLAIN?</text>
-<text x="60" y="1148" class="b">Three other BRF tasks · rate and mechanism controls</text>
-<text x="60" y="1184" class="b">Precision, packet loss, noise and payload cost</text>
+<text x="60" y="1148" class="b">Three other BRF tasks · precision and recovery</text>
+<text x="60" y="1184" class="b">Exact / surrogate gradients · fixed / learned θ</text>
 <text x="60" y="1225" class="s">Published BRF SHD: 91.7 ± 0.8% · reproduced closely.</text>
 <text x="60" y="1258" class="s">Final archive paper follows the complete evidence and review.</text>
-<text x="38" y="1342" class="k">19 CHECKS PASS · 20/80 PRIMARY TRAININGS COMPLETE</text>
-<a href="https://github.com/jordanlochhill/graded-resonators"><text x="38" y="1370" class="small">6 September 2026 · github.com/jordanlochhill/graded-resonators</text></a>
+<text x="38" y="1342" class="k">24 CHECKS PASS · FULL SHD PRIMARY COMPLETE</text>
+<a href="https://analysis.prosodylabs.com.au/graded-resonators/contents/"><text x="38" y="1370" class="small">6 September 2026 · open the live analysis</text></a>
 </svg>

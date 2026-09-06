@@ -238,10 +238,19 @@
       "source_commit": "8f7077f163622d14b1186158b7170329b21ab0c1",
       "manifest": "manifests/checkpoint-selection-shd.json",
       "results": "/mnt/hot/execute/athena/work/grf-shd-selection-20260906/attempt-1/source/results/grf-shd-selection-20260906"
+    },
+    {
+      "run_id": "grf-shd-exact-gradient-tune-20260906",
+      "role": "gradient-tuning",
+      "platform": "athena",
+      "source_commit": "8570a4fd9373976698d54f9a0c6219a56f5c87d3",
+      "manifest": "manifests/exact-gradient-shd.json",
+      "results": "/mnt/hot/execute/athena/work/grf-shd-exact-gradient-tune-20260906/attempt-1/source/results/grf-shd-exact-gradient-tune-20260906"
     }
   ],
   "pending_additional_work": [
     "Validation-selected rate confirmation, only for rates different from original; use tools/select_rates.py.",
+    "Exact-versus-surrogate gradient and threshold-learning confirmations: use tools/select_exact_gradient_rates.py after its 24 validation-only trainings; at most twenty confirmation trainings.",
     "Final figures, statistical comparisons, manuscript review, and verified archive publication."
   ],
   "status_source": "Read current status.yaml and attempt receipts from the Execute store; this file is an inventory, not live status.",
@@ -256,6 +265,37 @@
     ],
     "max_concurrent_h100": 2,
     "kaya_data": "/scratch/sh001/jhill/graded-resonators/qualification-data",
-    "note": "Per-task comparisons stay on one GPU type. The eight superseded Athena jobs were cancelled while pending; they are transport/scheduling records, not additional or failed model seeds."
+    "note": "Per-task comparisons stay on one GPU type. The eight superseded Athena jobs were cancelled while pending; they are transport/scheduling records, not additional or failed model seeds.",
+    "added_short_control_before_smnist": [
+      {
+        "run_id": "grf-smnist-brf-20260906",
+        "job_id": "725",
+        "previous_dependency": "afterany:722(unfulfilled),afterany:723(unfulfilled),afterany:724(unfulfilled)",
+        "added_afterany_run": "grf-shd-exact-gradient-tune-20260906",
+        "added_afterany_job": "738"
+      },
+      {
+        "run_id": "grf-smnist-graded-brf-20260906",
+        "job_id": "726",
+        "previous_dependency": "afterany:722(unfulfilled),afterany:723(unfulfilled),afterany:724(unfulfilled)",
+        "added_afterany_run": "grf-shd-exact-gradient-tune-20260906",
+        "added_afterany_job": "738"
+      },
+      {
+        "run_id": "grf-smnist-graded-observation-20260906",
+        "job_id": "727",
+        "previous_dependency": "afterany:722(unfulfilled),afterany:723(unfulfilled),afterany:724(unfulfilled)",
+        "added_afterany_run": "grf-shd-exact-gradient-tune-20260906",
+        "added_afterany_job": "738"
+      },
+      {
+        "run_id": "grf-smnist-graded-static-20260906",
+        "job_id": "728",
+        "previous_dependency": "afterany:722(unfulfilled),afterany:723(unfulfilled),afterany:724(unfulfilled)",
+        "added_afterany_run": "grf-shd-exact-gradient-tune-20260906",
+        "added_afterany_job": "738"
+      }
+    ],
+    "added_control_note": "Only the four pending sMNIST scheduler jobs gained an additional afterany dependency. The new SHD comparison runs after checkpoint selection and before those long groups. Accepted Execute workloads and data were unchanged."
   }
 }

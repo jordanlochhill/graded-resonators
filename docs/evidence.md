@@ -199,3 +199,38 @@ regenerates seed CSV, statistics, accuracy and activity figures and table rows;
 The generated figures were visually inspected. All 19 implementation checks,
 including the upstream forward/gradient oracle and unequal-batch loss reduction,
 passed after the selection-control addition.
+
+
+## Live analysis and added derivative control, 6 September 2026
+
+The live analysis is https://analysis.prosodylabs.com.au/graded-resonators/contents/ .
+It uses committed distilled primary records, preserves every source/checkpoint
+hash and planned missing seed, and reconstructs its charts without live storage.
+Six dedicated evidence tests and desktop/phone browser checks pass. The full
+analysis repository still has unrelated historical-evidence and rebuild failures.
+
+Jordan's threshold-learning question prompted an added two-by-two SHD study:
+ordinary versus BRF surrogate gradients for the same threshold-excess emission,
+crossed with fixed versus learned positive thresholds. The base threshold in
+the primary comparison was fixed, and its graded emission was full gated
+membrane amplitude. It cannot settle this new question. The training rate
+already decays linearly; the primary controls share its initial value and recipe.
+
+The new source passes 23 CPU tests plus the pinned original BRF forward/BPTT
+oracle (24 passing tests in total). The added tests check active and inactive
+threshold derivatives, finite differences through recurrence, equal forward
+computations and initial draws, exclusion of hidden hard-event feedback, and
+separate validation selection for conditions sharing a base arm. These are
+implementation checks, not trained task results.
+
+Execute `grf-shd-exact-gradient-tune-20260906` is queued from source `8570a4f`
+as scheduler job 738. Its committed manifest has 24 validation-only trainings
+and requires subsequent five-seed confirmation of four eligible conditions.
+Only the four pending sMNIST jobs gained a scheduler dependency on this short
+control; the exact old and added dependencies are recorded in execution.json.
+No existing trained recipe was changed. All new performance results are pending.
+
+Mixed membrane/event layers and waveform-as-first-state remain proposed audio
+extensions, with competing definitions recorded in docs/study.md. The manuscript
+now distinguishes these proposals and the added derivative control from the
+completed SHD comparison. Final archive publication remains pending.
