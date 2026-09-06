@@ -2,8 +2,7 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-data/
+data
 results/
 *.egg-info/
 .jax_cache/
-
