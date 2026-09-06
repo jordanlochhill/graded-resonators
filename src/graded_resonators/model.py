@@ -59,6 +59,7 @@ class Neuron:
     signed: bool = False
     reset: str = "none"
     surrogate: str = "double_gaussian"
+    learn_threshold: bool = False
     refractory_decay: float = 0.9
     threshold: float = 1.0
     dt: float = 0.01
@@ -73,8 +74,13 @@ class Neuron:
             raise ValueError(self.integration)
         if self.reset not in {"none", "subtract"}:
             raise ValueError(self.reset)
-        if self.surrogate not in {"double_gaussian", "fast_sigmoid", "logistic"}:
+        if self.surrogate not in {"double_gaussian", "fast_sigmoid", "logistic", "none"}:
             raise ValueError(self.surrogate)
+        if self.learn_threshold and self.threshold <= 0:
+            raise ValueError("Learned thresholds require a positive initial value")
+        if self.surrogate == "none" and (self.payload != "excess" or self.adaptive_threshold
+                                         or self.adaptive_damping or self.reset != "none"):
+            raise ValueError("Exact-gradient control requires excess emission without event feedback/reset")
         if not 0 <= self.refractory_decay < 1:
             raise ValueError("Refractory decay must be in [0, 1)")
         if self.payload == "smooth" and (self.adaptive_threshold or self.adaptive_damping):
@@ -107,6 +113,10 @@ def initialise(seed, inputs, hidden, classes, omega_range, damping_range, tau_st
         "damping": rng.uniform(*damping_range, hidden),
         "tau": rng.normal(20, tau_std, classes),
     }
+    if neuron.learn_threshold:
+        # Positive per-neuron thresholds, initially equal to the fixed control.
+        # No random draws: adding thresholds preserves every other parameter.
+        p["threshold_raw"] = np.full(hidden, math.log(math.expm1(neuron.threshold)))
     return {k: jnp.asarray(v, dtype=jnp.float32) for k, v in p.items()}
 
 
@@ -143,9 +153,11 @@ def advance(p, state, drive, neuron, coeff=None, transmission_keep=None):
         drive = drive + jnp.matmul(previous, p["recurrent"], precision="highest")
     new_u = real * u - imag * v + neuron.dt * drive
     new_v = imag * u + real * v
-    threshold = neuron.threshold + (q if neuron.adaptive_threshold else 0)
+    base_threshold = jax.nn.softplus(p["threshold_raw"]) if neuron.learn_threshold else neuron.threshold
+    threshold = base_threshold + (q if neuron.adaptive_threshold else 0)
     observed = jnp.abs(new_u) if neuron.signed else new_u
-    gate_fn = {"double_gaussian": event, "fast_sigmoid": fast_event, "logistic": logistic_event}[neuron.surrogate]
+    gate_fn = {"double_gaussian": event, "fast_sigmoid": fast_event, "logistic": logistic_event,
+               "none": lambda x: (x > 0).astype(x.dtype)}[neuron.surrogate]
     gate = gate_fn(observed - threshold)
     sign = jnp.where(new_u >= 0, 1., -1.) if neuron.signed else 1.
     if neuron.payload == "binary":

@@ -1,9 +1,9 @@
 {
   "schema": "agent-trigger-v1",
-  "description": "Finish the SHD reproduction and controlled graded-neuron analysis when the primary, ablation, tuning, robustness and checkpoint-selection jobs terminate; carry the authorised study through to its final paper.",
-  "produces": "Committed SHD evidence, statistical figures, validation-selected confirmation recipes, updated manuscript, and a tested successor for any remaining long jobs.",
+  "description": "Complete the SHD study, including the added exact-gradient and learned-threshold control; maintain the live analysis and carry the authorised replication to its final paper.",
+  "produces": "Committed SHD evidence, paired figures, validation-selected confirmations, current analysis page and manuscript, and one tested successor for unfinished jobs.",
   "artifact": "/home/jordan/Documents/worktrees/graded-resonators-shd-review/docs/shd-review-complete.json",
-  "boundaries": "Own graded-resonators and graded-resonators paper worktrees only, Execute-authored study jobs, own canvas card, and the final paper library/archive intake. Preserve other papers, all user ink, current audio code, global launch policy and VPN restrictions. No unbounded search or unsupported publication claims.",
+  "boundaries": "Own graded-resonators and paper worktrees, the graded-resonators analysis page and its data/tools/tests on main in /home/jordan/Documents/analysis, Execute-authored study jobs, own canvas card, and final paper library/archive intake. Preserve all other reports/papers, user ink, audio code, launch policy and VPN restrictions. No unbounded architecture search or unsupported publication claims.",
   "when": {
     "all_of": [
       {
@@ -35,6 +35,12 @@
           "run_id": "grf-shd-selection-20260906",
           "on_failure": true
         }
+      },
+      {
+        "execute_run": {
+          "run_id": "grf-shd-exact-gradient-tune-20260906",
+          "on_failure": true
+        }
       }
     ]
   },
@@ -43,7 +49,7 @@
     "name": "grf-shd-review",
     "workdir": "/home/jordan/Documents/worktrees/graded-resonators-shd-review",
     "timeout": "120m",
-    "brief": "Read and execute docs/continuation.md, docs/study.md, docs/evidence.md and docs/execution.json in your worktree. Fetch and integrate current source main and manuscript paper/brf-graded first, since the coordinator may have added platform decisions. Your separate manuscript worktree is /home/jordan/Documents/worktrees/papers-graded-shd-review. Jordan explicitly authorised the replication, independent public source and final archive publication, and said continue. Follow each run manifest decision_rule without assuming a winner. Inspect terminal outcomes and completeness, curate all eligible records, analyse SHD, select learning rates from validation only, queue changed-rate confirmations, revise the manuscript and arm one verified successor for remaining work. Publication is complete only after the full evidence, final PDF review, GitHub source and actual papers.prosodylabs.com.au archive verification. The first-worker completion contract in docs/continuation.md is mandatory: write docs/shd-review-complete.json last, including successor identity and remaining work. Use your own uv environment. Do not end at a plan or a request to approve already-authorised work."
+    "brief": "Read and execute docs/continuation.md, docs/study.md, docs/evidence.md and docs/execution.json in your worktree. Fetch and integrate current source main and manuscript paper/brf-graded first, since the coordinator may have added platform decisions. Your separate manuscript worktree is /home/jordan/Documents/worktrees/papers-graded-shd-review. Jordan explicitly authorised the replication, independent public source and final archive publication, and said continue. Follow each run manifest decision_rule without assuming a winner. Inspect terminal outcomes and completeness, curate all eligible records, analyse SHD, select learning rates from validation only, queue changed-rate confirmations, revise the manuscript and arm one verified successor for remaining work. Publication is complete only after the full evidence, final PDF review, GitHub source and actual papers.prosodylabs.com.au archive verification. The first-worker completion contract in docs/continuation.md is mandatory: write docs/shd-review-complete.json last, including successor identity and remaining work. Use your own uv environment. Do not end at a plan or a request to approve already-authorised work. Jordan subsequently requested the live analysis page, exact versus surrogate gradients for threshold-excess transmission, and threshold learning. Those bounded comparisons and page updates are now in docs/continuation.md and are part of your objective. The mixed-layer and waveform-as-state ideas remain documented proposals."
   },
   "guards": {
     "expires_at": "2026-09-20T23:59:00+08:00",

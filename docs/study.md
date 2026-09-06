@@ -57,6 +57,60 @@ primitive study.
 
 ## Reproduction and evaluation
 
+### Later addition: exact gradients and threshold learning
+
+Jordan raised this comparison after the first SHD results on 6 September 2026.
+The primary graded arms emit `u H(u-theta)` with a fixed base threshold. They
+do not test whether threshold-excess emission needs a surrogate. For
+`max(0, u-theta)`, the ordinary threshold derivative is -1 above threshold and
+zero below it, with a convention at equality. A surrogate changes this
+derivative while leaving the forward emission unchanged.
+
+The added SHD control crosses ordinary versus BRF surrogate derivatives with
+fixed versus learned per-neuron thresholds. All four conditions emit positive
+real threshold excess, use Euler integration, and omit event-dependent
+threshold, damping and reset feedback. Finite differences through recurrence
+check the exact derivative. Hard event feedback is excluded: removing its
+surrogate would introduce another gradient change without making that
+discontinuous state path smooth.
+
+Learned thresholds are `softplus(raw)` and begin at one. Adding these 128
+parameters preserves all other random draws. Derivative comparisons have equal
+parameter counts within each threshold condition. Inactive units' zero ordinary
+gradient and the surrogate's extra active-region term are part of the question.
+
+`manifests/exact-gradient-shd.json` defines an equal validation-only search of
+initial rates .075, .025 and .0075, with the same linear decay, on seeds 100 and
+101 for all four conditions (24 trainings). Select by mean best validation loss;
+both seeds must complete finitely and ties favour the smaller rate.
+`tools/select_exact_gradient_rates.py` authors at most twenty confirmation
+trainings on seeds 0-4. Keep them separate from the primary table. The overlapping
+original-rate fixed-threshold surrogate condition checks the earlier excess
+ablation; it must not become extra primary seeds.
+
+### Proposed audio extensions
+
+Jordan also proposed mixing continuous membrane reads with event connections,
+and treating the waveform itself as the first membrane. These remain design
+alternatives, without new raw-waveform training admitted by this note. Compare
+event connections, continuous membrane connections, and continuous early layers
+followed by event layers at fixed depth and projection sizes. State whether reads
+expose the real component or full complex state, retain the same event-to-memory
+branch where applicable, and count continuous transfers alongside events. A
+learned blend adds routing and scale choices; it is a separate experiment.
+
+Interpret waveform-as-membrane initially as `z0[t] = x[t]`: an externally supplied
+state without independent recurrence. This differs from a driven resonator
+`z0[t] = A z0[t-1] + B x[t]`, which filters sound and can ring after silence,
+and from a waveform plus learned recurrent residual. Raw-sample observation
+requires explicit scaling, signed thresholds and crossing/rearming semantics.
+Share sample rate, causal preprocessing and speaker split. SHD's already encoded
+cochlear events cannot evaluate these raw-waveform alternatives.
+
+The live analysis is https://analysis.prosodylabs.com.au/graded-resonators/contents/ .
+
+### Original-task protocol
+
 Reproduce BRF's four published tasks: sMNIST, psMNIST, QTDB ECG and SHD. Recipes
 preserve their widths, sequence lengths, batch sizes, Adam learning rates and
 epoch budgets (300/300/400/20). The independent implementation uses JAX scans;

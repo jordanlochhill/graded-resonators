@@ -9,19 +9,22 @@ from scipy.stats import t
 ARMS = ("brf", "graded_brf", "graded_observation", "graded_static")
 
 
-def select_learning_rates(results, rates=(.075, .025, .0075), seeds=(100, 101)):
+def select_learning_rates(results, rates=(.075, .025, .0075), seeds=(100, 101),
+                          arms=ARMS, group_key="arm"):
     """Two complete validation-only seeds are required for an eligible rate."""
     indexed = {}
     for result in results:
         config = result["config"]
         if config["stage"] != "tune" or "test" in result:
             raise ValueError("Learning-rate selection accepts validation-only tuning results")
-        key = config["arm"], config["lr"], config["seed"]
+        key = config[group_key], config["lr"], config["seed"]
+        if key[0] not in arms or key[1] not in rates or key[2] not in seeds:
+            raise ValueError(f"Unexpected tuning cell: {key}")
         if key in indexed:
             raise ValueError(f"Duplicate tuning seed: {key}")
         indexed[key] = result
     decisions = {}
-    for arm in ARMS:
+    for arm in arms:
         candidates = []
         for rate in rates:
             rows = []

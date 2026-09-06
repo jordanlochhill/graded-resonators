@@ -9,10 +9,14 @@ test accuracies are 91.57 ± 0.90% (BRF), 90.40 ± 0.60% (graded BRF),
 89.60 ± 1.06% (graded observation) and 89.81 ± 0.61% (graded static), with no
 numerical failures. The published BRF result is 91.7 ± 0.8%. Graded variants
 reduce event activity by 38–56% but have lower mean accuracy under the original
-learning rate. Rate controls, ablations, robustness and the other three tasks
+initial learning rate and linear decay. Rate controls, ablations, robustness and the other three tasks
 remain pending; this does not establish an energy advantage. The protocol is in
 [docs/study.md](docs/study.md). The manuscript is maintained in Jordan Hill's
 [papers archive source](https://github.com/jordanlochhill/papers).
+The [live analysis page](https://analysis.prosodylabs.com.au/graded-resonators/contents/)
+shows paired seeds, trajectories and analytic illustrations. A later controlled
+study tests ordinary versus surrogate gradients for the same threshold-excess
+emission, with fixed or learned thresholds and equal validation-based rate search.
 
 Four primary arms keep the architecture and trainable parameter count fixed:
 binary BRF; graded BRF; graded emission with adaptive observation only; graded

@@ -48,3 +48,18 @@ def test_failed_rate_cannot_win_on_an_early_checkpoint_and_test_access_is_refuse
     results[0]["test"] = {"accuracy": 1.0}
     with pytest.raises(ValueError, match="validation-only"):
         select_learning_rates(results)
+
+
+def test_conditions_sharing_a_base_arm_are_selected_separately():
+    results = [{"config": {"stage": "tune", "arm": "graded_static",
+                           "gradient_condition": condition, "lr": rate, "seed": seed},
+                "status": "complete", "best_validation_loss": abs(rate - preferred)}
+               for condition, preferred in (("exact", .025), ("surrogate", .0075))
+               for rate in (.075, .025, .0075) for seed in (100, 101)]
+    decision = select_learning_rates(results, arms=("exact", "surrogate"),
+                                     group_key="gradient_condition")
+    assert decision["exact"]["selected_rate"] == .025
+    assert decision["surrogate"]["selected_rate"] == .0075
+    with pytest.raises(ValueError, match="Missing tuning seed"):
+        select_learning_rates(results[:-1], arms=("exact", "surrogate"),
+                              group_key="gradient_condition")

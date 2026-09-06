@@ -23,6 +23,10 @@ for work awaiting long jobs. The final paper is the intended outcome.
 - The existing manuscript branch and draft PR are `paper/brf-graded` and
   https://github.com/jordanlochhill/papers/pull/10.
 - Source repository: https://github.com/jordanlochhill/graded-resonators.
+- Jordan additionally requested a live analysis page. Maintain the existing
+  https://analysis.prosodylabs.com.au/graded-resonators/contents/ at
+  `/home/jordan/Documents/analysis` on main, following its instructions and the
+  analysis skill. This is an authorised write scope; update this same page.
 - `docs/execution.json` is the current run inventory, including source pins,
   manifests, roles and result locations. Read it afresh; it is not live status.
 
@@ -104,6 +108,30 @@ the primary jobs. The pending evidence can change the interpretation.
 
 ## Complete the remaining study
 
+The later exact-gradient request is part of this study. Read the added section
+in docs/study.md and `manifests/exact-gradient-shd.json`; its Execute run is
+`grf-shd-exact-gradient-tune-20260906`. It crosses exact versus BRF surrogate
+gradients for identical threshold-excess emission with fixed versus learned
+positive thresholds, without event feedback or reset. Curate the 24 validation
+selections separately. Run `tools/select_exact_gradient_rates.py RESULTS --output
+MANIFEST` to author up to twenty confirmations. Commit before submitting to
+Execute; never submit an empty manifest. Report all four conditions, the 128
+extra learned-threshold parameters, inactivity, threshold/gradient scale,
+failures and paired test differences. This control was added after the primary
+SHD results. The older softplus control alone does not answer this question.
+
+After source records are curated and committed, ingest primary evidence in the
+analysis repo with `python3 tools/ingest_graded_resonators.py --source
+YOUR_SOURCE_WORKTREE`, then `python3 tools/build_graded_resonators_data.py`.
+Extend ingest and builder for the secondary groups without pooling them into
+primary evidence. Keep prose hand-authored, exact tables beside each chart,
+source revisions and hashes, and visibly missing results. Update the header,
+coverage, gallery and interpretation. Follow the desktop/mobile browser audit,
+deterministic rebuild and commit/push requirements. At first publication the
+six targeted tests passed; `make test` encountered an unrelated absent historical
+single-token log under the retired auto programme. Never shrink other reports
+to hide that absence.
+
 The original four-task primary design is 80 trainings: four arms, five paired
 seeds, original 300/300/400/20 epoch budgets for sMNIST/psMNIST/ECG/SHD. The
 Athena manifests are split into twelve per-arm jobs for the other tasks. The
@@ -134,6 +162,10 @@ and bounded diagnostics needed to explain failures or a reproduction mismatch.
 Do not expand into an unbounded architecture search. A raw-waveform/SSC extension
 is optional and has not been admitted; SHD already tests spoken-digit event
 classification, and neither transcription nor synthesis is established here.
+
+Jordan's mixed membrane/event layers and waveform-as-first-state ideas remain
+recorded proposals. Do not claim they were evaluated or turn them into an
+unbounded search. The exact-gradient study above is the bounded admitted addition.
 
 If jobs are still running when the bounded session ends, author and arm one
 successor trigger on their actual terminal conditions, with `on_failure: true`.
@@ -197,6 +229,8 @@ PDF hash with the built final file, and verify its source and code links. Keep
 the full source/result provenance available. Update the own canvas card and
 write the final completion record with paper URL, PDF URL, code URL, commits,
 validation results, findings and remaining scientific limitations.
+Include the analysis URL and link that page to the final archive PDF when it
+is published. Until then, its working-PDF link must clearly identify a draft.
 
 ## Completion contract for this first worker
 

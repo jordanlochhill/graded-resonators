@@ -143,6 +143,11 @@ def run(config, output, data_root):
                "validation": validation, "gradient_norm_mean": float(np.mean(gradient_norms)),
                "gradient_norm_max": float(np.max(gradient_norms)), "epoch_seconds": time.perf_counter() - tick,
                "batch_seconds_median": float(np.median(batch_seconds)), "best_epoch": best_epoch}
+        if neuron.learn_threshold:
+            thresholds = np.asarray(jax.nn.softplus(p["threshold_raw"]))
+            row["threshold_summary"] = {"min": float(thresholds.min()),
+                                        "mean": float(thresholds.mean()),
+                                        "max": float(thresholds.max())}
         with (output / "metrics.jsonl").open("a") as f:
             f.write(json.dumps(row, allow_nan=False) + "\n")
         print(json.dumps({"task": config["task"], "arm": config["arm"], "seed": config["seed"], **row}), flush=True)
