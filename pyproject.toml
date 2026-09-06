@@ -4,8 +4,12 @@ version = "0.1.0"
 description = "Reproduction of BRF and controlled studies of graded resonator emissions"
 requires-python = ">=3.11,<3.13"
 dependencies = [
-  "jax==0.6.2", "numpy==2.2.6", "scipy==1.15.3", "h5py==3.14.0",
+  "jax==0.6.2",
+  "numpy==2.2.6",
+  "scipy==1.15.3",
+  "h5py==3.14.0",
   "matplotlib==3.10.3",
+  "wandb==0.28.2",
 ]
 
 [project.optional-dependencies]
