@@ -1,0 +1,22 @@
+{
+  "method": "positive_membrane_quantile",
+  "quantile": 0.95,
+  "samples": 64,
+  "sample_indices_sha256": "3249d3957eaec792ac18682927e31f87f6d8742cda2a03db5bd5dbe828132ec8",
+  "input_sha256": "2c7b9065152caf00e5ca4d7f13d4515889675555a7f5e926142cbb665bae8713",
+  "uncoupled_membrane_max": 0.1633891612291336,
+  "uncoupled_positive_fraction": 0.500287109375,
+  "initial_threshold": 0.03535839542746544,
+  "initial_event_fraction": 0.025016114115715027,
+  "active_neuron_fraction": 0.9453125,
+  "initial_loss": 2.995847702026367,
+  "gradient_norms": {
+    "damping": 0.024084459990262985,
+    "input": 1.5969041585922241,
+    "omega": 0.018919406458735466,
+    "readout": 0.509324312210083,
+    "recurrent": 0.028802163898944855,
+    "tau": 3.040799310838338e-05,
+    "threshold_raw": 0.06711169332265854
+  }
+}

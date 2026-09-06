@@ -246,6 +246,17 @@
       "source_commit": "8570a4fd9373976698d54f9a0c6219a56f5c87d3",
       "manifest": "manifests/exact-gradient-shd.json",
       "results": "/mnt/hot/execute/athena/work/grf-shd-exact-gradient-tune-20260906/attempt-1/source/results/grf-shd-exact-gradient-tune-20260906"
+    },
+    {
+      "run_id": "grf-shd-active-init-tune-20260906",
+      "role": "active-initialisation-gradient-tuning",
+      "platform": "athena",
+      "source_commit": "7b23f9bcd55124462031852e6365f30c14b54bea",
+      "manifest": "manifests/active-init-gradient-shd.json",
+      "results": "/mnt/hot/execute/athena/work/grf-shd-active-init-tune-20260906/attempt-1/source/results/grf-shd-active-init-tune-20260906",
+      "scheduler_job_id": "739",
+      "wandb": "https://wandb.ai/jordanlochhill-nmtafe/graded-resonators/runs/grf-shd-active-init-tune-20260906",
+      "note": "24 validation-only trainings; original threshold-one exact sweep retained as an initialisation diagnostic."
     }
   ],
   "pending_additional_work": [
@@ -297,5 +308,6 @@
       }
     ],
     "added_control_note": "Only the four pending sMNIST scheduler jobs gained an additional afterany dependency. The new SHD comparison runs after checkpoint selection and before those long groups. Accepted Execute workloads and data were unchanged."
-  }
+  },
+  "wandb_project": "https://wandb.ai/jordanlochhill-nmtafe/graded-resonators"
 }
