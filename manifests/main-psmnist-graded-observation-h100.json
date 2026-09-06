@@ -1,0 +1,62 @@
+{
+  "description": "Full-budget psmnist BRF reproduction and paired graded-emission comparison. Four arms, five seeds; original architecture and training budget; select by fixed held-out validation loss. Scheduler shard: graded_observation, all five seeds. Kaya H100 allocation; the experiment recipe is unchanged.",
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
+  "decision_rule": "Require an explained BRF reproduction before interpreting alternatives. Report every seed, paired differences, event rate, payload scale and failures; no checkpoint selection from test accuracy.",
+  "cost": {
+    "gpu_type": "h100",
+    "gpus": 1,
+    "time_limit": "16:00:00",
+    "estimated_seconds": 43104,
+    "estimate_basis": "Original update budget times second-epoch H100 qualification batch median, plus 15% for validation/setup.",
+    "qualification_metrics_sha256": "00f41d02a23d3f694b17631a4eea3d00d25022e45610bdc91af372f2c8f8d308"
+  },
+  "defaults": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "brf",
+    "inputs": 1,
+    "hidden": 256,
+    "classes": 10,
+    "omega_range": [
+      15,
+      85
+    ],
+    "damping_range": [
+      0.1,
+      1
+    ],
+    "tau_std": 1,
+    "batch": 256,
+    "epochs": 300,
+    "lr": 0.1,
+    "task": "psmnist"
+  },
+  "experiments": [
+    {
+      "arm": "graded_observation",
+      "seed": 0
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 1
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 2
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 3
+    },
+    {
+      "arm": "graded_observation",
+      "seed": 4
+    }
+  ],
+  "parent_manifest": {
+    "path": "main-psmnist.json",
+    "sha256": "c26e41eca1512cfe65663a7cd17488cc541c7ce22176f226929b5ccfbae0a3c7"
+  }
+}

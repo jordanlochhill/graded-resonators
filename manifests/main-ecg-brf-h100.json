@@ -1,0 +1,62 @@
+{
+  "description": "Full-budget ecg BRF reproduction and paired graded-emission comparison. Four arms, five seeds; original architecture and training budget; select by fixed held-out validation loss. Scheduler shard: brf, all five seeds. Kaya H100 allocation; the experiment recipe is unchanged.",
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
+  "decision_rule": "Require an explained BRF reproduction before interpreting alternatives. Report every seed, paired differences, event rate, payload scale and failures; no checkpoint selection from test accuracy.",
+  "cost": {
+    "gpu_type": "h100",
+    "gpus": 1,
+    "time_limit": "03:00:00",
+    "estimated_seconds": 7836,
+    "estimate_basis": "Original update budget times second-epoch H100 qualification batch median, plus 15% for validation/setup.",
+    "qualification_metrics_sha256": "22c1d9d0f0e1503367456da54c2dd4764721d90d7ded8bcbe5c4096a68530026"
+  },
+  "defaults": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "brf",
+    "inputs": 4,
+    "hidden": 36,
+    "classes": 6,
+    "omega_range": [
+      3,
+      5
+    ],
+    "damping_range": [
+      0.1,
+      1
+    ],
+    "tau_std": 1,
+    "batch": 16,
+    "epochs": 400,
+    "lr": 0.1,
+    "task": "ecg"
+  },
+  "experiments": [
+    {
+      "arm": "brf",
+      "seed": 0
+    },
+    {
+      "arm": "brf",
+      "seed": 1
+    },
+    {
+      "arm": "brf",
+      "seed": 2
+    },
+    {
+      "arm": "brf",
+      "seed": 3
+    },
+    {
+      "arm": "brf",
+      "seed": 4
+    }
+  ],
+  "parent_manifest": {
+    "path": "main-ecg.json",
+    "sha256": "91f21179600d7b46ad961ec9208fe8b8c0b0ad9979e6bb9bae5f229201049db7"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "run": "grf-kaya-qualification-20260906",
+  "files": {
+    "summary.json": {
+      "bytes": 3251,
+      "sha256": "0b0f48af447624d8115f56c6f230a9ad1abd2c8f8817559eda824bdc3e5f5cee"
+    },
+    "timing-ecg/contract.json": {
+      "bytes": 2772,
+      "sha256": "b5cc00589efaceda5b8130022cff21fd9fa218d871812487e3dc55493af5b013"
+    },
+    "timing-psmnist/contract.json": {
+      "bytes": 3326,
+      "sha256": "1c8b9bae00e072f4412b5458d177ea401cb997f1236e86d281c5958b6250386e"
+    },
+    "timing-smnist/contract.json": {
+      "bytes": 3262,
+      "sha256": "90512c5ab591a931b66d9524af811bf601cb236d9017fb34216d7306a23d99e5"
+    },
+    "timing-ecg/metrics.jsonl": {
+      "bytes": 1182,
+      "sha256": "22c1d9d0f0e1503367456da54c2dd4764721d90d7ded8bcbe5c4096a68530026"
+    },
+    "timing-psmnist/metrics.jsonl": {
+      "bytes": 1195,
+      "sha256": "00f41d02a23d3f694b17631a4eea3d00d25022e45610bdc91af372f2c8f8d308"
+    },
+    "timing-smnist/metrics.jsonl": {
+      "bytes": 1199,
+      "sha256": "3c5dc8634061de5ea34fa1ca184eccc2fab030e8cec4e5fbac3b716629ef1b12"
+    },
+    "timing-ecg/result.json": {
+      "bytes": 977,
+      "sha256": "7e523752a6494bb4aba0df2d0a32feee44ad6d8fd88b4d29c95725b79037fc8a"
+    },
+    "timing-psmnist/result.json": {
+      "bytes": 994,
+      "sha256": "c2cc5c950d53d886f5ae77431ca46b4a571c77ef4682a7fe0258622d08701c99"
+    },
+    "timing-smnist/result.json": {
+      "bytes": 992,
+      "sha256": "42ddcb37619ee9c99c0e2290795f6d260c239c70f996234cc86bba8ad8c367fb"
+    }
+  }
+}

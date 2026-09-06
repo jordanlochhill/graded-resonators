@@ -97,3 +97,27 @@ numbers. Packet deletion preserves the sender's local event/refractory update.
 All conditions are reported; no test-condition selection is permitted. Dense
 forward latency includes emission statistics, uses resident device inputs, and
 is not a neuromorphic-energy claim.
+
+## H100 qualification and allocation decision
+
+Kaya job 1175552 completed the three original-shape timing pilots. Returned
+files were checked against their SHA-256 sidecars and curated under
+`measurements/timing/grf-kaya-qualification-20260906/`. Warm batch medians were
+118.0 ms (sMNIST), 118.4 ms (psMNIST) and 97.3 ms (ECG), slower per batch than
+the RTX 4090 for these small sequential recurrences. The advantage available
+here is concurrent independent jobs, not faster individual training.
+
+The planned allocation therefore keeps SHD and sMNIST on Athena and moves all
+psMNIST and ECG variants to Kaya, with at most two H100 jobs concurrently.
+Per-task paired comparisons stay on one hardware type. Sliding afterany
+dependencies enforce the Kaya cap. Superseded pending Athena jobs must be
+cancelled through the Execute store and replacements recorded in the inventory;
+no duplicate model is an extra seed. This reduces estimated elapsed compute
+from roughly three days to roughly a day and a half if scheduler slots remain
+available; it does not reduce aggregate GPU time.
+
+Artifact returns initially failed with HTTP 404 because Athena's receiver
+accepted only timestamp-style identifiers. The receiver now uses Execute's
+canonical run-ID validator (Athena commit `88f85b4`, three HTTP regression
+tests). Requests 1 and 2 remain failed transport records. Request 3 returned
+the same completed qualification after the fix; no training was repeated.
