@@ -106,6 +106,10 @@ and from a waveform plus learned recurrent residual. Raw-sample observation
 requires explicit scaling, signed thresholds and crossing/rearming semantics.
 Share sample rate, causal preprocessing and speaker split. SHD's already encoded
 cochlear events cannot evaluate these raw-waveform alternatives.
+For a waveform bounded by [-1, 1], a strict threshold of one produces no events.
+Do not inherit BRF's threshold scale for the externally supplied waveform state:
+ordinary threshold-excess gradients cannot train that threshold while every
+sample is inactive. Initialise for some activity using training data only.
 
 The live analysis is https://analysis.prosodylabs.com.au/graded-resonators/contents/ .
 
