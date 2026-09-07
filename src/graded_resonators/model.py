@@ -62,12 +62,23 @@ class Neuron:
     learn_threshold: bool = False
     refractory_decay: float = 0.9
     threshold: float = 1.0
+    threshold_spread: float = 0.0  # Uniform theta*(1 +/- spread), learned thresholds only.
+    read_normalization: str = "none"  # complex_rms normalises the read, never the carried state.
+    norm_epsilon: float = 1e-6
     dt: float = 0.01
     recurrent: bool = True
     payload_bits: int = 32
     payload_clip: float = 1.0
 
     def __post_init__(self):
+        if self.read_normalization not in {"none", "complex_rms"}:
+            raise ValueError("Unknown read normalization")
+        if not math.isfinite(self.norm_epsilon) or self.norm_epsilon <= 0:
+            raise ValueError("Normalization epsilon must be finite and positive")
+        if not 0 <= self.threshold_spread < 1 or (self.threshold_spread and not self.learn_threshold):
+            raise ValueError("Threshold spread requires learned thresholds and must be in [0, 1)")
+        if self.read_normalization != "none" and self.reset != "none":
+            raise ValueError("Normalized-read control has no reset; raw-unit reset conversion is not implemented")
         if self.payload not in {"binary", "membrane", "excess", "complex", "smooth"}:
             raise ValueError(f"Unknown payload: {self.payload}")
         if self.integration not in {"euler", "polar"}:
@@ -114,9 +125,13 @@ def initialise(seed, inputs, hidden, classes, omega_range, damping_range, tau_st
         "tau": rng.normal(20, tau_std, classes),
     }
     if neuron.learn_threshold:
-        # Positive per-neuron thresholds, initially equal to the fixed control.
-        # No random draws: adding thresholds preserves every other parameter.
-        p["threshold_raw"] = np.full(hidden, math.log(math.expm1(neuron.threshold)))
+        # Draw after all shared parameters, preserving paired initial weights.
+        threshold = np.full(hidden, neuron.threshold, dtype=np.float64)
+        if neuron.threshold_spread:
+            threshold *= rng.uniform(1 - neuron.threshold_spread, 1 + neuron.threshold_spread, hidden)
+        p["threshold_raw"] = np.log(np.expm1(threshold))
+    if neuron.read_normalization == "complex_rms":
+        p["norm_gain"] = np.ones(hidden)
     return {k: jnp.asarray(v, dtype=jnp.float32) for k, v in p.items()}
 
 
@@ -139,6 +154,20 @@ def coefficients(p, neuron):
     return real, imag, jnp.exp(-1 / jnp.abs(p["tau"]))
 
 
+def membrane_read(p, u, v, neuron):
+    """Causal complex RMS read across units, per sample, as in the playground.
+
+    No centering/bias: a silent membrane stays silent. Both components share
+    the scale. These values feed the gate and transmitted payload, while the
+    oscillator carries its original unnormalised membrane into the next step.
+    """
+    if neuron.read_normalization == "none":
+        return u, v
+    rms = jnp.sqrt(jnp.mean(u * u + v * v, axis=-1, keepdims=True) + neuron.norm_epsilon)
+    gain = p["norm_gain"] / rms
+    return gain * u, gain * v
+
+
 def advance(p, state, drive, neuron, coeff=None, transmission_keep=None):
     """One step. Event count, payload and carried membrane are separate values."""
     u, v, q, previous, readout = state
@@ -153,25 +182,26 @@ def advance(p, state, drive, neuron, coeff=None, transmission_keep=None):
         drive = drive + jnp.matmul(previous, p["recurrent"], precision="highest")
     new_u = real * u - imag * v + neuron.dt * drive
     new_v = imag * u + real * v
+    read_u, read_v = membrane_read(p, new_u, new_v, neuron)
     base_threshold = jax.nn.softplus(p["threshold_raw"]) if neuron.learn_threshold else neuron.threshold
     threshold = base_threshold + (q if neuron.adaptive_threshold else 0)
-    observed = jnp.abs(new_u) if neuron.signed else new_u
+    observed = jnp.abs(read_u) if neuron.signed else read_u
     gate_fn = {"double_gaussian": event, "fast_sigmoid": fast_event, "logistic": logistic_event,
                "none": lambda x: (x > 0).astype(x.dtype)}[neuron.surrogate]
     gate = gate_fn(observed - threshold)
-    sign = jnp.where(new_u >= 0, 1., -1.) if neuron.signed else 1.
+    sign = jnp.where(read_u >= 0, 1., -1.) if neuron.signed else 1.
     if neuron.payload == "binary":
         sent = gate * sign
     elif neuron.payload == "membrane":
-        sent = gate * new_u
+        sent = gate * read_u
     elif neuron.payload == "excess":
-        sent = gate * (new_u - sign * threshold)
+        sent = gate * (read_u - sign * threshold)
     elif neuron.payload == "complex":
-        sent = jnp.concatenate((gate * new_u, gate * new_v), axis=-1)
+        sent = jnp.concatenate((gate * read_u, gate * read_v), axis=-1)
     else:
-        sent = jax.nn.softplus(new_u - threshold)
+        sent = jax.nn.softplus(read_u - threshold)
         if neuron.signed:
-            sent = sent - jax.nn.softplus(-new_u - threshold)
+            sent = sent - jax.nn.softplus(-read_u - threshold)
     if neuron.payload_bits < 32 and neuron.payload != "binary":
         # Fixed validation-calibrated range, including a representable zero.
         levels = 2 ** (neuron.payload_bits - int(neuron.signed or neuron.payload == "complex")) - 1

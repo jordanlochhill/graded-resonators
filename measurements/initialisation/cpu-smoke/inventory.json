@@ -1,0 +1,190 @@
+{
+  "role": "CPU instrumentation smoke; not a performance comparison",
+  "source_commit": "7b23f9bcd55124462031852e6365f30c14b54bea",
+  "manifest": {
+    "description": "CPU smoke test of active-initialisation training and W&B telemetry; one epoch on 64 training/validation examples, not a performance comparison.",
+    "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
+    "decision_rule": "Compare exact versus surrogate within each threshold condition, and threshold learning within each derivative condition. Select the initial rate separately for each of four conditions by mean minimum validation loss across seeds 100 and 101; require both complete and finite, break ties with the smaller rate. Preserve the linear decay schedule. Confirm all eligible selections with five paired seeds 0-4 before test comparisons. Report failures, inactivity and threshold/gradient scale; do not infer that a surrogate is unnecessary for hard event-dependent refractory feedback. Calibrate a single positive network threshold from the first 64 training inputs, using the 95th percentile of positive uncoupled real membrane states; do not fit to validation/test data or labels. Retain the original silent sweep as an initialisation diagnostic, not a performance confirmation. Abort if initial activity is absent or exceeds 50%, fewer than half the units activate, or the input/learned-threshold gradient is zero. No adaptive calibration retries.",
+    "cost": {
+      "gpu_type": "rtx4090",
+      "gpus": 1,
+      "time_limit": "03:00:00",
+      "estimated_seconds": 3800,
+      "estimate_basis": "24 full-budget SHD trainings at about 150 seconds each, plus setup; subsequent confirmations are bounded at 20 trainings."
+    },
+    "defaults": {
+      "stage": "pilot",
+      "split_seed": 20260906,
+      "evaluation_batch": 32,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "train_limit": 64,
+      "validation_limit": 64,
+      "epoch_limit": 1
+    },
+    "conditions": {
+      "excess_surrogate_fixed": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      },
+      "excess_exact_fixed": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      },
+      "excess_surrogate_learned": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      },
+      "excess_exact_learned": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    "experiments": [
+      {
+        "name": "excess_surrogate_fixed-cpu-smoke",
+        "gradient_condition": "excess_surrogate_fixed",
+        "seed": 100,
+        "lr": 0.0075,
+        "neuron": {
+          "payload": "excess",
+          "surrogate": "double_gaussian",
+          "learn_threshold": false
+        }
+      },
+      {
+        "name": "excess_exact_fixed-cpu-smoke",
+        "gradient_condition": "excess_exact_fixed",
+        "seed": 100,
+        "lr": 0.0075,
+        "neuron": {
+          "payload": "excess",
+          "surrogate": "none",
+          "learn_threshold": false
+        }
+      },
+      {
+        "name": "excess_surrogate_learned-cpu-smoke",
+        "gradient_condition": "excess_surrogate_learned",
+        "seed": 100,
+        "lr": 0.0075,
+        "neuron": {
+          "payload": "excess",
+          "surrogate": "double_gaussian",
+          "learn_threshold": true
+        }
+      },
+      {
+        "name": "excess_exact_learned-cpu-smoke",
+        "gradient_condition": "excess_exact_learned",
+        "seed": 100,
+        "lr": 0.0075,
+        "neuron": {
+          "payload": "excess",
+          "surrogate": "none",
+          "learn_threshold": true
+        }
+      }
+    ],
+    "wandb": {
+      "project": "graded-resonators",
+      "entity": "jordanlochhill-nmtafe"
+    },
+    "tags": [
+      "graded-resonators",
+      "kairos-audio"
+    ]
+  },
+  "files": [
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_exact_fixed-cpu-smoke/contract.json",
+      "sha256": "7c978b1729771e389c92f0da39d758f92aa8a1654827c01d1cfe5107a78ef62d"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_exact_fixed-cpu-smoke/initialisation.json",
+      "sha256": "2ad67ec8cc38740ac45fec0df936ab76f1e2e4170895f1e3dc74865886918480"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_exact_fixed-cpu-smoke/metrics.jsonl",
+      "sha256": "e22890f1b9bb16977aa3ebf897dec7bc5b2e79771fd22f887573def319c8da08"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_exact_fixed-cpu-smoke/result.json",
+      "sha256": "c161c9049233eb5bfe5425d5d06bef95748bc1de802c45770cfbab0754824cba"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_exact_learned-cpu-smoke/contract.json",
+      "sha256": "356144a26068a76e3ac7a453c09b34b4ca4c34a3ec77feb98b0c42d1a5084fe2"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_exact_learned-cpu-smoke/initialisation.json",
+      "sha256": "59b40192054b1156786bc57c1074bd15b0af151583069cdfba5cb0157de95229"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_exact_learned-cpu-smoke/metrics.jsonl",
+      "sha256": "a21883340291b8962956a506c095c8e99c5f4fdef2f6cc51648ef276b9fbad58"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_exact_learned-cpu-smoke/result.json",
+      "sha256": "06f47805dd13bf854a224df97d80be994b51f8301964b44e4c2773cd6bf1a12d"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_surrogate_fixed-cpu-smoke/contract.json",
+      "sha256": "e6a3f5c5fa64d4b39401fe2a2285dd657f4f5fc701869c468beb0de1b8dd152d"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_surrogate_fixed-cpu-smoke/initialisation.json",
+      "sha256": "2870d09715776967cc3a81b5a6e07f9f18580a7e58d30217006aca0167f27fd2"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_surrogate_fixed-cpu-smoke/metrics.jsonl",
+      "sha256": "c4b588e99629f349d9bd49b054c2530ccf894e56bb72f484d76b0ab0d8670a26"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_surrogate_fixed-cpu-smoke/result.json",
+      "sha256": "6d58423ff46e3a741868dcce94cdbdc43bda4493f72c560c0ebc86a0ac395baa"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_surrogate_learned-cpu-smoke/contract.json",
+      "sha256": "de1785e80fdb0583cc38e3eeebfdae6309604be75403c057182592a568d218a6"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_surrogate_learned-cpu-smoke/initialisation.json",
+      "sha256": "4987696225714754abc74665d91f9225383536dfd0880cce4f9b0126450cd632"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_surrogate_learned-cpu-smoke/metrics.jsonl",
+      "sha256": "6ed95b345fb46818974310363cc4bdf31877c453b67593258ee5b88935f4fc01"
+    },
+    {
+      "path": "measurements/initialisation/cpu-smoke/excess_surrogate_learned-cpu-smoke/result.json",
+      "sha256": "78fa2a402d0e7d74f14cfbb63c9b363d36960e2d5aa1161559e2e0265ec66084"
+    }
+  ]
+}

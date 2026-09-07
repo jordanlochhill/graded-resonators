@@ -1,0 +1,69 @@
+{
+  "run": "grf-psmnist-graded-static-h100-20260906",
+  "files": {
+    "summary.json": {
+      "bytes": 6373,
+      "sha256": "48a945138d9affd7608b582fb59463e5406b27efeca69d2070bb9818b65da05c"
+    },
+    "psmnist-graded_static-s0/contract.json": {
+      "bytes": 3234,
+      "sha256": "dae370103a0c16449895799c105a7c91f38d1c0749149a81da94e8ada5876734"
+    },
+    "psmnist-graded_static-s1/contract.json": {
+      "bytes": 3234,
+      "sha256": "c99feed0cb4f165dc01c333970e256b7227712fd74c2515166ea0f67d771ec05"
+    },
+    "psmnist-graded_static-s2/contract.json": {
+      "bytes": 3234,
+      "sha256": "ebad03233724371e4f5afe75cb2703884c6483fe39c2c558f9509a404a14d8dd"
+    },
+    "psmnist-graded_static-s3/contract.json": {
+      "bytes": 3234,
+      "sha256": "221d80ff98669c8e7c7f355f6f0b8b6e0ad5315eaabb4ccebb27b45329b1378d"
+    },
+    "psmnist-graded_static-s4/contract.json": {
+      "bytes": 3234,
+      "sha256": "5259eab97c29f37ad337e783672efe464f475dabfa4b6bef11117451fbf16c60"
+    },
+    "psmnist-graded_static-s0/metrics.jsonl": {
+      "bytes": 201695,
+      "sha256": "4176ef5b0806b749bcc14abd1b28a17effd57aed2c366eb242aa37a0627355eb"
+    },
+    "psmnist-graded_static-s1/metrics.jsonl": {
+      "bytes": 201763,
+      "sha256": "aaa81071f11bae938b89594b0c32a4ebfa2b02726871a9563018636b0adc91ed"
+    },
+    "psmnist-graded_static-s2/metrics.jsonl": {
+      "bytes": 201790,
+      "sha256": "ee074e020d43b073da960e55631d1922b1308cbc9da47d82f94d7c9e610143a5"
+    },
+    "psmnist-graded_static-s3/metrics.jsonl": {
+      "bytes": 201737,
+      "sha256": "adb237f8690ef35c876141cd89b36d1afb7fba36cd3b7da2ee5aa1239971661d"
+    },
+    "psmnist-graded_static-s4/metrics.jsonl": {
+      "bytes": 201700,
+      "sha256": "7d28282c10f03efcdf7f0826a3dc0e641ca3c77a2da0fc05fdcc028debbe58d9"
+    },
+    "psmnist-graded_static-s0/result.json": {
+      "bytes": 1168,
+      "sha256": "99c2132b4ebadae23440fa1d8679457531c239b7dd0074a74363d20c4ecc6bcf"
+    },
+    "psmnist-graded_static-s1/result.json": {
+      "bytes": 1170,
+      "sha256": "f1966678c970c4bd79051efe663edc4a798d1dd4f6bdf36e93c8dc4342378abd"
+    },
+    "psmnist-graded_static-s2/result.json": {
+      "bytes": 1169,
+      "sha256": "d12243643da5742d22ce94cb916576319205b527e0a74e7377a6d93679e7bcee"
+    },
+    "psmnist-graded_static-s3/result.json": {
+      "bytes": 1168,
+      "sha256": "0482d13717a187f138cd21bf39389ad77799d063e4dc636475656faa8f1af43e"
+    },
+    "psmnist-graded_static-s4/result.json": {
+      "bytes": 1170,
+      "sha256": "a3b8bc63b1110665ab92f1ee2edfc06f4dfec744c52d0864b3e2ff7b9224a0b9"
+    }
+  }
+}

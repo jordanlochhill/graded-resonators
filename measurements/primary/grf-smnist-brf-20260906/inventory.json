@@ -1,0 +1,69 @@
+{
+  "run": "grf-smnist-brf-20260906",
+  "files": {
+    "summary.json": {
+      "bytes": 6317,
+      "sha256": "823a760ff5e92c86f8d2f91b0ede3cbf40606a2d7d62d05aa5527804116e42d1"
+    },
+    "smnist-brf-s0/contract.json": {
+      "bytes": 3157,
+      "sha256": "8f19778a379d9d396b06355c7b4085b600bdeda389fddc9a23583c71ad21e9fc"
+    },
+    "smnist-brf-s1/contract.json": {
+      "bytes": 3157,
+      "sha256": "41a1ba3ec1a1552c475d4f10542411c7caf6017516b2f7b167acd4a352023d79"
+    },
+    "smnist-brf-s2/contract.json": {
+      "bytes": 3157,
+      "sha256": "6e3d0e3dccc107cec5feaf78249e13d386b90b6fbb062aa030dc776e36b0cff9"
+    },
+    "smnist-brf-s3/contract.json": {
+      "bytes": 3157,
+      "sha256": "74e59aa94839148daee1b8331b4f591105f1e29b14e2938a4f7272064f7f35d2"
+    },
+    "smnist-brf-s4/contract.json": {
+      "bytes": 3157,
+      "sha256": "c98205ad6cef337bb5342c45e2c527efb28f4e3f7b0588310040b5a4cc7c73bd"
+    },
+    "smnist-brf-s0/metrics.jsonl": {
+      "bytes": 202689,
+      "sha256": "712e62bf3720ea6fe67a1ebb955e736228595318a3758654d9c413003b00351a"
+    },
+    "smnist-brf-s1/metrics.jsonl": {
+      "bytes": 202613,
+      "sha256": "340433d198fe16ea1ce7f73df12c1d27699cb6dff484c26b7360ef13aa865362"
+    },
+    "smnist-brf-s2/metrics.jsonl": {
+      "bytes": 202673,
+      "sha256": "f6bd0024e907fd795d71daa4a57fbe42bfc447e0a688f1db5f983c8649231282"
+    },
+    "smnist-brf-s3/metrics.jsonl": {
+      "bytes": 202759,
+      "sha256": "b5a3e8cb8fd0cf7ca46c977611af328952a57fdf3416f4bc5404654ff31e8990"
+    },
+    "smnist-brf-s4/metrics.jsonl": {
+      "bytes": 202741,
+      "sha256": "0f4ce1a1f189cc2b6ee607d33842660c8fd8b4799a24b825f519774559bd616c"
+    },
+    "smnist-brf-s0/result.json": {
+      "bytes": 1158,
+      "sha256": "1bf9d258902e4b73182a8d972106b8d4261580dec1ffbe9d88b582b298a8ac6a"
+    },
+    "smnist-brf-s1/result.json": {
+      "bytes": 1157,
+      "sha256": "20c59e731bedd49204bc8be385aacb0aa3020b4306b88c36f7ab64fa72d0dff8"
+    },
+    "smnist-brf-s2/result.json": {
+      "bytes": 1160,
+      "sha256": "d50b0f59827447d2102d352b5b0c12b340dd307ccf7dd36e27f7912a8d4f126c"
+    },
+    "smnist-brf-s3/result.json": {
+      "bytes": 1158,
+      "sha256": "fb536cb6b85eff26513b8ddb721ad158262324b5752133b9e194b7edd3e7fbc8"
+    },
+    "smnist-brf-s4/result.json": {
+      "bytes": 1156,
+      "sha256": "9e0315b317be38cc6928bd90a9e03bb329f730886857b16c3480236e0d20310e"
+    }
+  }
+}

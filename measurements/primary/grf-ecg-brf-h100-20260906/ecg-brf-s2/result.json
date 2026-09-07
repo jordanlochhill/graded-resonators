@@ -1,0 +1,52 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 2,
+    "arm": "brf",
+    "inputs": 4,
+    "hidden": 36,
+    "classes": 6,
+    "omega_range": [
+      3,
+      5
+    ],
+    "damping_range": [
+      0.1,
+      1
+    ],
+    "tau_std": 1,
+    "batch": 16,
+    "epochs": 400,
+    "lr": 0.1,
+    "task": "ecg"
+  },
+  "best_epoch": 365,
+  "best_validation_loss": 0.4197961390018463,
+  "steps": 14000,
+  "seconds_this_invocation": 1385.29439641512,
+  "parameters": 1734,
+  "memory_stats": {
+    "num_allocs": 1184576,
+    "bytes_in_use": 24832,
+    "peak_bytes_in_use": 74116096,
+    "largest_alloc_size": 67108864,
+    "bytes_limit": 74962501632,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 102760448,
+    "peak_pool_bytes": 102760448
+  },
+  "test": {
+    "loss": 0.4356156587600708,
+    "accuracy": 0.8484397530555725,
+    "event_fraction": 0.15022443234920502,
+    "payload_rms": 0.3875879672399609,
+    "max_membrane_component": 84.6676025390625,
+    "seconds": 0.03779147891327739,
+    "samples": 141
+  }
+}

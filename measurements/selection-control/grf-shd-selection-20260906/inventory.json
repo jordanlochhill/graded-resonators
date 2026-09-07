@@ -1,0 +1,69 @@
+{
+  "run": "grf-shd-selection-20260906",
+  "files": {
+    "summary.json": {
+      "bytes": 7249,
+      "sha256": "0093f7ea78d24acb3f16e9b31f850f1d722c05a730ce207f1e1d59ed0dd890b2"
+    },
+    "brf-batch-selection-s0/contract.json": {
+      "bytes": 3004,
+      "sha256": "8f42130b86f8bc1f13b0c60fa0ad40b22e28b70409201cea96a0090f79aee04b"
+    },
+    "brf-batch-selection-s1/contract.json": {
+      "bytes": 3005,
+      "sha256": "bbcba6689d434d1a9818ff8bda05d739a3096b151f8ae18e1f68c145da100cb4"
+    },
+    "brf-batch-selection-s2/contract.json": {
+      "bytes": 3005,
+      "sha256": "b149408b260605d72fd4590f5d97ea7d56d30ca0bab950f792d0e8bcf767b6ce"
+    },
+    "brf-batch-selection-s3/contract.json": {
+      "bytes": 3005,
+      "sha256": "7a665bb1caacd67622abecaee454811626e4f720527f1a6c902fdce66cc5f502"
+    },
+    "brf-batch-selection-s4/contract.json": {
+      "bytes": 3003,
+      "sha256": "95725ea725385ea0a61ca806470afbad9f21b7e260c171349f7b3f21ae3e42d0"
+    },
+    "brf-batch-selection-s0/metrics.jsonl": {
+      "bytes": 13923,
+      "sha256": "57bc2c02afd5b3a20581c33028dc9c9ea94a54f448c67b12efbbe8fe004d07ad"
+    },
+    "brf-batch-selection-s1/metrics.jsonl": {
+      "bytes": 13980,
+      "sha256": "1c44222a3084a73caad85619f390dbf3af44189c343714e904464142cf25644c"
+    },
+    "brf-batch-selection-s2/metrics.jsonl": {
+      "bytes": 13954,
+      "sha256": "d901b87c80fe01788104cfbd901359121a2a2942f5c9c9d9fbeb6f534b079701"
+    },
+    "brf-batch-selection-s3/metrics.jsonl": {
+      "bytes": 13993,
+      "sha256": "9af30bb1a4bd151b9aeb97020231de5491ad3a9c096a99c653a8d418f1892036"
+    },
+    "brf-batch-selection-s4/metrics.jsonl": {
+      "bytes": 13905,
+      "sha256": "d5736e67da41e075ab374dcd8c123dad5b8b39b3ffaf597a05290c8a4699e33d"
+    },
+    "brf-batch-selection-s0/result.json": {
+      "bytes": 1336,
+      "sha256": "4f24efad6fd821839b18b197870d03d8c5e1ff6af84278bbc97edf44c8187aa8"
+    },
+    "brf-batch-selection-s1/result.json": {
+      "bytes": 1337,
+      "sha256": "31c861c8eb904e4cb327861096f4a51eda9ee7453bd8327b71a4230305c62623"
+    },
+    "brf-batch-selection-s2/result.json": {
+      "bytes": 1336,
+      "sha256": "93dba01f8d6d7ab7f64955883f045b07da29500973d5c56f0bfbe4bc2b4cc0a0"
+    },
+    "brf-batch-selection-s3/result.json": {
+      "bytes": 1337,
+      "sha256": "de5485da3510a697e36b253ed67c47ff1ea568585b8f7d58211ec00aa2bc5f1a"
+    },
+    "brf-batch-selection-s4/result.json": {
+      "bytes": 1335,
+      "sha256": "6c3e707f1c7d6d7eb5d09ef788736a47f1c22995eddf4e289032a059ba8d5c9c"
+    }
+  }
+}

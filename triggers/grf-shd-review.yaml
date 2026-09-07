@@ -41,6 +41,15 @@
           "run_id": "grf-shd-exact-gradient-tune-20260906",
           "on_failure": true
         }
+      },
+      {
+        "execute_run": {
+          "run_id": "grf-shd-active-init-tune-20260906",
+          "on_failure": true
+        }
+      },
+      {
+        "at": "2026-09-06T23:05:01+08:00"
       }
     ]
   },
@@ -49,7 +58,7 @@
     "name": "grf-shd-review",
     "workdir": "/home/jordan/Documents/worktrees/graded-resonators-shd-review",
     "timeout": "120m",
-    "brief": "Read and execute docs/continuation.md, docs/study.md, docs/evidence.md and docs/execution.json. Fetch and integrate current source main first. Jordan authorised the committed replication, exact-versus-surrogate gradient study, learned-threshold comparison and analysis. Inspect terminal outcomes and completeness, curate all eligible records, select rates from validation only, submit admitted confirmations, and prepare evidence for interactive discussion. Keep an honest record of failures and pending work, and arm one verified successor if admitted jobs remain unfinished. The working PDF is already in the private papers archive. Jordan subsequently clarified that papers are written interactively with him: do not write, revise, merge or publish manuscripts, modify the papers archive, or intake papers into the library. Complete docs/shd-review-complete.json last under its stated contract. Use your own uv environment. Mixed-layer and waveform-as-state ideas remain documented proposals."
+    "brief": "Fetch origin and integrate origin/research/active-init into your clean worktree before reading the continuation; this branch adds Jordan's active-initialisation correction and W&B requirement. Read and execute docs/continuation.md, docs/study.md, docs/evidence.md and docs/execution.json. Fetch and integrate current source main first. Jordan authorised the committed replication, exact-versus-surrogate gradient study, learned-threshold comparison and analysis. Inspect terminal outcomes and completeness, curate all eligible records, select rates from validation only, submit admitted confirmations, and prepare evidence for interactive discussion. Keep an honest record of failures and pending work, and arm one verified successor if admitted jobs remain unfinished. The working PDF is already in the private papers archive. Jordan subsequently clarified that papers are written interactively with him: do not write, revise, merge or publish manuscripts, modify the papers archive, or intake papers into the library. Complete docs/shd-review-complete.json last under its stated contract. Use your own uv environment. Mixed-layer and waveform-as-state ideas remain documented proposals. Do not confirm the original all-silent exact-gradient sweep. Use the active-init manifest for that comparison. All results must be visible in the graded-resonators W&B project."
   },
   "guards": {
     "expires_at": "2026-09-20T23:59:00+08:00",

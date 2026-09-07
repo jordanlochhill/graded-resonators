@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 1,
+    "arm": "brf",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "name": "brf-batch-selection-s1",
+    "validation_reduction": "batch_mean",
+    "comparison_role": "checkpoint_selection_control"
+  },
+  "best_epoch": 8,
+  "best_validation_loss": 0.5933473706245422,
+  "steps": 4600,
+  "seconds_this_invocation": 143.45723599893972,
+  "parameters": 108820,
+  "memory_stats": {
+    "num_allocs": 258889,
+    "bytes_in_use": 1307648,
+    "peak_bytes_in_use": 337627904,
+    "largest_alloc_size": 268435456,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 404750336,
+    "peak_pool_bytes": 404750336
+  },
+  "test": {
+    "loss": 0.9489841979299755,
+    "accuracy": 0.8953180245712873,
+    "event_fraction": 0.10565902861394647,
+    "payload_rms": 0.3250523375357729,
+    "max_membrane_component": 111.44727325439453,
+    "batch_mean_loss": 0.9503031969070435,
+    "seconds": 0.5987678160890937,
+    "samples": 2264
+  }
+}

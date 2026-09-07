@@ -1,0 +1,11 @@
+[Unit]
+Description=Mirror saved graded-resonator results to W&B
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/jordan/Documents/worktrees/graded-resonators-active-init
+ExecStart=/home/jordan/Documents/worktrees/graded-resonators-active-init/.venv/bin/python tools/sync_wandb.py
+Environment=CUDA_VISIBLE_DEVICES=
+Environment=WANDB_SILENT=true
+Nice=10
+TimeoutStartSec=30min

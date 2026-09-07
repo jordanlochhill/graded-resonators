@@ -1,0 +1,77 @@
+{
+  "run": "grf-smnist-graded-observation-20260906",
+  "files": {
+    "summary.json": {
+      "bytes": 5825,
+      "sha256": "de1624d93049350bafc7e7245cd4ead233d29c6c993b6231026ed9af9e131c50"
+    },
+    "smnist-graded_observation-s0/contract.json": {
+      "bytes": 3175,
+      "sha256": "11facaacfeda89d9a41031ed87117c8b1e898fea09e2024d4692dd458beeed39"
+    },
+    "smnist-graded_observation-s1/contract.json": {
+      "bytes": 3175,
+      "sha256": "bf7b724424163efce7e62b9f3da533e466656a7677bdd3d653f48f5e31393a42"
+    },
+    "smnist-graded_observation-s2/contract.json": {
+      "bytes": 3175,
+      "sha256": "39031ee48aadb8e266fbf522186187198719fa4a9f58fe20a89efa3e5925baff"
+    },
+    "smnist-graded_observation-s3/contract.json": {
+      "bytes": 3175,
+      "sha256": "7335c00f9d9b9b1987b0e49cbf71528d2f9271315cd5d19e7495a515adae5dd7"
+    },
+    "smnist-graded_observation-s4/contract.json": {
+      "bytes": 3175,
+      "sha256": "b810810399715a8de17da8a92981405d4f88b37f1a499dda8c138408a9468890"
+    },
+    "smnist-graded_observation-s0/metrics.jsonl": {
+      "bytes": 2653,
+      "sha256": "b1a684ac33570d21f3437bbc178f876ff5fa17e8222c4ed91b043ea671cbcd0d"
+    },
+    "smnist-graded_observation-s1/metrics.jsonl": {
+      "bytes": 203067,
+      "sha256": "f5df041b63147d623f227f2ce3c05a15a54a341b20b803d0e29216df1bc2c19b"
+    },
+    "smnist-graded_observation-s2/metrics.jsonl": {
+      "bytes": 203175,
+      "sha256": "15ba53bedc6f99fa716b8905584f39474ebfab9008978555a3e6814739e65acf"
+    },
+    "smnist-graded_observation-s3/metrics.jsonl": {
+      "bytes": 17512,
+      "sha256": "251b5f4701835f86e2c832495158b8d8545f7687acaf25db5fba674a2644a929"
+    },
+    "smnist-graded_observation-s4/metrics.jsonl": {
+      "bytes": 202618,
+      "sha256": "f0eb6d818b18410c8d42f890bea4711a0437fff714bdf5fae1b2af9a4103eb29"
+    },
+    "smnist-graded_observation-s0/result.json": {
+      "bytes": 906,
+      "sha256": "339ab64c929c6688dbbed2631e175d48c43c31db31092e7680ca16941e60686b"
+    },
+    "smnist-graded_observation-s1/result.json": {
+      "bytes": 1174,
+      "sha256": "938c9816ad2fdaec2319bf71f42619a00617b72f4f1490f81b1d8192e56bcf13"
+    },
+    "smnist-graded_observation-s2/result.json": {
+      "bytes": 1173,
+      "sha256": "0c6e23bee7b4f53d3a4d05f78457ee883cf45c84423c530583297210d462208b"
+    },
+    "smnist-graded_observation-s3/result.json": {
+      "bytes": 911,
+      "sha256": "07c1771056f53d520c6991e64095697a234a7940d51a170bbe9553039d929434"
+    },
+    "smnist-graded_observation-s4/result.json": {
+      "bytes": 1169,
+      "sha256": "a1a023dbb4191fd908e0936b3e9a8d85be814d7f7f178f84155e626261cb631b"
+    },
+    "smnist-graded_observation-s0/failure.json": {
+      "bytes": 97,
+      "sha256": "ada6f4bf07f0c5d7227ddc2fd284d95f0df69a21456087521973a737cd8e885b"
+    },
+    "smnist-graded_observation-s3/failure.json": {
+      "bytes": 99,
+      "sha256": "0a5247cbf7895d6ed13653c34a488cb72ac9951803d600691c39390f8be19815"
+    }
+  }
+}

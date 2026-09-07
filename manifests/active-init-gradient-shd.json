@@ -1,0 +1,337 @@
+{
+  "description": "Repeat the exact-versus-surrogate and fixed-versus-learned threshold comparison after training-input calibration removes the all-silent initialisation observed at threshold one. Identical paired initial weights and forward functions; 24 full-budget validation-only SHD trainings.",
+  "planning_workspace": "https://canvas.prosodylabs.com.au/w/50b74ebefe?x=[17420,18420]&y=[24641,26141]",
+  "decision_rule": "Compare exact versus surrogate within each threshold condition, and threshold learning within each derivative condition. Select the initial rate separately for each of four conditions by mean minimum validation loss across seeds 100 and 101; require both complete and finite, break ties with the smaller rate. Preserve the linear decay schedule. Confirm all eligible selections with five paired seeds 0-4 before test comparisons. Report failures, inactivity and threshold/gradient scale; do not infer that a surrogate is unnecessary for hard event-dependent refractory feedback. Calibrate a single positive network threshold from the first 64 training inputs, using the 95th percentile of positive uncoupled real membrane states; do not fit to validation/test data or labels. Retain the original silent sweep as an initialisation diagnostic, not a performance confirmation. Abort if initial activity is absent or exceeds 50%, fewer than half the units activate, or the input/learned-threshold gradient is zero. No adaptive calibration retries.",
+  "cost": {
+    "gpu_type": "rtx4090",
+    "gpus": 1,
+    "time_limit": "03:00:00",
+    "estimated_seconds": 3800,
+    "estimate_basis": "24 full-budget SHD trainings at about 150 seconds each, plus setup; subsequent confirmations are bounded at 20 trainings."
+  },
+  "defaults": {
+    "stage": "tune",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "graded_static",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "comparison_role": "active_initialisation_gradient",
+    "initialisation_calibration": {
+      "method": "positive_membrane_quantile",
+      "samples": 64,
+      "quantile": 0.95
+    }
+  },
+  "conditions": {
+    "excess_surrogate_fixed": {
+      "payload": "excess",
+      "surrogate": "double_gaussian",
+      "learn_threshold": false
+    },
+    "excess_exact_fixed": {
+      "payload": "excess",
+      "surrogate": "none",
+      "learn_threshold": false
+    },
+    "excess_surrogate_learned": {
+      "payload": "excess",
+      "surrogate": "double_gaussian",
+      "learn_threshold": true
+    },
+    "excess_exact_learned": {
+      "payload": "excess",
+      "surrogate": "none",
+      "learn_threshold": true
+    }
+  },
+  "experiments": [
+    {
+      "name": "excess_surrogate_fixed-lr0.075-s100",
+      "gradient_condition": "excess_surrogate_fixed",
+      "lr": 0.075,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_surrogate_fixed-lr0.075-s101",
+      "gradient_condition": "excess_surrogate_fixed",
+      "lr": 0.075,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_surrogate_fixed-lr0.025-s100",
+      "gradient_condition": "excess_surrogate_fixed",
+      "lr": 0.025,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_surrogate_fixed-lr0.025-s101",
+      "gradient_condition": "excess_surrogate_fixed",
+      "lr": 0.025,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_surrogate_fixed-lr0.0075-s100",
+      "gradient_condition": "excess_surrogate_fixed",
+      "lr": 0.0075,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_surrogate_fixed-lr0.0075-s101",
+      "gradient_condition": "excess_surrogate_fixed",
+      "lr": 0.0075,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_exact_fixed-lr0.075-s100",
+      "gradient_condition": "excess_exact_fixed",
+      "lr": 0.075,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_exact_fixed-lr0.075-s101",
+      "gradient_condition": "excess_exact_fixed",
+      "lr": 0.075,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_exact_fixed-lr0.025-s100",
+      "gradient_condition": "excess_exact_fixed",
+      "lr": 0.025,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_exact_fixed-lr0.025-s101",
+      "gradient_condition": "excess_exact_fixed",
+      "lr": 0.025,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_exact_fixed-lr0.0075-s100",
+      "gradient_condition": "excess_exact_fixed",
+      "lr": 0.0075,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_exact_fixed-lr0.0075-s101",
+      "gradient_condition": "excess_exact_fixed",
+      "lr": 0.0075,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    {
+      "name": "excess_surrogate_learned-lr0.075-s100",
+      "gradient_condition": "excess_surrogate_learned",
+      "lr": 0.075,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_surrogate_learned-lr0.075-s101",
+      "gradient_condition": "excess_surrogate_learned",
+      "lr": 0.075,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_surrogate_learned-lr0.025-s100",
+      "gradient_condition": "excess_surrogate_learned",
+      "lr": 0.025,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_surrogate_learned-lr0.025-s101",
+      "gradient_condition": "excess_surrogate_learned",
+      "lr": 0.025,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_surrogate_learned-lr0.0075-s100",
+      "gradient_condition": "excess_surrogate_learned",
+      "lr": 0.0075,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_surrogate_learned-lr0.0075-s101",
+      "gradient_condition": "excess_surrogate_learned",
+      "lr": 0.0075,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_exact_learned-lr0.075-s100",
+      "gradient_condition": "excess_exact_learned",
+      "lr": 0.075,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_exact_learned-lr0.075-s101",
+      "gradient_condition": "excess_exact_learned",
+      "lr": 0.075,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_exact_learned-lr0.025-s100",
+      "gradient_condition": "excess_exact_learned",
+      "lr": 0.025,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_exact_learned-lr0.025-s101",
+      "gradient_condition": "excess_exact_learned",
+      "lr": 0.025,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_exact_learned-lr0.0075-s100",
+      "gradient_condition": "excess_exact_learned",
+      "lr": 0.0075,
+      "seed": 100,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    {
+      "name": "excess_exact_learned-lr0.0075-s101",
+      "gradient_condition": "excess_exact_learned",
+      "lr": 0.0075,
+      "seed": 101,
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    }
+  ],
+  "wandb": {
+    "project": "graded-resonators",
+    "entity": "jordanlochhill-nmtafe"
+  },
+  "tags": [
+    "graded-resonators",
+    "kairos-audio"
+  ]
+}

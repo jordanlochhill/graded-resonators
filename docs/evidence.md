@@ -1,5 +1,58 @@
 # Evidence ledger
 
+## Current synthesis, 7 September 2026
+
+All 80 primary outcomes, 42 ablations, 72 validation-only tuning outcomes,
+20 checkpoint-robustness evaluations and five selection-control replays are
+now curated. The live synthesis is
+https://wandb.ai/jordanlochhill-nmtafe/graded-resonators/runs/grf-study-synthesis-20260907
+and https://analysis.prosodylabs.com.au/graded-resonators/contents/ .
+The analysis builder regenerates comparisons from committed records, including
+failed seeds; eight targeted evidence tests pass. The private working PDF has
+not been revised with these findings.
+
+Binary BRF completed 20/20 primary trainings. Graded BRF completed 8/20,
+graded observation 9/20 and graded static 18/20. These initial variants emit
+gated membrane amplitude; their longer-task failures cannot be attributed to
+refractory feedback alone without further controls. SHD means remain
+91.57/90.40/89.60/89.81% for BRF/graded BRF/observation/static. All five static
+psMNIST seeds completed at 94.10 ± 0.20%, versus BRF 94.98 ± 0.16%, with
+3.72% versus 13.50% event fractions. Survivor means on failed groups must not
+stand in for five-seed model performance.
+
+The active-initialisation threshold-excess control changes that emission to
+max(0, u − θ), without hard-event threshold/damping/reset feedback. All 24
+calibrated tuning runs learned and remained finite. Every condition selected
+initial LR 0.025 with the fixed linear decay schedule. Mean best validation
+loss over seeds 100/101: exact/learned 0.4957549, surrogate/learned 0.5102603,
+exact/fixed 0.5147801 and surrogate/fixed 0.5486453. All twelve uncalibrated
+exact-gradient runs had previously remained silent at log(20). This supports
+an initialisation diagnosis and demonstrates ordinary-gradient learning for
+the stated control. It does not yet establish a five-seed test advantage,
+a sparse implementation, or ordinary derivatives for discontinuous event
+feedback. Calibrated final training event fractions at the selected rate are
+roughly 28–30%.
+
+Four/eight-bit payloads retain mean SHD accuracy closely; two bits degrade it.
+Longer threshold recovery gives 90.43% accuracy and 2.82% event activity in
+three seeds, but its paired accuracy interval includes zero. Signed and
+complex payloads do not establish gains. Smooth emission improves its matched
+three-seed parent by 0.44 pp, with no multiple-comparison correction; it emits
+below threshold, so reported event fraction is not total message activity.
+The selection replay preserves all training metrics, changes one selected
+checkpoint, and lowers that seed's test accuracy by 1.90 pp. No protocol is
+chosen from this test difference.
+
+One nominally completed ECG static seed has an overflowing validation RMS
+measurement at zero-based epoch 25. Its loss and selected test metrics are
+finite; the analysis marks the diagnostic missing rather than plotting zero.
+
+Five-seed calibrated-gradient confirmation and the changed-rate observation
+confirmation remain outstanding. Mixed membrane/event layers, waveform-as-state,
+raw-waveform speech processing, and measured hardware energy remain untested.
+Earlier entries below describe the historical state when each was recorded.
+
+
 ## Implementation qualification, 6 September 2026
 
 The independent BRF recurrence, network output, spike count, summed temporal

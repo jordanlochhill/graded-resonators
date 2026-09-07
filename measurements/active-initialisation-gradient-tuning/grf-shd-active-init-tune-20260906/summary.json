@@ -1,0 +1,1346 @@
+[
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_fixed-lr0.075-s100",
+      "gradient_condition": "excess_surrogate_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.5319226313953751,
+    "steps": 4600,
+    "seconds_this_invocation": 146.54107210901566,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 129626,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_fixed-lr0.075-s101",
+      "gradient_condition": "excess_surrogate_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.5791004428102926,
+    "steps": 4600,
+    "seconds_this_invocation": 145.11976127210073,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 259252,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.025,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_fixed-lr0.025-s100",
+      "gradient_condition": "excess_surrogate_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 12,
+    "best_validation_loss": 0.5488462743583632,
+    "steps": 4600,
+    "seconds_this_invocation": 143.66383848292753,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 388878,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.025,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_fixed-lr0.025-s101",
+      "gradient_condition": "excess_surrogate_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 18,
+    "best_validation_loss": 0.5484442724772026,
+    "steps": 4600,
+    "seconds_this_invocation": 143.7953016620595,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 518504,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.0075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_fixed-lr0.0075-s100",
+      "gradient_condition": "excess_surrogate_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.6353578953655219,
+    "steps": 4600,
+    "seconds_this_invocation": 143.85254635708407,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 648130,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.0075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_fixed-lr0.0075-s101",
+      "gradient_condition": "excess_surrogate_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.630442205236002,
+    "steps": 4600,
+    "seconds_this_invocation": 143.61793316085823,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 777756,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_fixed-lr0.075-s100",
+      "gradient_condition": "excess_exact_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 8,
+    "best_validation_loss": 0.5389154247711041,
+    "steps": 4600,
+    "seconds_this_invocation": 139.24204956484027,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 907379,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_fixed-lr0.075-s101",
+      "gradient_condition": "excess_exact_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 9,
+    "best_validation_loss": 0.5624668356099743,
+    "steps": 4600,
+    "seconds_this_invocation": 139.05006295093335,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 1037002,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.025,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_fixed-lr0.025-s100",
+      "gradient_condition": "excess_exact_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 14,
+    "best_validation_loss": 0.5177460381589785,
+    "steps": 4600,
+    "seconds_this_invocation": 138.06105242995545,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 1166625,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.025,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_fixed-lr0.025-s101",
+      "gradient_condition": "excess_exact_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 15,
+    "best_validation_loss": 0.5118142038766592,
+    "steps": 4600,
+    "seconds_this_invocation": 137.84837334998883,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 1296248,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.0075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_fixed-lr0.0075-s100",
+      "gradient_condition": "excess_exact_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 16,
+    "best_validation_loss": 0.6168112382567001,
+    "steps": 4600,
+    "seconds_this_invocation": 137.9616106839385,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 1425871,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.0075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_fixed-lr0.0075-s101",
+      "gradient_condition": "excess_exact_fixed",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": false
+      }
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.6238258603891712,
+    "steps": 4600,
+    "seconds_this_invocation": 137.70905860699713,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 1555494,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_learned-lr0.075-s100",
+      "gradient_condition": "excess_surrogate_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 7,
+    "best_validation_loss": 0.5741771834028279,
+    "steps": 4600,
+    "seconds_this_invocation": 146.50162198604085,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 1698955,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_learned-lr0.075-s101",
+      "gradient_condition": "excess_surrogate_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 7,
+    "best_validation_loss": 0.5765276967382138,
+    "steps": 4600,
+    "seconds_this_invocation": 146.2398787578568,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 1842416,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.025,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_learned-lr0.025-s100",
+      "gradient_condition": "excess_surrogate_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.5159480716553202,
+    "steps": 4600,
+    "seconds_this_invocation": 144.91653149202466,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 1985877,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.025,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_learned-lr0.025-s101",
+      "gradient_condition": "excess_surrogate_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 12,
+    "best_validation_loss": 0.504572436780286,
+    "steps": 4600,
+    "seconds_this_invocation": 144.95281549310312,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 2129338,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.0075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_learned-lr0.0075-s100",
+      "gradient_condition": "excess_surrogate_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.6107555802614411,
+    "steps": 4600,
+    "seconds_this_invocation": 145.05162610812113,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 2272799,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.0075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_surrogate_learned-lr0.0075-s101",
+      "gradient_condition": "excess_surrogate_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "double_gaussian",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.611795418686662,
+    "steps": 4600,
+    "seconds_this_invocation": 144.9467657948844,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 2416260,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_learned-lr0.075-s100",
+      "gradient_condition": "excess_exact_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 8,
+    "best_validation_loss": 0.5373677849769593,
+    "steps": 4600,
+    "seconds_this_invocation": 139.40563186607324,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 2559718,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_learned-lr0.075-s101",
+      "gradient_condition": "excess_exact_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 9,
+    "best_validation_loss": 0.5286479025530669,
+    "steps": 4600,
+    "seconds_this_invocation": 139.43072111299261,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 2703176,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.025,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_learned-lr0.025-s100",
+      "gradient_condition": "excess_exact_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 15,
+    "best_validation_loss": 0.4955498733403493,
+    "steps": 4600,
+    "seconds_this_invocation": 138.1753951339051,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 2846634,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.025,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_learned-lr0.025-s101",
+      "gradient_condition": "excess_exact_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 15,
+    "best_validation_loss": 0.4959599156321192,
+    "steps": 4600,
+    "seconds_this_invocation": 138.1287023439072,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 2990092,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 100,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.0075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_learned-lr0.0075-s100",
+      "gradient_condition": "excess_exact_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.6112523841711641,
+    "steps": 4600,
+    "seconds_this_invocation": 138.08010516688228,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 3133550,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "tune",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 101,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.0075,
+      "task": "shd",
+      "comparison_role": "active_initialisation_gradient",
+      "initialisation_calibration": {
+        "method": "positive_membrane_quantile",
+        "samples": 64,
+        "quantile": 0.95
+      },
+      "name": "excess_exact_learned-lr0.0075-s101",
+      "gradient_condition": "excess_exact_learned",
+      "neuron": {
+        "payload": "excess",
+        "surrogate": "none",
+        "learn_threshold": true
+      }
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.6115126050323065,
+    "steps": 4600,
+    "seconds_this_invocation": 138.06780099798925,
+    "parameters": 108948,
+    "memory_stats": {
+      "num_allocs": 3277008,
+      "bytes_in_use": 1601792,
+      "peak_bytes_in_use": 337150208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 538968064,
+      "peak_pool_bytes": 538968064
+    }
+  }
+]

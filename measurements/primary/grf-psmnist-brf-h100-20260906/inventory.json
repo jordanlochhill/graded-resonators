@@ -1,0 +1,69 @@
+{
+  "run": "grf-psmnist-brf-h100-20260906",
+  "files": {
+    "summary.json": {
+      "bytes": 6317,
+      "sha256": "41c3222e7b61ac64e9c64163dbf7723ac20ba129e298a78d75dc2550a68b7bc4"
+    },
+    "psmnist-brf-s0/contract.json": {
+      "bytes": 3220,
+      "sha256": "b104703bc2900ba7c4f56e5fa30ead00934d8225c0d9105307ae2dcc60704bfd"
+    },
+    "psmnist-brf-s1/contract.json": {
+      "bytes": 3220,
+      "sha256": "3c08bf830c35358d2d5da4c0b41a2fbafa7a5295e3a76563e614f970d54da6dd"
+    },
+    "psmnist-brf-s2/contract.json": {
+      "bytes": 3219,
+      "sha256": "f8b7903f7aace90a11837c61b3c265cf94d1072d4dea2ab1dff56d90696cf561"
+    },
+    "psmnist-brf-s3/contract.json": {
+      "bytes": 3220,
+      "sha256": "0b8f23e23be22fe9c7d1411dda764abedc04bf95a70c528fe378b50c850d1ac2"
+    },
+    "psmnist-brf-s4/contract.json": {
+      "bytes": 3220,
+      "sha256": "2e1c363759bd49c223f90b637e9b637c3817691b565368ab8796c67595508f7f"
+    },
+    "psmnist-brf-s0/metrics.jsonl": {
+      "bytes": 201319,
+      "sha256": "1451cc2f3f9bdc0854f32e786fa8872cd0a570ecf04ec21f0282c31c87c6f2ab"
+    },
+    "psmnist-brf-s1/metrics.jsonl": {
+      "bytes": 201252,
+      "sha256": "dfb2d44139c5c9e6f4ddacebae2b6130e569d0445b72d834eff1652c3b82d650"
+    },
+    "psmnist-brf-s2/metrics.jsonl": {
+      "bytes": 201345,
+      "sha256": "ad8ae477e6a0ba4202b4ea2a60a400a3d8d8507bb6947ca29caa954dc43ea104"
+    },
+    "psmnist-brf-s3/metrics.jsonl": {
+      "bytes": 201011,
+      "sha256": "6894c82962ccf5f02de2f3f5ac434d6b8b66b37bd6a6393834c3c617260d99f2"
+    },
+    "psmnist-brf-s4/metrics.jsonl": {
+      "bytes": 201301,
+      "sha256": "c5428a7335e53f968cc108046d89ee406df6fbdea9f151e3506af09ddbb9eaa6"
+    },
+    "psmnist-brf-s0/result.json": {
+      "bytes": 1159,
+      "sha256": "9ff6c809b9cb87fb30100e900bfc252871ef34634c26626d759a0accc283ef49"
+    },
+    "psmnist-brf-s1/result.json": {
+      "bytes": 1157,
+      "sha256": "69a296614252f65c112055097789c77804f60aa82a0be35a321fec17ead6cb9c"
+    },
+    "psmnist-brf-s2/result.json": {
+      "bytes": 1158,
+      "sha256": "0e314a687e5021a00e76b5c07fbcde1ed497790cfd5daf2def043ef9f34a58a9"
+    },
+    "psmnist-brf-s3/result.json": {
+      "bytes": 1155,
+      "sha256": "734fef0721173da2496f06fea0cc2cbd59208db13a5fb8973f9a7972e2b61a8a"
+    },
+    "psmnist-brf-s4/result.json": {
+      "bytes": 1160,
+      "sha256": "34db8bc386b1c55b284a4a5a18ac6332be9d3d0c5b02af685f8e428522e7d734"
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "status": "complete",
+  "identity": {
+    "checkpoint_sha256": "cd8e0ba4e4296479b364135009e008be262d061977f4a8e355ca203a8097aaac",
+    "training_source": "dc839cde43bd282475d4bc19187c96fcfe21bb9c",
+    "training_config_sha256": "e0e8e9e50247ca388a62b79c0d7e81e9f1d3220becf38516be34f02535d1155e",
+    "protocol": {
+      "batch": 32,
+      "clip_quantile": 0.999,
+      "payload_bits": [
+        2,
+        4,
+        8
+      ],
+      "packet_loss": [
+        0.01,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "input_noise": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "perturbation_seed": 20260906,
+      "latency_repetitions": 25
+    },
+    "evaluation_source": "acfa75ff8c2ae7834cd362650623dc44e4f637ce"
+  },
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 2,
+    "arm": "brf",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd"
+  },
+  "calibration": {
+    "clip": 1.0,
+    "quantile": 0.999,
+    "active_components": 2494845,
+    "maximum": 1.0
+  },
+  "devices": [
+    "cuda:0"
+  ],
+  "jax": "0.6.2",
+  "latency": {
+    "batch": 32,
+    "steps": 250,
+    "repetitions": 25,
+    "median_seconds": 0.007380248047411442,
+    "seconds": [
+      0.007343285949900746,
+      0.007341509917750955,
+      0.0073571340180933475,
+      0.007317297160625458,
+      0.007302501006051898,
+      0.007420378969982266,
+      0.007388091878965497,
+      0.00739959510974586,
+      0.007322533056139946,
+      0.0073314320761710405,
+      0.007391931023448706,
+      0.007300024852156639,
+      0.007380248047411442,
+      0.0073757588397711515,
+      0.00901476782746613,
+      0.00740273087285459,
+      0.007432793965563178,
+      0.007316684816032648,
+      0.00729496288113296,
+      0.007401556940749288,
+      0.007361230906099081,
+      0.00738901412114501,
+      0.007464427966624498,
+      0.007482327986508608,
+      0.00745023600757122
+    ],
+    "scope": "Dense JAX forward including emission statistics; input already on device"
+  },
+  "evaluations": [
+    {
+      "kind": "clean",
+      "strength": 0.0,
+      "metrics": {
+        "loss": 0.8878500737486795,
+        "accuracy": 0.9125441696113075,
+        "event_fraction": 0.09588284490386505,
+        "payload_rms": 0.3096495470391528,
+        "max_membrane_component": 423.1990966796875,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.01,
+      "metrics": {
+        "loss": 0.8938302865297971,
+        "accuracy": 0.9081272084805654,
+        "event_fraction": 0.09501152967395715,
+        "payload_rms": 0.30669682634151474,
+        "max_membrane_component": 423.1832580566406,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.05,
+      "metrics": {
+        "loss": 0.9159792769081601,
+        "accuracy": 0.9019434633187607,
+        "event_fraction": 0.09165969167181123,
+        "payload_rms": 0.29507566736872076,
+        "max_membrane_component": 424.3856201171875,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.1,
+      "metrics": {
+        "loss": 0.9565096794505844,
+        "accuracy": 0.8909010600706714,
+        "event_fraction": 0.08772401316848323,
+        "payload_rms": 0.28097194071521747,
+        "max_membrane_component": 424.8559265136719,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.2,
+      "metrics": {
+        "loss": 1.0885494265034006,
+        "accuracy": 0.8586572440268715,
+        "event_fraction": 0.0807357867751863,
+        "payload_rms": 0.2541584897952805,
+        "max_membrane_component": 426.97625732421875,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "input_noise",
+      "strength": 0.01,
+      "metrics": {
+        "loss": 0.8896801669690297,
+        "accuracy": 0.9116607778063932,
+        "event_fraction": 0.09590053971685707,
+        "payload_rms": 0.3096781203382152,
+        "max_membrane_component": 422.9637145996094,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "input_noise",
+      "strength": 0.05,
+      "metrics": {
+        "loss": 0.9169574876977361,
+        "accuracy": 0.9103356890459364,
+        "event_fraction": 0.09646708391896407,
+        "payload_rms": 0.3105915032510939,
+        "max_membrane_component": 423.3815612792969,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "input_noise",
+      "strength": 0.1,
+      "metrics": {
+        "loss": 1.0085569948695152,
+        "accuracy": 0.8926678445229682,
+        "event_fraction": 0.09809730178265184,
+        "payload_rms": 0.31320488471305225,
+        "max_membrane_component": 422.09375,
+        "samples": 2264
+      }
+    }
+  ]
+}

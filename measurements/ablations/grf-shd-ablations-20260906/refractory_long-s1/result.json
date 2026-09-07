@@ -1,0 +1,57 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 1,
+    "arm": "graded_observation",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "name": "refractory_long-s1",
+    "neuron": {
+      "refractory_decay": 0.99
+    },
+    "parent": "graded_observation"
+  },
+  "best_epoch": 18,
+  "best_validation_loss": 0.5259323730059197,
+  "steps": 4600,
+  "seconds_this_invocation": 144.09384782309644,
+  "parameters": 108820,
+  "memory_stats": {
+    "num_allocs": 4531696,
+    "bytes_in_use": 1307648,
+    "peak_bytes_in_use": 337744640,
+    "largest_alloc_size": 268435456,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 404750336,
+    "peak_pool_bytes": 404750336
+  },
+  "test": {
+    "loss": 1.0959168638862906,
+    "accuracy": 0.9116607757002221,
+    "event_fraction": 0.02866384308693055,
+    "payload_rms": 1.6536797986530039,
+    "max_membrane_component": 922.8082275390625,
+    "seconds": 0.5956892990507185,
+    "samples": 2264
+  }
+}
