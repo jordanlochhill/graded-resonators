@@ -1,4 +1,6 @@
-from graded_resonators.telemetry import Telemetry, flatten, model_id
+import pytest
+
+from graded_resonators.telemetry import Telemetry, flatten, live_settings, model_id, open_run
 
 
 def test_model_ids_separate_seeds_and_execute_runs():
@@ -33,3 +35,35 @@ def test_live_telemetry_keeps_model_histories_separate(monkeypatch, tmp_path):
     assert len(runs) == 3
     assert runs[1].rows == [{'epoch': 0, 'train/loss': 1}]
     assert runs[2].rows == [{'epoch': 0, 'train/loss': 2}]
+
+
+def test_new_runs_default_to_live_project_and_reject_offline(monkeypatch):
+    monkeypatch.delenv('WANDB_MODE', raising=False)
+    assert live_settings({})['project'] == 'graded-resonators'
+    for mode in ['offline', 'disabled', 'dryrun']:
+        with pytest.raises(ValueError, match='live W&B'):
+            live_settings({'wandb': {'mode': mode}})
+        monkeypatch.setenv('WANDB_MODE', mode)
+        with pytest.raises(ValueError, match='live W&B'):
+            live_settings({})
+        monkeypatch.delenv('WANDB_MODE')
+
+
+def test_failed_wandb_start_aborts_instead_of_silently_falling_back(monkeypatch, tmp_path):
+    monkeypatch.delenv('WANDB_MODE', raising=False)
+    def unavailable(**kwargs):
+        assert kwargs['mode'] == 'online'
+        raise ConnectionError('unavailable')
+    monkeypatch.setattr('graded_resonators.telemetry.wandb.init', unavailable)
+    with pytest.raises(ConnectionError):
+        Telemetry({}, tmp_path / 'job')
+    assert not (tmp_path / 'job' / 'telemetry.json').exists()
+
+
+def test_offline_sdk_response_is_rejected(monkeypatch, tmp_path):
+    from types import SimpleNamespace
+    monkeypatch.delenv('WANDB_MODE', raising=False)
+    monkeypatch.setattr('graded_resonators.telemetry.wandb.init',
+                        lambda **kwargs: SimpleNamespace(settings=SimpleNamespace(mode='offline')))
+    with pytest.raises(RuntimeError, match='online run'):
+        open_run('check', 'check', 'check', {}, tmp_path)

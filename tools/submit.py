@@ -24,6 +24,8 @@ root = Path(__file__).resolve().parents[1]
 manifest_path = args.manifest.resolve()
 relative = str(manifest_path.relative_to(root))
 manifest = json.loads(manifest_path.read_text())
+from graded_resonators.telemetry import live_settings
+wandb_settings = live_settings(manifest)
 platform = args.platform
 if manifest["cost"]["gpu_type"] != ("h100" if platform == "kaya" else "rtx4090"):
     raise SystemExit("Manifest GPU type must match the selected platform")
@@ -65,9 +67,9 @@ with tempfile.TemporaryDirectory(prefix="graded-resonators-proposal-") as direct
             "--env", "XLA_PYTHON_CLIENT_PREALLOCATE=false",
             "--env", f"PATH={uv_directory}:/usr/local/bin:/usr/bin:/bin",
             "--env", "UV_LINK_MODE=copy"]
-    if manifest.get("wandb"):
-        argv += ["--capability", "wandb=true", "--env", "WANDB_PROJECT=" + manifest["wandb"]["project"],
-                 "--env", "WANDB_ENTITY=" + manifest["wandb"]["entity"]]
+    argv += ["--capability", "wandb=true", "--env", "WANDB_MODE=online",
+             "--env", "WANDB_PROJECT=" + wandb_settings["project"],
+             "--env", "WANDB_ENTITY=" + wandb_settings["entity"]]
     if platform == "kaya":
         argv += ["--artifact-policy", "dependent", "--artifact-path", f"results/{args.run_id}",
                  "--artifact-destination", f"{args.run_id}/attempt-1",

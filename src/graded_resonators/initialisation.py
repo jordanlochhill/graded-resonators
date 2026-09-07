@@ -9,7 +9,7 @@ import jax.numpy as jnp
 import numpy as np
 
 from .data import batches
-from .model import forward, objective
+from .model import forward, membrane_read, objective
 
 
 def calibrate(p, neuron, training, permutation, config):
@@ -20,6 +20,8 @@ def calibrate(p, neuron, training, permutation, config):
     same threshold and all other initial parameters remain untouched.
     """
     recipe = config['initialisation_calibration']
+    if neuron.threshold_spread:
+        raise ValueError('Uniform threshold initialisation and quantile calibration are separate controls')
     if recipe['method'] != 'positive_membrane_quantile' or config['task'] != 'shd':
         raise ValueError('Unsupported calibration recipe')
     if neuron.payload != 'excess' or neuron.adaptive_threshold or neuron.adaptive_damping or neuron.reset != 'none':
@@ -30,7 +32,7 @@ def calibrate(p, neuron, training, permutation, config):
     x, y, mask = next(batches(training, count, 'shd', permutation, limit=count))
     probe = replace(neuron, recurrent=False, learn_threshold=False, surrogate='none')
     _, trace = forward(p, x, probe, trace=True)
-    membrane = np.asarray(trace[3])
+    membrane = np.asarray(membrane_read(p, trace[3], trace[4], probe)[0])
     positive = membrane[membrane > 0]
     if not positive.size or not np.isfinite(membrane).all():
         raise ValueError('No finite positive membrane samples for calibration')
@@ -48,6 +50,7 @@ def calibrate(p, neuron, training, permutation, config):
         'uncoupled_membrane_max': float(membrane.max()),
         'uncoupled_positive_fraction': float((membrane > 0).mean()),
         'initial_threshold': threshold,
+        'read_normalization': neuron.read_normalization,
     }
     # The labels are used only for a diagnostic, after the threshold is frozen.
     # They do not select a threshold, a quantile or any other hyperparameter.

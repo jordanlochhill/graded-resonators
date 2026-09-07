@@ -1,0 +1,97 @@
+{
+  "scope": "Historical training-window reconstruction, not held-out classification or a normalization ablation",
+  "reference_code_commit": "339258a48b1ac63798e3ba395bed1654375a1157",
+  "reference_code_note": "Inspected reference checkout; run-time commit was not recorded by the old playground service.",
+  "runs": [
+    {
+      "run_id": "20260902-211630-c117",
+      "shape": [
+        8,
+        8,
+        8
+      ],
+      "snapshot_step": 0,
+      "settings": {
+        "norm": "1",
+        "init": "random",
+        "reset": "none",
+        "coupling": "events",
+        "fireOn": "re",
+        "kick": "1"
+      },
+      "initial_threshold_min": 0.106506,
+      "initial_threshold_max": 0.29724,
+      "first": {
+        "step": 1,
+        "loss": 4.14549446105957,
+        "snr_window": -11.124858314977846,
+        "fires_per_s": 128251.953125
+      },
+      "last": {
+        "step": 3000,
+        "loss": 3.992057827417739e-05,
+        "snr_window": 39.03922525601614,
+        "fires_per_s": 119229.4921875
+      },
+      "source_files": {
+        "snapshot.json": {
+          "path": "/home/jordan/Documents/kairos-audio/runs/20260902-211630-c117/snapshot.json",
+          "sha256": "3a3b71102048ede3afd5c27767dd388ed15aa02b0d037f9ffdf3086da2139590"
+        },
+        "loss.jsonl": {
+          "path": "/home/jordan/Documents/kairos-audio/runs/20260902-211630-c117/loss.jsonl",
+          "sha256": "f19f3e2962de418265c78732cdce033aa2b4197fd78cdf1143f685280b26bb5b"
+        },
+        "status.json": {
+          "path": "/home/jordan/Documents/kairos-audio/runs/20260902-211630-c117/status.json",
+          "sha256": "ddcfa2a234e08a1691cd9a5d813fd0bf331961ccdbda625e31f4b29b0dd5046e"
+        }
+      }
+    },
+    {
+      "run_id": "20260903-080743-1f69",
+      "shape": [
+        8,
+        8,
+        8
+      ],
+      "snapshot_step": 0,
+      "settings": {
+        "norm": "1",
+        "init": "random",
+        "reset": "none",
+        "coupling": "events",
+        "fireOn": "re",
+        "kick": "1"
+      },
+      "initial_threshold_min": 0.11272312812507153,
+      "initial_threshold_max": 0.29656315241009,
+      "first": {
+        "step": 1,
+        "loss": 0.4014080762863159,
+        "snr_window": -4.775464381173611,
+        "fires_per_s": 90669.677734375
+      },
+      "last": {
+        "step": 3000,
+        "loss": 4.194200664642267e-05,
+        "snr_window": 34.977540785339734,
+        "fires_per_s": 79290.52734375
+      },
+      "source_files": {
+        "snapshot.json": {
+          "path": "/home/jordan/Documents/kairos-audio/runs/20260903-080743-1f69/snapshot.json",
+          "sha256": "40429f91a8c14a981435c86c40f0f1dbedfaffed782428005483f600b766b0e0"
+        },
+        "loss.jsonl": {
+          "path": "/home/jordan/Documents/kairos-audio/runs/20260903-080743-1f69/loss.jsonl",
+          "sha256": "da1d0a7b956fe3feee047236fe250a9d58b209814eb0999fb523b9eff3f136f6"
+        },
+        "status.json": {
+          "path": "/home/jordan/Documents/kairos-audio/runs/20260903-080743-1f69/status.json",
+          "sha256": "dbdb38e26af7a938f689605dfc0c87beebd5376adbad02b8fab68564286e0641"
+        }
+      }
+    }
+  ]
+}

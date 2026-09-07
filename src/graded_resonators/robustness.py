@@ -85,7 +85,7 @@ def latency(p, dataset, permutation, config, neuron, repetitions):
             "seconds": durations, "scope": "Dense JAX forward including emission statistics; input already on device"}
 
 
-def run(checkpoint_directory, protocol, data_root, output):
+def run(checkpoint_directory, protocol, data_root, output, on_evaluation=None):
     directory, output = Path(checkpoint_directory), Path(output)
     output.mkdir(parents=True, exist_ok=True)
     training = json.loads((directory / "result.json").read_text())
@@ -131,6 +131,8 @@ def run(checkpoint_directory, protocol, data_root, output):
         row = {"kind": kind, "strength": strength, "metrics": metrics}
         result["evaluations"].append(row)
         print(json.dumps({"checkpoint": str(directory), **row}), flush=True)
+        if on_evaluation is not None:
+            on_evaluation(row, len(result["evaluations"]) - 1)
     write_json(output / "result.json", result)
     return result
 
@@ -144,10 +146,24 @@ def main():
     if not os.environ.get("SLURM_JOB_ID") or jax.default_backend() != "gpu":
         raise SystemExit("Checkpoint evaluation must run in a Slurm GPU allocation")
     manifest = json.loads(args.manifest.read_text())
+    from .telemetry import Telemetry
+    telemetry = Telemetry(manifest, args.output)
     results = []
-    for entry in manifest["checkpoints"]:
-        results.append(run(entry["path"], manifest["protocol"], args.data, args.output / entry["name"]))
+    try:
+        for entry in manifest["checkpoints"]:
+            training = json.loads((Path(entry["path"]) / "result.json").read_text())
+            config = training["config"] | {"name": entry["name"],
+                      "checkpoint": entry["path"], "protocol": manifest["protocol"]}
+            telemetry.start(config)
+            result = run(entry["path"], manifest["protocol"], args.data, args.output / entry["name"],
+                         lambda row, index: telemetry.evaluation(config, row, index))
+            results.append(result)
+            telemetry.result(config, result)
+    except Exception:
+        telemetry.finish(1)
+        raise
     write_json(args.output / "summary.json", results)
+    telemetry.finish(0 if all(r["status"] == "complete" for r in results) else 2)
 
 
 if __name__ == "__main__":

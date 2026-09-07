@@ -195,6 +195,7 @@ def main():
         config = manifest["defaults"] | experiment
         name = config.get("name", f"{config['task']}-{config['arm']}-s{config['seed']}")
         try:
+            telemetry.start(config)
             result = run(config, args.output / name, args.data, telemetry)
         except Exception:
             telemetry.finish(1)

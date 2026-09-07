@@ -70,6 +70,14 @@ selected checkpoint once. A failed seed remains a failed seed in the summary.
 Generated result directories are ignored by git; curated measurements for the
 paper will live under `measurements/` with an evidence ledger.
 
+New training and robustness jobs require live W&B logging. Manifests without
+telemetry settings inherit `jordanlochhill-nmtafe/graded-resonators`; offline or
+disabled mode is rejected. Collection and model links are published before
+computation. An unavailable connection aborts startup, while local records remain
+available for recovery after later interruptions. CPU unit tests do not open
+W&B runs. The [playground comparison](docs/playground-comparison.md) documents
+the optional normalized membrane read and random low-threshold initialisation.
+
 `tools/split_primary.py` regenerates the twelve bounded original-task scheduler
 manifests from their three complete manifests. `manifests/robustness-shd.json`
 specifies post-training quantisation, packet deletion and binned-input Gaussian
