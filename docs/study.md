@@ -1,5 +1,12 @@
 # Graded emissions and refractory feedback in resonator networks
 
+**Historical protocol, superseded 7 September 2026.** The graded arms below do
+not implement Jordan's intended serial audio neuron and are retired from its
+paper evidence. Preserve their records as diagnostics. The replacement study
+is being reconciled against the [KA implementation audit](ka-implementation-audit.md);
+KA's componentwise tanh and missing interlayer normalisation must not be copied
+as approved design choices. No replacement training has been queued yet.
+
 ## Question
 
 Does transmitting membrane amplitude improve temporal learning, and should an
