@@ -1,0 +1,57 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "graded_static",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "name": "logistic_surrogate-s0",
+    "neuron": {
+      "surrogate": "logistic"
+    },
+    "parent": "graded_static"
+  },
+  "best_epoch": 10,
+  "best_validation_loss": 0.5994280569392479,
+  "steps": 4600,
+  "seconds_this_invocation": 142.9930275788065,
+  "parameters": 108820,
+  "memory_stats": {
+    "num_allocs": 3236906,
+    "bytes_in_use": 1307648,
+    "peak_bytes_in_use": 337744640,
+    "largest_alloc_size": 268435456,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 404750336,
+    "peak_pool_bytes": 404750336
+  },
+  "test": {
+    "loss": 1.063232005274338,
+    "accuracy": 0.8988515884210702,
+    "event_fraction": 0.0596159621414995,
+    "payload_rms": 0.8499119475125207,
+    "max_membrane_component": 74.79593658447266,
+    "seconds": 0.6003180239349604,
+    "samples": 2264
+  }
+}

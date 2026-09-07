@@ -1,0 +1,57 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "graded_static",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "name": "fast_surrogate-s0",
+    "neuron": {
+      "surrogate": "fast_sigmoid"
+    },
+    "parent": "graded_static"
+  },
+  "best_epoch": 10,
+  "best_validation_loss": 0.5603708618257675,
+  "steps": 4600,
+  "seconds_this_invocation": 145.2958722829353,
+  "parameters": 108820,
+  "memory_stats": {
+    "num_allocs": 2848469,
+    "bytes_in_use": 1307648,
+    "peak_bytes_in_use": 337744640,
+    "largest_alloc_size": 268435456,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 404750336,
+    "peak_pool_bytes": 404750336
+  },
+  "test": {
+    "loss": 1.087486968023617,
+    "accuracy": 0.8953180195164765,
+    "event_fraction": 0.062270555447773886,
+    "payload_rms": 0.827238645450333,
+    "max_membrane_component": 160.7493438720703,
+    "seconds": 0.5970497119706124,
+    "samples": 2264
+  }
+}

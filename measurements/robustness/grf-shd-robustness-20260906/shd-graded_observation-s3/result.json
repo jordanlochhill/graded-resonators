@@ -1,0 +1,232 @@
+{
+  "status": "complete",
+  "identity": {
+    "checkpoint_sha256": "abd567b7e1c3d0651a078a65b1e2db9debef4f543cb60f2c77b90e8d66cabb9c",
+    "training_source": "dc839cde43bd282475d4bc19187c96fcfe21bb9c",
+    "training_config_sha256": "e283d68d1387bb3d96d2d9e0f71c9cba0f0ff22f26a1af3ce899fba894b11c63",
+    "protocol": {
+      "batch": 32,
+      "clip_quantile": 0.999,
+      "payload_bits": [
+        2,
+        4,
+        8
+      ],
+      "packet_loss": [
+        0.01,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "input_noise": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "perturbation_seed": 20260906,
+      "latency_repetitions": 25
+    },
+    "evaluation_source": "acfa75ff8c2ae7834cd362650623dc44e4f637ce"
+  },
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 3,
+    "arm": "graded_observation",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd"
+  },
+  "calibration": {
+    "clip": 23.64820098876953,
+    "quantile": 0.999,
+    "active_components": 1117534,
+    "maximum": 40.148475646972656
+  },
+  "devices": [
+    "cuda:0"
+  ],
+  "jax": "0.6.2",
+  "latency": {
+    "batch": 32,
+    "steps": 250,
+    "repetitions": 25,
+    "median_seconds": 0.006923121167346835,
+    "seconds": [
+      0.006866062991321087,
+      0.006851286860182881,
+      0.006940447026863694,
+      0.006884824950248003,
+      0.00690091191790998,
+      0.006878153886646032,
+      0.006853868952021003,
+      0.006857187952846289,
+      0.0068679070100188255,
+      0.00700086890719831,
+      0.007005243096500635,
+      0.006878966931253672,
+      0.007010617991909385,
+      0.006964922184124589,
+      0.006975417956709862,
+      0.006987558910623193,
+      0.006922711851075292,
+      0.006923121167346835,
+      0.006928428076207638,
+      0.0069293619599193335,
+      0.006866307929158211,
+      0.006880601868033409,
+      0.006951924879103899,
+      0.006955801043659449,
+      0.0069496240466833115
+    ],
+    "scope": "Dense JAX forward including emission statistics; input already on device"
+  },
+  "evaluations": [
+    {
+      "kind": "clean",
+      "strength": 0.0,
+      "metrics": {
+        "loss": 1.1158901680484676,
+        "accuracy": 0.8939929330728079,
+        "event_fraction": 0.043887466218572625,
+        "payload_rms": 1.2387670513178575,
+        "max_membrane_component": 370.8211975097656,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "payload_bits",
+      "strength": 2,
+      "metrics": {
+        "loss": 1.6965118389668818,
+        "accuracy": 0.8683745587251211,
+        "event_fraction": 0.051040624521751704,
+        "payload_rms": 1.434938968114817,
+        "max_membrane_component": 375.9147644042969,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "payload_bits",
+      "strength": 4,
+      "metrics": {
+        "loss": 1.117338709612196,
+        "accuracy": 0.8944346291858821,
+        "event_fraction": 0.04363815615434107,
+        "payload_rms": 1.233221884667195,
+        "max_membrane_component": 371.54815673828125,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "payload_bits",
+      "strength": 8,
+      "metrics": {
+        "loss": 1.119904168081789,
+        "accuracy": 0.8917844525074369,
+        "event_fraction": 0.043799761853875206,
+        "payload_rms": 1.2313378433279356,
+        "max_membrane_component": 371.24920654296875,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.01,
+      "metrics": {
+        "loss": 1.1169058632092426,
+        "accuracy": 0.8970848058643274,
+        "event_fraction": 0.04374806979151159,
+        "payload_rms": 1.2288489177300588,
+        "max_membrane_component": 370.50115966796875,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.05,
+      "metrics": {
+        "loss": 1.1281589484467522,
+        "accuracy": 0.8939929332834251,
+        "event_fraction": 0.0432336593948489,
+        "payload_rms": 1.1924741064128521,
+        "max_membrane_component": 369.8341979980469,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.1,
+      "metrics": {
+        "loss": 1.1483672271768954,
+        "accuracy": 0.8922261488311283,
+        "event_fraction": 0.04262471216148286,
+        "payload_rms": 1.1478200053692025,
+        "max_membrane_component": 369.0674133300781,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.2,
+      "metrics": {
+        "loss": 1.284031130399805,
+        "accuracy": 0.8652826859336017,
+        "event_fraction": 0.041599742396876166,
+        "payload_rms": 1.0663611593931805,
+        "max_membrane_component": 368.3445739746094,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "input_noise",
+      "strength": 0.01,
+      "metrics": {
+        "loss": 1.1133354506307271,
+        "accuracy": 0.8939929330728079,
+        "event_fraction": 0.043900482264403316,
+        "payload_rms": 1.2389390884493598,
+        "max_membrane_component": 371.3534240722656,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "input_noise",
+      "strength": 0.05,
+      "metrics": {
+        "loss": 1.1319303512573242,
+        "accuracy": 0.8913427563943627,
+        "event_fraction": 0.04409043925284497,
+        "payload_rms": 1.240544189958031,
+        "max_membrane_component": 373.13763427734375,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "input_noise",
+      "strength": 0.1,
+      "metrics": {
+        "loss": 1.1925876115320428,
+        "accuracy": 0.8931095408466595,
+        "event_fraction": 0.0446396883405982,
+        "payload_rms": 1.2444718064517353,
+        "max_membrane_component": 378.673583984375,
+        "samples": 2264
+      }
+    }
+  ]
+}

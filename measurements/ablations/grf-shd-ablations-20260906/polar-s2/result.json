@@ -1,0 +1,57 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 2,
+    "arm": "graded_static",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "name": "polar-s2",
+    "neuron": {
+      "integration": "polar"
+    },
+    "parent": "graded_static"
+  },
+  "best_epoch": 17,
+  "best_validation_loss": 0.5408771277205344,
+  "steps": 4600,
+  "seconds_this_invocation": 155.08893133397214,
+  "parameters": 108820,
+  "memory_stats": {
+    "num_allocs": 388368,
+    "bytes_in_use": 1375232,
+    "peak_bytes_in_use": 337627904,
+    "largest_alloc_size": 268435456,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 404750336,
+    "peak_pool_bytes": 404750336
+  },
+  "test": {
+    "loss": 1.3385511767316622,
+    "accuracy": 0.8992932862190812,
+    "event_fraction": 0.07701978292776923,
+    "payload_rms": 0.9767832081628066,
+    "max_membrane_component": 281.2958679199219,
+    "seconds": 0.7334653679281473,
+    "samples": 2264
+  }
+}

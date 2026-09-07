@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "tune",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 100,
+    "arm": "graded_static",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.0075,
+    "task": "shd",
+    "comparison_role": "active_initialisation_gradient",
+    "initialisation_calibration": {
+      "method": "positive_membrane_quantile",
+      "samples": 64,
+      "quantile": 0.95
+    },
+    "name": "excess_surrogate_fixed-lr0.0075-s100",
+    "gradient_condition": "excess_surrogate_fixed",
+    "neuron": {
+      "payload": "excess",
+      "surrogate": "double_gaussian",
+      "learn_threshold": false
+    }
+  },
+  "best_epoch": 19,
+  "best_validation_loss": 0.6353578953655219,
+  "steps": 4600,
+  "seconds_this_invocation": 143.85254635708407,
+  "parameters": 108820,
+  "memory_stats": {
+    "num_allocs": 648130,
+    "bytes_in_use": 1307648,
+    "peak_bytes_in_use": 336855552,
+    "largest_alloc_size": 268435456,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 538968064,
+    "peak_pool_bytes": 538968064
+  }
+}

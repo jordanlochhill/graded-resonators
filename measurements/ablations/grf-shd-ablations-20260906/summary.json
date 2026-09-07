@@ -1,0 +1,2414 @@
+[
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "polar-s0",
+      "neuron": {
+        "integration": "polar"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.5653914777047795,
+    "steps": 4600,
+    "seconds_this_invocation": 152.9145651489962,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 129410,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 336855552,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1255153506046471,
+      "accuracy": 0.8820671384410387,
+      "event_fraction": 0.060131641137726316,
+      "payload_rms": 0.8471674439274228,
+      "max_membrane_component": 282.7110900878906,
+      "seconds": 0.9235291208606213,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "polar-s1",
+      "neuron": {
+        "integration": "polar"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.579402245334321,
+    "steps": 4600,
+    "seconds_this_invocation": 148.35152410296723,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 258889,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337627904,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1232245718211251,
+      "accuracy": 0.8882508840240775,
+      "event_fraction": 0.05715190424409435,
+      "payload_rms": 0.8269989408077497,
+      "max_membrane_component": 171.0452423095703,
+      "seconds": 0.8800236468669027,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "polar-s2",
+      "neuron": {
+        "integration": "polar"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 17,
+    "best_validation_loss": 0.5408771277205344,
+    "steps": 4600,
+    "seconds_this_invocation": 155.08893133397214,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 388368,
+      "bytes_in_use": 1375232,
+      "peak_bytes_in_use": 337627904,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.3385511767316622,
+      "accuracy": 0.8992932862190812,
+      "event_fraction": 0.07701978292776923,
+      "payload_rms": 0.9767832081628066,
+      "max_membrane_component": 281.2958679199219,
+      "seconds": 0.7334653679281473,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "signed-s0",
+      "neuron": {
+        "signed": true
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.5497655250543466,
+    "steps": 4600,
+    "seconds_this_invocation": 143.4880837679375,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 517847,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337627904,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1158191281578145,
+      "accuracy": 0.8856007067137809,
+      "event_fraction": 0.13936544343987117,
+      "payload_rms": 0.8798305088267696,
+      "max_membrane_component": 22.47597885131836,
+      "seconds": 0.6213679700158536,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "signed-s1",
+      "neuron": {
+        "signed": true
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.5687822347769708,
+    "steps": 4600,
+    "seconds_this_invocation": 141.72081563901156,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 647326,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337627904,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1203909939674943,
+      "accuracy": 0.8953180241500531,
+      "event_fraction": 0.14397602867953768,
+      "payload_rms": 0.907543276003459,
+      "max_membrane_component": 31.12786865234375,
+      "seconds": 0.59193951706402,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "signed-s2",
+      "neuron": {
+        "signed": true
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 17,
+    "best_validation_loss": 0.5623079912062803,
+    "steps": 4600,
+    "seconds_this_invocation": 141.59640873293392,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 776805,
+      "bytes_in_use": 1309952,
+      "peak_bytes_in_use": 337627904,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0949479901748496,
+      "accuracy": 0.8895759713102145,
+      "event_fraction": 0.11388546699664619,
+      "payload_rms": 0.7893659873332138,
+      "max_membrane_component": 24.898731231689453,
+      "seconds": 0.6375494659878314,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "polar_signed-s0",
+      "neuron": {
+        "integration": "polar",
+        "signed": true
+      },
+      "parent": "polar"
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.5795146433122319,
+    "steps": 4600,
+    "seconds_this_invocation": 145.2424832561519,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 906284,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337630208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1960035191829128,
+      "accuracy": 0.8833922261484098,
+      "event_fraction": 0.13910601274916645,
+      "payload_rms": 0.8962536401270209,
+      "max_membrane_component": 31.128040313720703,
+      "seconds": 1.0235887649469078,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "polar_signed-s1",
+      "neuron": {
+        "integration": "polar",
+        "signed": true
+      },
+      "parent": "polar"
+    },
+    "best_epoch": 17,
+    "best_validation_loss": 0.5424885393651716,
+    "steps": 4600,
+    "seconds_this_invocation": 149.07178365206346,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 1035763,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337630208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0431601925368024,
+      "accuracy": 0.890017666159586,
+      "event_fraction": 0.14220763174257514,
+      "payload_rms": 0.8325683242977957,
+      "max_membrane_component": 27.4521541595459,
+      "seconds": 0.6149782780557871,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "polar_signed-s2",
+      "neuron": {
+        "integration": "polar",
+        "signed": true
+      },
+      "parent": "polar"
+    },
+    "best_epoch": 17,
+    "best_validation_loss": 0.5627395806137038,
+    "steps": 4600,
+    "seconds_this_invocation": 142.41974002704956,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 1165242,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337630208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1982423517813532,
+      "accuracy": 0.8705830382374066,
+      "event_fraction": 0.11795608336007216,
+      "payload_rms": 0.8175934250800538,
+      "max_membrane_component": 23.28076171875,
+      "seconds": 0.6563376418780535,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "complex-s0",
+      "neuron": {
+        "integration": "polar",
+        "signed": true,
+        "payload": "complex"
+      },
+      "parent": "polar_signed"
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.6014524861347456,
+    "steps": 4600,
+    "seconds_this_invocation": 165.21554522309452,
+    "parameters": 127764,
+    "memory_stats": {
+      "num_allocs": 1294721,
+      "bytes_in_use": 1641472,
+      "peak_bytes_in_use": 337630208,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.2063651586168647,
+      "accuracy": 0.8745583038869258,
+      "event_fraction": 0.1028015308687628,
+      "payload_rms": 0.6275404450542231,
+      "max_membrane_component": 31.034221649169922,
+      "seconds": 0.6353397539351135,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "complex-s1",
+      "neuron": {
+        "integration": "polar",
+        "signed": true,
+        "payload": "complex"
+      },
+      "parent": "polar_signed"
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.5470076232600066,
+    "steps": 4600,
+    "seconds_this_invocation": 162.44684303109534,
+    "parameters": 127764,
+    "memory_stats": {
+      "num_allocs": 1424200,
+      "bytes_in_use": 1641472,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.199390162427518,
+      "accuracy": 0.8754416971661598,
+      "event_fraction": 0.10798483628898121,
+      "payload_rms": 0.6074445293188112,
+      "max_membrane_component": 23.524118423461914,
+      "seconds": 0.6023846589960158,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "complex-s2",
+      "neuron": {
+        "integration": "polar",
+        "signed": true,
+        "payload": "complex"
+      },
+      "parent": "polar_signed"
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.5560359452399739,
+    "steps": 4600,
+    "seconds_this_invocation": 162.59067673399113,
+    "parameters": 127764,
+    "memory_stats": {
+      "num_allocs": 1553679,
+      "bytes_in_use": 1641472,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1495358109895417,
+      "accuracy": 0.8816254400111762,
+      "event_fraction": 0.1077575279998695,
+      "payload_rms": 0.6496093206734965,
+      "max_membrane_component": 24.183971405029297,
+      "seconds": 0.6154675730504096,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 112,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "complex_matched-s0",
+      "neuron": {
+        "integration": "polar",
+        "signed": true,
+        "payload": "complex"
+      },
+      "parent": "polar_signed"
+    },
+    "best_epoch": 18,
+    "best_validation_loss": 0.534131614342789,
+    "steps": 4600,
+    "seconds_this_invocation": 162.65875357203186,
+    "parameters": 108212,
+    "memory_stats": {
+      "num_allocs": 1683158,
+      "bytes_in_use": 1320960,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1463160624352444,
+      "accuracy": 0.8869257933680665,
+      "event_fraction": 0.13083464733914016,
+      "payload_rms": 0.7504984901664342,
+      "max_membrane_component": 31.929895401000977,
+      "seconds": 0.658785104053095,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 112,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "complex_matched-s1",
+      "neuron": {
+        "integration": "polar",
+        "signed": true,
+        "payload": "complex"
+      },
+      "parent": "polar_signed"
+    },
+    "best_epoch": 17,
+    "best_validation_loss": 0.5746342328428491,
+    "steps": 4600,
+    "seconds_this_invocation": 161.0584621890448,
+    "parameters": 108212,
+    "memory_stats": {
+      "num_allocs": 1812637,
+      "bytes_in_use": 1323264,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1709434564880263,
+      "accuracy": 0.868816256101898,
+      "event_fraction": 0.11024859439673777,
+      "payload_rms": 0.6624842111291978,
+      "max_membrane_component": 29.83621597290039,
+      "seconds": 0.6390645219944417,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 112,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "complex_matched-s2",
+      "neuron": {
+        "integration": "polar",
+        "signed": true,
+        "payload": "complex"
+      },
+      "parent": "polar_signed"
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.565921843271314,
+    "steps": 4600,
+    "seconds_this_invocation": 161.58807406690903,
+    "parameters": 108212,
+    "memory_stats": {
+      "num_allocs": 1942116,
+      "bytes_in_use": 1456384,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.2232081687913767,
+      "accuracy": 0.8785335722744676,
+      "event_fraction": 0.11380869642479259,
+      "payload_rms": 0.6898234687275102,
+      "max_membrane_component": 24.051088333129883,
+      "seconds": 0.6236831061542034,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "excess-s0",
+      "neuron": {
+        "payload": "excess"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 12,
+    "best_validation_loss": 0.5631671973532695,
+    "steps": 4600,
+    "seconds_this_invocation": 145.07486168690957,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 2071595,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1767631069931461,
+      "accuracy": 0.8953180245712873,
+      "event_fraction": 0.10210079354869182,
+      "payload_rms": 0.8971956354238304,
+      "max_membrane_component": 158.9380645751953,
+      "seconds": 0.6235020409803838,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "excess-s1",
+      "neuron": {
+        "payload": "excess"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 13,
+    "best_validation_loss": 0.5363119925458008,
+    "steps": 4600,
+    "seconds_this_invocation": 143.9502609751653,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 2201074,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.126937602518304,
+      "accuracy": 0.9006183728733669,
+      "event_fraction": 0.10033500294592693,
+      "payload_rms": 0.8813358037730082,
+      "max_membrane_component": 68.93541717529297,
+      "seconds": 0.6054446341004223,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "excess-s2",
+      "neuron": {
+        "payload": "excess"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 15,
+    "best_validation_loss": 0.5872034815191491,
+    "steps": 4600,
+    "seconds_this_invocation": 144.2839299601037,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 2330553,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.154778367639009,
+      "accuracy": 0.9081272067956284,
+      "event_fraction": 0.10366445305911896,
+      "payload_rms": 0.899471704654906,
+      "max_membrane_component": 96.81454467773438,
+      "seconds": 0.6377179201226681,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "reset-s0",
+      "neuron": {
+        "reset": "subtract"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.5103991806872783,
+    "steps": 4600,
+    "seconds_this_invocation": 146.05850382102653,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 2460032,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 0.9441475817676989,
+      "accuracy": 0.9169611296889639,
+      "event_fraction": 0.10962131948542679,
+      "payload_rms": 0.9104101088231801,
+      "max_membrane_component": 541.578857421875,
+      "seconds": 0.6116254429798573,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "reset-s1",
+      "neuron": {
+        "reset": "subtract"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 15,
+    "best_validation_loss": 0.5410678254314727,
+    "steps": 4600,
+    "seconds_this_invocation": 144.88941884809174,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 2589511,
+      "bytes_in_use": 1309952,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.120684315374799,
+      "accuracy": 0.8842756190064096,
+      "event_fraction": 0.11504813649629114,
+      "payload_rms": 0.9058160073867473,
+      "max_membrane_component": 496.4170227050781,
+      "seconds": 0.6083414359018207,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "reset-s2",
+      "neuron": {
+        "reset": "subtract"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 17,
+    "best_validation_loss": 0.5465192993725736,
+    "steps": 4600,
+    "seconds_this_invocation": 144.47017701691948,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 2718990,
+      "bytes_in_use": 1376256,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1805103815065257,
+      "accuracy": 0.8992932879040182,
+      "event_fraction": 0.12716636161711528,
+      "payload_rms": 0.9689044195565842,
+      "max_membrane_component": 376.91888427734375,
+      "seconds": 0.613132277969271,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "fast_surrogate-s0",
+      "neuron": {
+        "surrogate": "fast_sigmoid"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 10,
+    "best_validation_loss": 0.5603708618257675,
+    "steps": 4600,
+    "seconds_this_invocation": 145.2958722829353,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 2848469,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.087486968023617,
+      "accuracy": 0.8953180195164765,
+      "event_fraction": 0.062270555447773886,
+      "payload_rms": 0.827238645450333,
+      "max_membrane_component": 160.7493438720703,
+      "seconds": 0.5970497119706124,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "fast_surrogate-s1",
+      "neuron": {
+        "surrogate": "fast_sigmoid"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 14,
+    "best_validation_loss": 0.5466499072642415,
+    "steps": 4600,
+    "seconds_this_invocation": 143.8277332719881,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 2977948,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.090513825837799,
+      "accuracy": 0.8975265034517214,
+      "event_fraction": 0.06131164666410049,
+      "payload_rms": 0.8225710291514995,
+      "max_membrane_component": 193.2711944580078,
+      "seconds": 0.602111523039639,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "fast_surrogate-s2",
+      "neuron": {
+        "surrogate": "fast_sigmoid"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 19,
+    "best_validation_loss": 0.5558116991095747,
+    "steps": 4600,
+    "seconds_this_invocation": 144.21055903891101,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 3107427,
+      "bytes_in_use": 1309952,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0823556408022823,
+      "accuracy": 0.9045936395759717,
+      "event_fraction": 0.0708160081832232,
+      "payload_rms": 0.926796589683609,
+      "max_membrane_component": 490.17169189453125,
+      "seconds": 0.5885812609922141,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "logistic_surrogate-s0",
+      "neuron": {
+        "surrogate": "logistic"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 10,
+    "best_validation_loss": 0.5994280569392479,
+    "steps": 4600,
+    "seconds_this_invocation": 142.9930275788065,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 3236906,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.063232005274338,
+      "accuracy": 0.8988515884210702,
+      "event_fraction": 0.0596159621414995,
+      "payload_rms": 0.8499119475125207,
+      "max_membrane_component": 74.79593658447266,
+      "seconds": 0.6003180239349604,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "logistic_surrogate-s1",
+      "neuron": {
+        "surrogate": "logistic"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.5815589844814839,
+    "steps": 4600,
+    "seconds_this_invocation": 141.886496263789,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 3366385,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0439593096925177,
+      "accuracy": 0.9072438179393539,
+      "event_fraction": 0.061532411869128265,
+      "payload_rms": 0.8684765806221458,
+      "max_membrane_component": 155.26174926757812,
+      "seconds": 0.6187489170115441,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "logistic_surrogate-s2",
+      "neuron": {
+        "surrogate": "logistic"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 14,
+    "best_validation_loss": 0.56086053628863,
+    "steps": 4600,
+    "seconds_this_invocation": 141.63667865796015,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 3495864,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0759440955340651,
+      "accuracy": 0.9081272097442681,
+      "event_fraction": 0.06811013696682326,
+      "payload_rms": 0.8707755231876722,
+      "max_membrane_component": 181.48992919921875,
+      "seconds": 0.5874681621789932,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "smooth-s0",
+      "neuron": {
+        "payload": "smooth"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.5236984283646191,
+    "steps": 4600,
+    "seconds_this_invocation": 142.96387409581803,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 3625343,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 0.9853592799324872,
+      "accuracy": 0.9121024764468729,
+      "event_fraction": 0.05876562725950046,
+      "payload_rms": 1.1510887532007583,
+      "max_membrane_component": 375.3023986816406,
+      "seconds": 0.6157400719821453,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "smooth-s1",
+      "neuron": {
+        "payload": "smooth"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 13,
+    "best_validation_loss": 0.5336908924799024,
+    "steps": 4600,
+    "seconds_this_invocation": 141.60885284794495,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 3754822,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.04704978651377,
+      "accuracy": 0.9041519447266002,
+      "event_fraction": 0.05938770107319414,
+      "payload_rms": 1.1111198367077453,
+      "max_membrane_component": 342.30889892578125,
+      "seconds": 0.5874333060346544,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_static",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "smooth-s2",
+      "neuron": {
+        "payload": "smooth"
+      },
+      "parent": "graded_static"
+    },
+    "best_epoch": 12,
+    "best_validation_loss": 0.5531001896214631,
+    "steps": 4600,
+    "seconds_this_invocation": 141.68405564897694,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 3884301,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0897995936996945,
+      "accuracy": 0.9006183768750922,
+      "event_fraction": 0.05964256027983271,
+      "payload_rms": 1.1202825841893105,
+      "max_membrane_component": 425.9693603515625,
+      "seconds": 0.597281496040523,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_observation",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "refractory_short-s0",
+      "neuron": {
+        "refractory_decay": 0.5
+      },
+      "parent": "graded_observation"
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.5581865156355079,
+    "steps": 4600,
+    "seconds_this_invocation": 145.41813418199308,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 4013780,
+      "bytes_in_use": 1311744,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0660904056191867,
+      "accuracy": 0.892226150094831,
+      "event_fraction": 0.04951681431001151,
+      "payload_rms": 0.9197920604154222,
+      "max_membrane_component": 123.4187240600586,
+      "seconds": 0.5999888849910349,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_observation",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "refractory_short-s1",
+      "neuron": {
+        "refractory_decay": 0.5
+      },
+      "parent": "graded_observation"
+    },
+    "best_epoch": 9,
+    "best_validation_loss": 0.5506938312682638,
+    "steps": 4600,
+    "seconds_this_invocation": 144.18348977598362,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 4143259,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0710093237907221,
+      "accuracy": 0.905035334004109,
+      "event_fraction": 0.054609542666496744,
+      "payload_rms": 0.8912898318290531,
+      "max_membrane_component": 120.8586196899414,
+      "seconds": 0.6211572021711618,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_observation",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "refractory_short-s2",
+      "neuron": {
+        "refractory_decay": 0.5
+      },
+      "parent": "graded_observation"
+    },
+    "best_epoch": 13,
+    "best_validation_loss": 0.5378356495517894,
+    "steps": 4600,
+    "seconds_this_invocation": 144.15564780309796,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 4272738,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.122647612339195,
+      "accuracy": 0.9068021218262797,
+      "event_fraction": 0.05606872680541062,
+      "payload_rms": 0.8841711094753939,
+      "max_membrane_component": 74.85767364501953,
+      "seconds": 0.5901973771397024,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_observation",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "refractory_long-s0",
+      "neuron": {
+        "refractory_decay": 0.99
+      },
+      "parent": "graded_observation"
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.5390444971301073,
+    "steps": 4600,
+    "seconds_this_invocation": 145.64550804696046,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 4402217,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.060099641341624,
+      "accuracy": 0.9006183735052183,
+      "event_fraction": 0.027106643078499883,
+      "payload_rms": 1.5425775059138458,
+      "max_membrane_component": 856.2421875,
+      "seconds": 0.6166619129944593,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_observation",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "refractory_long-s1",
+      "neuron": {
+        "refractory_decay": 0.99
+      },
+      "parent": "graded_observation"
+    },
+    "best_epoch": 18,
+    "best_validation_loss": 0.5259323730059197,
+    "steps": 4600,
+    "seconds_this_invocation": 144.09384782309644,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 4531696,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0959168638862906,
+      "accuracy": 0.9116607757002221,
+      "event_fraction": 0.02866384308693055,
+      "payload_rms": 1.6536797986530039,
+      "max_membrane_component": 922.8082275390625,
+      "seconds": 0.5956892990507185,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_observation",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "refractory_long-s2",
+      "neuron": {
+        "refractory_decay": 0.99
+      },
+      "parent": "graded_observation"
+    },
+    "best_epoch": 15,
+    "best_validation_loss": 0.531681561104359,
+    "steps": 4600,
+    "seconds_this_invocation": 144.2100049399305,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 4661175,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.161403325336982,
+      "accuracy": 0.9006183745583038,
+      "event_fraction": 0.028972008512371843,
+      "payload_rms": 1.5754008460729916,
+      "max_membrane_component": 768.0048217773438,
+      "seconds": 0.6092087831348181,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "brf",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "binary_static-s0",
+      "neuron": {
+        "adaptive_threshold": false,
+        "adaptive_damping": false
+      },
+      "parent": "brf"
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.6194606787587967,
+    "steps": 4600,
+    "seconds_this_invocation": 141.377711098874,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 4790654,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0601163470702963,
+      "accuracy": 0.8917844539817568,
+      "event_fraction": 0.14139287889846222,
+      "payload_rms": 0.3760224401928538,
+      "max_membrane_component": 119.5746841430664,
+      "seconds": 0.5949489860795438,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "brf",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "binary_static-s1",
+      "neuron": {
+        "adaptive_threshold": false,
+        "adaptive_damping": false
+      },
+      "parent": "brf"
+    },
+    "best_epoch": 7,
+    "best_validation_loss": 0.5794802425097834,
+    "steps": 4600,
+    "seconds_this_invocation": 140.55722309811972,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 4920133,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0058435867194995,
+      "accuracy": 0.8939929328621908,
+      "event_fraction": 0.1326446885460257,
+      "payload_rms": 0.36420418755275547,
+      "max_membrane_component": 134.8566436767578,
+      "seconds": 0.6222540179733187,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "brf",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "binary_static-s2",
+      "neuron": {
+        "adaptive_threshold": false,
+        "adaptive_damping": false
+      },
+      "parent": "brf"
+    },
+    "best_epoch": 9,
+    "best_validation_loss": 0.594271947854867,
+    "steps": 4600,
+    "seconds_this_invocation": 139.9928185408935,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 5049612,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0253742149777632,
+      "accuracy": 0.8926678462079052,
+      "event_fraction": 0.13416498004337082,
+      "payload_rms": 0.36628538290287777,
+      "max_membrane_component": 109.03523254394531,
+      "seconds": 0.5978397000581026,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 0,
+      "arm": "graded_brf",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "graded_damping_only-s0",
+      "neuron": {
+        "adaptive_threshold": false
+      },
+      "parent": "graded_brf"
+    },
+    "best_epoch": 14,
+    "best_validation_loss": 0.5551259940387281,
+    "steps": 4600,
+    "seconds_this_invocation": 142.20378928189166,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 5179091,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.1553633680613218,
+      "accuracy": 0.9041519468327714,
+      "event_fraction": 0.07451987906290028,
+      "payload_rms": 0.8383087850695188,
+      "max_membrane_component": 265.64935302734375,
+      "seconds": 0.6319148300681263,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 1,
+      "arm": "graded_brf",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "graded_damping_only-s1",
+      "neuron": {
+        "adaptive_threshold": false
+      },
+      "parent": "graded_brf"
+    },
+    "best_epoch": 12,
+    "best_validation_loss": 0.5349619002429986,
+    "steps": 4600,
+    "seconds_this_invocation": 140.78703683894128,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 5308570,
+      "bytes_in_use": 1342720,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0413940647886835,
+      "accuracy": 0.9094522980834907,
+      "event_fraction": 0.07124221840932597,
+      "payload_rms": 0.7975039665761751,
+      "max_membrane_component": 165.1976318359375,
+      "seconds": 0.6165887368842959,
+      "samples": 2264
+    }
+  },
+  {
+    "status": "complete",
+    "config": {
+      "stage": "main",
+      "split_seed": 20260906,
+      "evaluation_batch": 256,
+      "seed": 2,
+      "arm": "graded_brf",
+      "inputs": 700,
+      "hidden": 128,
+      "classes": 20,
+      "omega_range": [
+        5,
+        10
+      ],
+      "damping_range": [
+        2,
+        3
+      ],
+      "tau_std": 5,
+      "batch": 32,
+      "epochs": 20,
+      "lr": 0.075,
+      "task": "shd",
+      "name": "graded_damping_only-s2",
+      "neuron": {
+        "adaptive_threshold": false
+      },
+      "parent": "graded_brf"
+    },
+    "best_epoch": 11,
+    "best_validation_loss": 0.5163450348596631,
+    "steps": 4600,
+    "seconds_this_invocation": 140.86161878192797,
+    "parameters": 108820,
+    "memory_stats": {
+      "num_allocs": 5438049,
+      "bytes_in_use": 1307648,
+      "peak_bytes_in_use": 337744640,
+      "largest_alloc_size": 268435456,
+      "bytes_limit": 18932072448,
+      "bytes_reserved": 0,
+      "peak_bytes_reserved": 0,
+      "largest_free_block_bytes": 0,
+      "pool_bytes": 404750336,
+      "peak_pool_bytes": 404750336
+    },
+    "test": {
+      "loss": 1.0026047347712432,
+      "accuracy": 0.9054770341189085,
+      "event_fraction": 0.07591995907545933,
+      "payload_rms": 0.7990983937236825,
+      "max_membrane_component": 187.3004608154297,
+      "seconds": 0.6039786559995264,
+      "samples": 2264
+    }
+  }
+]

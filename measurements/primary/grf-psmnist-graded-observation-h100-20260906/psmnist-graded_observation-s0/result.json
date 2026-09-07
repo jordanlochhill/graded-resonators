@@ -1,0 +1,43 @@
+{
+  "status": "nonfinite",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "graded_observation",
+    "inputs": 1,
+    "hidden": 256,
+    "classes": 10,
+    "omega_range": [
+      15,
+      85
+    ],
+    "damping_range": [
+      0.1,
+      1
+    ],
+    "tau_std": 1,
+    "batch": 256,
+    "epochs": 300,
+    "lr": 0.1,
+    "task": "psmnist"
+  },
+  "best_epoch": 1,
+  "best_validation_loss": 1.2734591592152913,
+  "steps": 519,
+  "seconds_this_invocation": 62.104214866878465,
+  "parameters": 68874,
+  "memory_stats": {
+    "num_allocs": 14918,
+    "bytes_in_use": 1111808,
+    "peak_bytes_in_use": 1889680640,
+    "largest_alloc_size": 1886840832,
+    "bytes_limit": 74962501632,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 2153775104,
+    "peak_pool_bytes": 2153775104
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "graded_static",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "name": "smooth-s0",
+    "neuron": {
+      "payload": "smooth"
+    },
+    "parent": "graded_static"
+  },
+  "best_epoch": 11,
+  "best_validation_loss": 0.5236984283646191,
+  "steps": 4600,
+  "seconds_this_invocation": 142.96387409581803,
+  "parameters": 108820,
+  "memory_stats": {
+    "num_allocs": 3625343,
+    "bytes_in_use": 1307648,
+    "peak_bytes_in_use": 337744640,
+    "largest_alloc_size": 268435456,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 404750336,
+    "peak_pool_bytes": 404750336
+  },
+  "test": {
+    "loss": 0.9853592799324872,
+    "accuracy": 0.9121024764468729,
+    "event_fraction": 0.05876562725950046,
+    "payload_rms": 1.1510887532007583,
+    "max_membrane_component": 375.3023986816406,
+    "seconds": 0.6157400719821453,
+    "samples": 2264
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 2,
+    "arm": "graded_static",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "name": "signed-s2",
+    "neuron": {
+      "signed": true
+    },
+    "parent": "graded_static"
+  },
+  "best_epoch": 17,
+  "best_validation_loss": 0.5623079912062803,
+  "steps": 4600,
+  "seconds_this_invocation": 141.59640873293392,
+  "parameters": 108820,
+  "memory_stats": {
+    "num_allocs": 776805,
+    "bytes_in_use": 1309952,
+    "peak_bytes_in_use": 337627904,
+    "largest_alloc_size": 268435456,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 404750336,
+    "peak_pool_bytes": 404750336
+  },
+  "test": {
+    "loss": 1.0949479901748496,
+    "accuracy": 0.8895759713102145,
+    "event_fraction": 0.11388546699664619,
+    "payload_rms": 0.7893659873332138,
+    "max_membrane_component": 24.898731231689453,
+    "seconds": 0.6375494659878314,
+    "samples": 2264
+  }
+}

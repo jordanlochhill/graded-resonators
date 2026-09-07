@@ -1,0 +1,297 @@
+{
+  "run": "grf-shd-exact-gradient-tune-20260906",
+  "files": {
+    "summary.json": {
+      "bytes": 30196,
+      "sha256": "9486c22cdbf4ae9c04dba142dfdac9e3ab5bd4fbd86f5a98a32d1a8862cc570e"
+    },
+    "excess_exact_fixed-lr0.0075-s100/contract.json": {
+      "bytes": 3149,
+      "sha256": "d2f70a595983b2e637f654455ae4523bfb71e1b96672512df29e71e678bfaaf1"
+    },
+    "excess_exact_fixed-lr0.0075-s101/contract.json": {
+      "bytes": 3149,
+      "sha256": "dcd3cbe1da80e344ea4c4103232e78ff426ecfa2f228e1150eaaf95a2c89bdb3"
+    },
+    "excess_exact_fixed-lr0.025-s100/contract.json": {
+      "bytes": 3146,
+      "sha256": "dfc0812762f42fdd0f89c49bbabaec76ca93e6891355a847ed0463ef96fd0c76"
+    },
+    "excess_exact_fixed-lr0.025-s101/contract.json": {
+      "bytes": 3147,
+      "sha256": "b109b58a72c5c39c8e67d6fddf4ec27b9d8c9e8aed7d6ae81fb286e9a4f4a473"
+    },
+    "excess_exact_fixed-lr0.075-s100/contract.json": {
+      "bytes": 3147,
+      "sha256": "084c08277df5c7b00a89dc72577b962cde7a7bc38a433b1dace98f1a5bcd9fff"
+    },
+    "excess_exact_fixed-lr0.075-s101/contract.json": {
+      "bytes": 3146,
+      "sha256": "50febd9e22cd5d910e80f73e716665a7ad1a7a7f04d981dde173cb28731a71dd"
+    },
+    "excess_exact_learned-lr0.0075-s100/contract.json": {
+      "bytes": 3151,
+      "sha256": "1365e43d978e5f3a91b8b4895869e568d1c0a21fb3f4f44b01e577306b42e007"
+    },
+    "excess_exact_learned-lr0.0075-s101/contract.json": {
+      "bytes": 3151,
+      "sha256": "13052b777f8a3357bdb2a25ad2ea6e7c6690fd061901ac7156e89dbbbad013af"
+    },
+    "excess_exact_learned-lr0.025-s100/contract.json": {
+      "bytes": 3148,
+      "sha256": "c5c8abef678ef59a833d5403a99640ab693dee4ebd910efcc373cff54cbe1c5b"
+    },
+    "excess_exact_learned-lr0.025-s101/contract.json": {
+      "bytes": 3149,
+      "sha256": "aca2737bbff3d25221f92436acb89614585e653742c22f4b53f103b898de125d"
+    },
+    "excess_exact_learned-lr0.075-s100/contract.json": {
+      "bytes": 3149,
+      "sha256": "195ba19b216ed8b5dbd731aeae25db671136e7f9132636c0ed71d0b904f5b045"
+    },
+    "excess_exact_learned-lr0.075-s101/contract.json": {
+      "bytes": 3149,
+      "sha256": "5759c11284038c93f8c5621a4c6c3bc58cbc92c09b3c00b4cbb81bee6a13a399"
+    },
+    "excess_surrogate_fixed-lr0.0075-s100/contract.json": {
+      "bytes": 3179,
+      "sha256": "d958a45f53599494baf640c3fc3e417d7060816e98924189bb9f117bc63b3be5"
+    },
+    "excess_surrogate_fixed-lr0.0075-s101/contract.json": {
+      "bytes": 3178,
+      "sha256": "6c23e985e6644157d2ac96485d1a0f96e26aea1523e703f5a2f38ecca68e3500"
+    },
+    "excess_surrogate_fixed-lr0.025-s100/contract.json": {
+      "bytes": 3177,
+      "sha256": "87de3d16b8aef205ae7caee22df27e5573927115c04952f5db90703eb47519d8"
+    },
+    "excess_surrogate_fixed-lr0.025-s101/contract.json": {
+      "bytes": 3177,
+      "sha256": "572b7259a4cbd13d9ca413d8bc7a64f95d0331b7ab6d74a941e896eab3de9e22"
+    },
+    "excess_surrogate_fixed-lr0.075-s100/contract.json": {
+      "bytes": 3177,
+      "sha256": "5a8185b0534843477bd7c7837c188d9b79c03f5c2f7e908065e92109c56b3bd3"
+    },
+    "excess_surrogate_fixed-lr0.075-s101/contract.json": {
+      "bytes": 3177,
+      "sha256": "c26b2c5610eb9cfc96777b080b9177797917e8c2c7aa4074cd639d5d2754dd05"
+    },
+    "excess_surrogate_learned-lr0.0075-s100/contract.json": {
+      "bytes": 3181,
+      "sha256": "59a1985f7e3c1f61b453a0dcfd8458be2f3a0d3a3d4fa81ff8b19da0b336fd91"
+    },
+    "excess_surrogate_learned-lr0.0075-s101/contract.json": {
+      "bytes": 3180,
+      "sha256": "b5ee872dc2ab5707539c056f12afee170b1c47b85de9f5be7ced5400e309eb00"
+    },
+    "excess_surrogate_learned-lr0.025-s100/contract.json": {
+      "bytes": 3179,
+      "sha256": "bf813510e309526588527c6e9ea7a818d5ecb19c2c620600eef493b4a9c348b9"
+    },
+    "excess_surrogate_learned-lr0.025-s101/contract.json": {
+      "bytes": 3178,
+      "sha256": "f647cc6951af65545f6ab8d2d3e1aba8fd1aac8d61cb3737b9b10b52e1a1ba0c"
+    },
+    "excess_surrogate_learned-lr0.075-s100/contract.json": {
+      "bytes": 3179,
+      "sha256": "5bf3a1f3689711d8d56977b1364133e82020bac0c90878faa4fb9ce03dc75005"
+    },
+    "excess_surrogate_learned-lr0.075-s101/contract.json": {
+      "bytes": 3179,
+      "sha256": "3cbe84e3165a34e4bc2557e69d87867dae00b8b8d2652eb324658c3074ae7597"
+    },
+    "excess_exact_fixed-lr0.0075-s100/metrics.jsonl": {
+      "bytes": 12228,
+      "sha256": "fadf63171592c716a8328c93952624d5174d92084fe333fb71e9fe1ae7349ba3"
+    },
+    "excess_exact_fixed-lr0.0075-s101/metrics.jsonl": {
+      "bytes": 12267,
+      "sha256": "d4122a47812356cefde8794a174b32628264d2e982b2a4b225391645bb60a703"
+    },
+    "excess_exact_fixed-lr0.025-s100/metrics.jsonl": {
+      "bytes": 12261,
+      "sha256": "766cc2093caa8bc1dce46cc2b5ce082c3bbaaa856daedbe72723ad2fb66a7cd0"
+    },
+    "excess_exact_fixed-lr0.025-s101/metrics.jsonl": {
+      "bytes": 12302,
+      "sha256": "214961d8cef814b9808ab070d2baae58e6f663238a00f18badbf2321e48de6e9"
+    },
+    "excess_exact_fixed-lr0.075-s100/metrics.jsonl": {
+      "bytes": 12187,
+      "sha256": "e8a11964de0eef6d55dc38646019f84df75cbf28b3721c6986a67bad8259a28f"
+    },
+    "excess_exact_fixed-lr0.075-s101/metrics.jsonl": {
+      "bytes": 12226,
+      "sha256": "123c7af242c9e9fc73da5e7b49cdfe457d7dafa60b9ce37b98a638e6aea3030e"
+    },
+    "excess_exact_learned-lr0.0075-s100/metrics.jsonl": {
+      "bytes": 13426,
+      "sha256": "6d5c4119bba3a575777642b2ded85b64d231482948a27daa0af3597928c4879f"
+    },
+    "excess_exact_learned-lr0.0075-s101/metrics.jsonl": {
+      "bytes": 13471,
+      "sha256": "354f57ca6fb1a1f8ec1ce0a8b0de4f983320b6aa75772e83478183cda5b22339"
+    },
+    "excess_exact_learned-lr0.025-s100/metrics.jsonl": {
+      "bytes": 13464,
+      "sha256": "15b081dfd18ea20f67405928d8cc5faa7404c1156a05c8623e29a98196891b6d"
+    },
+    "excess_exact_learned-lr0.025-s101/metrics.jsonl": {
+      "bytes": 13499,
+      "sha256": "8b10cae14f3b1885cb9f8cdcf72e1ede2b6df057255786cae6250de36d3c02cd"
+    },
+    "excess_exact_learned-lr0.075-s100/metrics.jsonl": {
+      "bytes": 13389,
+      "sha256": "cbf26449dc9cce4632db1053c3efae5e6772ca4361477f828fd6253050587261"
+    },
+    "excess_exact_learned-lr0.075-s101/metrics.jsonl": {
+      "bytes": 13421,
+      "sha256": "a2527ef32376fa595c57393a9b4c199bc60e9152d578047d703ab9d14e8f64ff"
+    },
+    "excess_surrogate_fixed-lr0.0075-s100/metrics.jsonl": {
+      "bytes": 13953,
+      "sha256": "b43bce0b3dff14a83962e85cf492d3a04c90c6eca5300a59e39f8e2b06e0451e"
+    },
+    "excess_surrogate_fixed-lr0.0075-s101/metrics.jsonl": {
+      "bytes": 13987,
+      "sha256": "2a8819f02504ed5acafab07b53f07a5e4e0e7238f32eca4e222394ef8f3734be"
+    },
+    "excess_surrogate_fixed-lr0.025-s100/metrics.jsonl": {
+      "bytes": 13924,
+      "sha256": "8b8fe6c9bc66425cb2069528afc91217474659193f461dd4f144a46fc44310cd"
+    },
+    "excess_surrogate_fixed-lr0.025-s101/metrics.jsonl": {
+      "bytes": 13857,
+      "sha256": "9ca53cb2b273977f252c3ff25bebf657ae2ac5df4fdc7f78770983d3d8b20673"
+    },
+    "excess_surrogate_fixed-lr0.075-s100/metrics.jsonl": {
+      "bytes": 13808,
+      "sha256": "419edfb7d16a286bdd131fe9e61ec5850f69d690a0db3e3d0a15a5ca4c6d5994"
+    },
+    "excess_surrogate_fixed-lr0.075-s101/metrics.jsonl": {
+      "bytes": 13828,
+      "sha256": "d4eda5e8b10368e5e9467cc042d3edfe95626b03b8db242b009d506c3c3252cb"
+    },
+    "excess_surrogate_learned-lr0.0075-s100/metrics.jsonl": {
+      "bytes": 16076,
+      "sha256": "671b52f76676b29a6a0dfb4978ebe47bbb05b5e3e3896da8fdfe481f1fb13920"
+    },
+    "excess_surrogate_learned-lr0.0075-s101/metrics.jsonl": {
+      "bytes": 16079,
+      "sha256": "b4b778439710d17e20bcddfc3abf7f256856cc05dafc6c62b52e70711ee9c8d8"
+    },
+    "excess_surrogate_learned-lr0.025-s100/metrics.jsonl": {
+      "bytes": 16062,
+      "sha256": "81e383e5a8b4dd574b17318c7bec8f1c6650209cb6bc59a6915f0e56bc5b3e98"
+    },
+    "excess_surrogate_learned-lr0.025-s101/metrics.jsonl": {
+      "bytes": 15999,
+      "sha256": "fbdbdf6ea7d1b9033c9b9eae8f0892a12c71166ecaf7a6f2e759561579bdb110"
+    },
+    "excess_surrogate_learned-lr0.075-s100/metrics.jsonl": {
+      "bytes": 15959,
+      "sha256": "0342cb9585bcec16245164ef744174b60878c6814e8f04191dd9fef18324dbf4"
+    },
+    "excess_surrogate_learned-lr0.075-s101/metrics.jsonl": {
+      "bytes": 15934,
+      "sha256": "65e89d504d6b4dba96d4d4a3514a8bcfcc132b019b2928bbf7babd957b4cd27c"
+    },
+    "excess_exact_fixed-lr0.0075-s100/result.json": {
+      "bytes": 1145,
+      "sha256": "b96a4f56a13e462fe9ee7ab8c5d12d0141bce17d9a915f843a448fca9b1913c4"
+    },
+    "excess_exact_fixed-lr0.0075-s101/result.json": {
+      "bytes": 1145,
+      "sha256": "c59fa225dbc45ca43c9247e08252abf59f0e984fc375254b6deaaa5466b75ef2"
+    },
+    "excess_exact_fixed-lr0.025-s100/result.json": {
+      "bytes": 1143,
+      "sha256": "ad78c2a7193ac0b5088e903abcd0efd13d56e433a6b629342d332c827199755c"
+    },
+    "excess_exact_fixed-lr0.025-s101/result.json": {
+      "bytes": 1141,
+      "sha256": "1f260f545b6abc9b2e33de687b9776c1f5d9c7c9b2c07dc365e808dd5f7d4ae3"
+    },
+    "excess_exact_fixed-lr0.075-s100/result.json": {
+      "bytes": 1141,
+      "sha256": "8fa4bd54eb30cfd83fbaa4015e6ac5d165087d132f15ef880bd1901e91756ebc"
+    },
+    "excess_exact_fixed-lr0.075-s101/result.json": {
+      "bytes": 1143,
+      "sha256": "2f0bb3f8fd77fac1f4d8db997abe293b565e9eac9814ada51dde5ec6b8c8f4b5"
+    },
+    "excess_exact_learned-lr0.0075-s100/result.json": {
+      "bytes": 1148,
+      "sha256": "ec413a8cb7569de1416089b7de80449be0f48d8d4f8e693a02b83e91d5a50f9c"
+    },
+    "excess_exact_learned-lr0.0075-s101/result.json": {
+      "bytes": 1148,
+      "sha256": "2aa0999e6b20f397efea9aa5ea737c37f99e0653e7acf666703f72fd4ad6322b"
+    },
+    "excess_exact_learned-lr0.025-s100/result.json": {
+      "bytes": 1146,
+      "sha256": "be73f8042ffc830ce6f1d46ab833964e9c8e1727a83879eac46ca8f86adba985"
+    },
+    "excess_exact_learned-lr0.025-s101/result.json": {
+      "bytes": 1145,
+      "sha256": "2d4b84f90b1daf8876a6fc2a8639f5da441c23223d69fdf7274c4d3437578482"
+    },
+    "excess_exact_learned-lr0.075-s100/result.json": {
+      "bytes": 1146,
+      "sha256": "0a236c1fe6afc36911a9a2fc9a4bd8a59c22277768d65e3d5a92d7b3639e5a9a"
+    },
+    "excess_exact_learned-lr0.075-s101/result.json": {
+      "bytes": 1146,
+      "sha256": "66b0a570c41a74099b0826db0224b974caf120b765245f5aea2a4f20333c1a7c"
+    },
+    "excess_surrogate_fixed-lr0.0075-s100/result.json": {
+      "bytes": 1165,
+      "sha256": "bbcd44ba444de88619d633c5ca1e323038101a774c6ad7ec2c54fb0a31362a96"
+    },
+    "excess_surrogate_fixed-lr0.0075-s101/result.json": {
+      "bytes": 1165,
+      "sha256": "e17c8d92d447aaa36d586836af48dfd3eba8977fc6682506630b084e8e88c66b"
+    },
+    "excess_surrogate_fixed-lr0.025-s100/result.json": {
+      "bytes": 1162,
+      "sha256": "8f6044010b7b15bc46f8c51d81f20bf61a6c9f860edd12659660056bef29c170"
+    },
+    "excess_surrogate_fixed-lr0.025-s101/result.json": {
+      "bytes": 1163,
+      "sha256": "9da6a5c87e05b4a26564198be347b9234779760f79c3af0208922375d20c8396"
+    },
+    "excess_surrogate_fixed-lr0.075-s100/result.json": {
+      "bytes": 1163,
+      "sha256": "a53abb5b052c2748ffa52ad09f33fa7aa2fe3fdc443c5bf2e0fdc9731a457043"
+    },
+    "excess_surrogate_fixed-lr0.075-s101/result.json": {
+      "bytes": 1162,
+      "sha256": "cfab54dd77a5f6ffb1582079cccfcc97c58f99ad666e95456cc3353a2520cf52"
+    },
+    "excess_surrogate_learned-lr0.0075-s100/result.json": {
+      "bytes": 1169,
+      "sha256": "c99dff21c349616480b903338a60f4e7d19ec8d3cbbccc48bf524e03317ec177"
+    },
+    "excess_surrogate_learned-lr0.0075-s101/result.json": {
+      "bytes": 1169,
+      "sha256": "ac8596b706e31442085b4ec914145dc26fcce990f0c735d37db85e3c36a10e42"
+    },
+    "excess_surrogate_learned-lr0.025-s100/result.json": {
+      "bytes": 1167,
+      "sha256": "c5cc421b8235ad1c4e5c5764365fbaa269d9fafe1274a9c280a8660f0c2d5eb6"
+    },
+    "excess_surrogate_learned-lr0.025-s101/result.json": {
+      "bytes": 1166,
+      "sha256": "ad58c397206b5b0af0110e6c4fe8a5bceb32cc28a06ea63a1d32f42f4a7d8e93"
+    },
+    "excess_surrogate_learned-lr0.075-s100/result.json": {
+      "bytes": 1166,
+      "sha256": "2834935681ef74eb27ff3992ae17d94bf109abfbe09a2daa56ab0c56f366ff91"
+    },
+    "excess_surrogate_learned-lr0.075-s101/result.json": {
+      "bytes": 1167,
+      "sha256": "f15c74913c86264f1800baaaefd9c7057453b792f2cff3dbfd09870bfc66e2e7"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "status": "nonfinite",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 4,
+    "arm": "graded_brf",
+    "inputs": 4,
+    "hidden": 36,
+    "classes": 6,
+    "omega_range": [
+      3,
+      5
+    ],
+    "damping_range": [
+      0.1,
+      1
+    ],
+    "tau_std": 1,
+    "batch": 16,
+    "epochs": 400,
+    "lr": 0.1,
+    "task": "ecg"
+  },
+  "best_epoch": 48,
+  "best_validation_loss": 0.5535260438919067,
+  "steps": 1768,
+  "seconds_this_invocation": 186.62851998093538,
+  "parameters": 1734,
+  "memory_stats": {
+    "num_allocs": 945248,
+    "bytes_in_use": 24832,
+    "peak_bytes_in_use": 74116096,
+    "largest_alloc_size": 67108864,
+    "bytes_limit": 74962501632,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 102760448,
+    "peak_pool_bytes": 102760448
+  }
+}

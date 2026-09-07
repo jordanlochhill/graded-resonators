@@ -1,0 +1,59 @@
+{
+  "status": "complete",
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 0,
+    "arm": "graded_static",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd",
+    "name": "complex-s0",
+    "neuron": {
+      "integration": "polar",
+      "signed": true,
+      "payload": "complex"
+    },
+    "parent": "polar_signed"
+  },
+  "best_epoch": 19,
+  "best_validation_loss": 0.6014524861347456,
+  "steps": 4600,
+  "seconds_this_invocation": 165.21554522309452,
+  "parameters": 127764,
+  "memory_stats": {
+    "num_allocs": 1294721,
+    "bytes_in_use": 1641472,
+    "peak_bytes_in_use": 337630208,
+    "largest_alloc_size": 268435456,
+    "bytes_limit": 18932072448,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 0,
+    "pool_bytes": 404750336,
+    "peak_pool_bytes": 404750336
+  },
+  "test": {
+    "loss": 1.2063651586168647,
+    "accuracy": 0.8745583038869258,
+    "event_fraction": 0.1028015308687628,
+    "payload_rms": 0.6275404450542231,
+    "max_membrane_component": 31.034221649169922,
+    "seconds": 0.6353397539351135,
+    "samples": 2264
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "status": "complete",
+  "identity": {
+    "checkpoint_sha256": "6c3e5c90324fab4da84adb91d302965df57ac937eb58713c967861ddf69425ad",
+    "training_source": "dc839cde43bd282475d4bc19187c96fcfe21bb9c",
+    "training_config_sha256": "da87a2eee887a230a8296ef10a938624e91515394d26d40d5350d5b762a4fc45",
+    "protocol": {
+      "batch": 32,
+      "clip_quantile": 0.999,
+      "payload_bits": [
+        2,
+        4,
+        8
+      ],
+      "packet_loss": [
+        0.01,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "input_noise": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "perturbation_seed": 20260906,
+      "latency_repetitions": 25
+    },
+    "evaluation_source": "acfa75ff8c2ae7834cd362650623dc44e4f637ce"
+  },
+  "config": {
+    "stage": "main",
+    "split_seed": 20260906,
+    "evaluation_batch": 256,
+    "seed": 1,
+    "arm": "graded_observation",
+    "inputs": 700,
+    "hidden": 128,
+    "classes": 20,
+    "omega_range": [
+      5,
+      10
+    ],
+    "damping_range": [
+      2,
+      3
+    ],
+    "tau_std": 5,
+    "batch": 32,
+    "epochs": 20,
+    "lr": 0.075,
+    "task": "shd"
+  },
+  "calibration": {
+    "clip": 20.248821258544922,
+    "quantile": 0.999,
+    "active_components": 1083494,
+    "maximum": 28.34705352783203
+  },
+  "devices": [
+    "cuda:0"
+  ],
+  "jax": "0.6.2",
+  "latency": {
+    "batch": 32,
+    "steps": 250,
+    "repetitions": 25,
+    "median_seconds": 0.006936098914593458,
+    "seconds": [
+      0.006817461922764778,
+      0.006812826031818986,
+      0.0067975870333611965,
+      0.006772035034373403,
+      0.006762867793440819,
+      0.006799246883019805,
+      0.006936098914593458,
+      0.006972180912271142,
+      0.006908613024279475,
+      0.006869503064081073,
+      0.006875953869894147,
+      0.0069465909618884325,
+      0.00691676908172667,
+      0.006936649791896343,
+      0.006954772863537073,
+      0.007054553832858801,
+      0.006928464863449335,
+      0.007042614975944161,
+      0.007032620022073388,
+      0.007038897136226296,
+      0.007008301094174385,
+      0.006983596133068204,
+      0.007005919003859162,
+      0.006932158023118973,
+      0.0069978078827261925
+    ],
+    "scope": "Dense JAX forward including emission statistics; input already on device"
+  },
+  "evaluations": [
+    {
+      "kind": "clean",
+      "strength": 0.0,
+      "metrics": {
+        "loss": 1.099738622301459,
+        "accuracy": 0.9098939931434793,
+        "event_fraction": 0.04232626368847837,
+        "payload_rms": 1.1470528081197082,
+        "max_membrane_component": 534.2363891601562,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "payload_bits",
+      "strength": 2,
+      "metrics": {
+        "loss": 1.4406381457938744,
+        "accuracy": 0.8988515905272413,
+        "event_fraction": 0.046926556490756596,
+        "payload_rms": 1.280062516173752,
+        "max_membrane_component": 514.2313842773438,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "payload_bits",
+      "strength": 4,
+      "metrics": {
+        "loss": 1.103044025468321,
+        "accuracy": 0.9103356892565535,
+        "event_fraction": 0.042224825415826096,
+        "payload_rms": 1.1452850705051583,
+        "max_membrane_component": 541.0227661132812,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "payload_bits",
+      "strength": 8,
+      "metrics": {
+        "loss": 1.1015111827176367,
+        "accuracy": 0.9094522970304051,
+        "event_fraction": 0.04228644184899836,
+        "payload_rms": 1.1430679978543026,
+        "max_membrane_component": 534.109375,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.01,
+      "metrics": {
+        "loss": 1.1039002430312626,
+        "accuracy": 0.9107773853696277,
+        "event_fraction": 0.042254060190895,
+        "payload_rms": 1.1401090087728358,
+        "max_membrane_component": 529.5018310546875,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.05,
+      "metrics": {
+        "loss": 1.1429856206840003,
+        "accuracy": 0.900618374768921,
+        "event_fraction": 0.04196746848760561,
+        "payload_rms": 1.1125650898684678,
+        "max_membrane_component": 513.3975830078125,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.1,
+      "metrics": {
+        "loss": 1.18952419437705,
+        "accuracy": 0.8878091872791519,
+        "event_fraction": 0.04164879861231827,
+        "payload_rms": 1.0803563841419004,
+        "max_membrane_component": 504.7669982910156,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "packet_loss",
+      "strength": 0.2,
+      "metrics": {
+        "loss": 1.3508029262084422,
+        "accuracy": 0.8515901064283014,
+        "event_fraction": 0.04116326365159173,
+        "payload_rms": 1.020479738645612,
+        "max_membrane_component": 491.882568359375,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "input_noise",
+      "strength": 0.01,
+      "metrics": {
+        "loss": 1.1000347019505585,
+        "accuracy": 0.9098939931434793,
+        "event_fraction": 0.042344938897833806,
+        "payload_rms": 1.1474632937363622,
+        "max_membrane_component": 539.223388671875,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "input_noise",
+      "strength": 0.05,
+      "metrics": {
+        "loss": 1.1186339202281022,
+        "accuracy": 0.9068021201413428,
+        "event_fraction": 0.042502541779524027,
+        "payload_rms": 1.1481514417636194,
+        "max_membrane_component": 537.982666015625,
+        "samples": 2264
+      }
+    },
+    {
+      "kind": "input_noise",
+      "strength": 0.1,
+      "metrics": {
+        "loss": 1.17584585680136,
+        "accuracy": 0.901060070671378,
+        "event_fraction": 0.043054054250986754,
+        "payload_rms": 1.1530370560954415,
+        "max_membrane_component": 532.4869995117188,
+        "samples": 2264
+      }
+    }
+  ]
+}
