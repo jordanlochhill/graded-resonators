@@ -35,21 +35,50 @@ record = {"scope": "Isolated neuron, fixed external impulses, no recurrent synap
 (args.output / "contract.json").write_text(json.dumps(record, indent=2) + "\n")
 colors = {"brf": "#294f73", "graded_brf": "#b65d3d", "graded_observation": "#39846e", "graded_static": "#795b92"}
 labels = {"brf": "Binary BRF", "graded_brf": "Graded BRF", "graded_observation": "Graded, threshold adapts", "graded_static": "Graded, fixed threshold"}
-fig, axes = plt.subplots(3, 1, figsize=(7.0, 6.0), sharex=True, layout="constrained")
+fig, axes = plt.subplots(5, 1, figsize=(7.0, 8.2), sharex=False, layout="constrained",
+                         gridspec_kw={"height_ratios": [1.25, 1, 1, 1.1, 1.15]})
 for name in ("brf", "graded_observation"):
-    axes[0].plot(traces[name]["real"], color=colors[name], label="Damping adapts" if name == "brf" else "Damping fixed")
-axes[0].set(ylabel="Real membrane", title="Event-dependent damping changes the oscillation")
-axes[0].legend(loc="upper right", frameon=False, ncols=2)
-for name in ("brf", "graded_brf"):
-    axes[1].plot(traces[name]["payload"], color=colors[name], label=labels[name], lw=1.3)
-axes[1].set(ylabel="Transmitted value", title="Graded events carry membrane amplitude")
-axes[1].legend(frameon=False, ncols=2)
+    axes[0].plot(traces[name]["real"], color=colors[name],
+                 ls="-" if name == "brf" else "--",
+                 label="Damping adapts" if name == "brf" else "Damping fixed")
+axes[0].set(ylabel="Real membrane", title="(a) Event-dependent damping changes the oscillation")
+axes[0].legend(loc="upper right", frameon=False, ncols=2, fontsize=8)
+# Separate panels preserve coincident events and a shared scale preserves amplitude.
+maximum = max(traces[name]["payload"].max() for name in ("brf", "graded_brf"))
+for ax, name, title in zip(axes[1:3], ("brf", "graded_brf"),
+        (r"(b) Binary BRF: $y_t=s_t$ (0 or 1)",
+         r"(c) Graded BRF: $y_t=s_t\,\mathrm{Re}\,z_t$ (membrane amplitude)")):
+    times = np.flatnonzero(traces[name]["event"])
+    values = traces[name]["payload"][times]
+    positions = np.arange(len(times))
+    ax.vlines(positions, 0, values, color=colors[name], lw=1.6)
+    ax.scatter(positions, values, color=colors[name], marker="o" if name == "brf" else "D", s=20, zorder=3)
+    ax.axhline(1, color="0.5", ls=":", lw=.8)
+    for t, value in zip(positions, values):
+        ax.annotate(f"{value:.2f}" if name != "brf" else "1", (t, value),
+                    xytext=(4, 4), textcoords="offset points", fontsize=8)
+    ax.set(ylabel="Transmitted value", title=title, ylim=(-.1, maximum + .55), yticks=[0, 1, 2])
+for name, style in (("brf", "-"), ("graded_observation", "--")):
+    previous_q = np.r_[0., traces[name]["refractory"][:-1]]
+    axes[3].plot(1 + previous_q, color=colors[name], ls=style,
+                 label="Binary / graded BRF" if name == "brf" else "Graded observation")
+axes[3].axhline(1, color=colors["graded_static"], ls=":", label="Fixed base / graded static")
+axes[3].set(ylabel="Threshold", title=r"(d) Effective threshold: $1+q_{t-1}$; base parameter stays at 1")
+axes[3].legend(frameon=False, ncols=3, fontsize=7, loc="upper right")
 for index, name in enumerate(ARMS):
-    t = np.flatnonzero(traces[name]["event"])
-    axes[2].vlines(t, index - .24, index + .24, color=colors[name])
-axes[2].set(yticks=range(4), yticklabels=[labels[name] for name in ARMS], xlabel="Time step", ylim=(-.6, 3.6), title="Threshold adaptation changes event timing")
+    times = np.flatnonzero(traces[name]["event"])
+    axes[4].vlines(times, index - .24, index + .24, color=colors[name])
+axes[4].set(yticks=range(4), yticklabels=["Binary BRF", "Graded BRF", "Graded observation", "Graded static"],
+            xlabel="Time step", ylim=(-.6, 3.6), title="(e) Event times under each refractory rule")
 for ax in axes:
     ax.grid(alpha=.15)
+    if ax in (axes[1], axes[2]):
+        ax.set(xlim=(-.4, len(np.flatnonzero(traces["brf"]["event"])) - .6),
+               xticks=range(len(np.flatnonzero(traces["brf"]["event"]))), xticklabels=[f"Step {t}" for t in np.flatnonzero(traces["brf"]["event"])])
+    else:
+        ax.set_xlim(-5, 300)
+        if ax is not axes[4]:
+            ax.tick_params(labelbottom=False)
 fig.savefig(args.output / "mechanism.pdf")
 fig.savefig(args.output / "mechanism.png", dpi=160)
 plt.close(fig)
